@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function () {
     return view('backend.home.index');
 })->name('dashboard.index');
+
 Route::get('/website', function () {
     return view('frontend.home.index');
-})->name('home');
-Route::get('/home', function () {
-    return view('frontend.layouts.master');
+})->name('website.index');
+
+Route::get('/login', function () {
+    return view('backend.layouts.login');
 });
