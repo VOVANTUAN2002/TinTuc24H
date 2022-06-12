@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/home', function () {
+Route::get('/dashboard', function () {
     return view('backend.home.index');
-})->name('home.index');
+})->name('dashboard.index');
+Route::get('/website', function () {
+    return view('frontend.home.index');
+})->name('home');
+Route::get('/home', function () {
+    return view('frontend.layouts.master');
+});
