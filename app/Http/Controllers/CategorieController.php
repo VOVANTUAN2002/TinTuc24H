@@ -23,8 +23,11 @@ class CategorieController extends Controller
      */
     public function index(Request $request)
     {
-        $items = $this->categorieService->getAll($request);
-        return response()->json($items, 200);
+        $categories = $this->categorieService->getAll($request);
+        $params = [
+            "categories" => $categories,
+        ];
+        return view("backend.categories.index", $params);
     }
 
     /**
@@ -34,7 +37,7 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.categories.create');
     }
 
     /**
@@ -45,7 +48,8 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        //
+        $categories = $this->categorieService->create($request);
+        return redirect()->route('categories.index')->with('success', 'Thêm mới thành công');
     }
 
     /**

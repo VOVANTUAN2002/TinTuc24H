@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('news',NewsController::class);
-Route::resource('categorie',CategorieController::class);
+Route::resource('categories',CategorieController::class);
