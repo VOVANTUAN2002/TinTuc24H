@@ -5,17 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
+use App\Services\Interfaces\NewServiceInterface;
+use GuzzleHttp\Psr7\Request;
 
 class NewsController extends Controller
 {
+    protected $newsRepository;
+
+    public function __construct(NewServiceInterface $newsRepository)
+    {
+        $this->newsRepository = $newsRepository;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(Request $request)
     {
-        //
+        $items = $this->newsRepository->getAll($request);
+        return response()->json($items, 200);
     }
 
     /**
@@ -45,9 +55,15 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(News $news, $slug)
     {
-        //
+        if (is_numeric($slug)) {
+            $item = $this->courseService->findById($slug);
+        } else {
+            $item = $this->courseService->findBySlug($slug);
+        }
+
+        return response()->json($item, 200);
     }
 
     /**
@@ -70,7 +86,7 @@ class NewsController extends Controller
      */
     public function update(UpdateNewsRequest $request, News $news)
     {
-        //
+        dd($news);
     }
 
     /**

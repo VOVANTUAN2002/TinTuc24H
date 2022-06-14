@@ -7,19 +7,20 @@ use App\Services\Interfaces\NewServiceInterface;
 class NewService implements NewServiceInterface
 {
     protected $newsRepository;
-    public function __construct(NewServiceInterface $requirementsRepository)
+
+    public function __construct(NewServiceInterface $newsRepository)
     {
-        $this->requirementsRepository = $requirementsRepository;
+        $this->newsRepository = $newsRepository;
     }
 
     public function getAll($request)
     {
-        return $this->requirementsRepository->getAll($request);
+        return $this->newsRepository->getAll($request);
     }
 
     public function findById($id)
     {
-        $course = $this->requirementsRepository->findById($id);
+        $course = $this->newsRepository->findById($id);
 
         $statusCode = 200;
         if (!$course) {
@@ -34,7 +35,7 @@ class NewService implements NewServiceInterface
 
     public function create($request)
     {
-        $course = $this->requirementsRepository->create($request);
+        $course = $this->newsRepository->create($request);
 
         $statusCode = 201;
         if (!$course) {
@@ -49,13 +50,13 @@ class NewService implements NewServiceInterface
 
     public function update($request, $id)
     {
-        $oldCustomer = $this->requirementsRepository->findById($id);
+        $oldCustomer = $this->newsRepository->findById($id);
 
         if (!$oldCustomer) {
             $newCustomer = null;
             $statusCode = 404;
         } else {
-            $newCustomer = $this->requirementsRepository->update($request, $oldCustomer);
+            $newCustomer = $this->newsRepository->update($request, $oldCustomer);
             $statusCode = 200;
         }
 
@@ -67,12 +68,12 @@ class NewService implements NewServiceInterface
 
     public function destroy($id)
     {
-        $course = $this->requirementsRepository->findById($id);
+        $course = $this->newsRepository->findById($id);
 
         $statusCode = 404;
         $message = "User not found";
         if ($course) {
-            $this->requirementsRepository->destroy($course);
+            $this->newsRepository->destroy($course);
             $statusCode = 200;
             $message = "Delete success!";
         }
@@ -85,7 +86,7 @@ class NewService implements NewServiceInterface
 
     public function findBySlug($id)
     {
-        $course = $this->requirementsRepository->findBySlug($id);
+        $course = $this->newsRepository->findBySlug($id);
 
         $statusCode = 200;
         if (!$course) {
