@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use App\Repositories\Eloquent\CategorieRepository;
 use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\NewInterface;
