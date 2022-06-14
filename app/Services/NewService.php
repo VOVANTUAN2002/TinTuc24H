@@ -20,31 +20,31 @@ class NewService implements NewServiceInterface
 
     public function findById($id)
     {
-        $course = $this->newsRepository->findById($id);
+        $news = $this->newsRepository->findById($id);
 
         $statusCode = 200;
-        if (!$course) {
+        if (!$news) {
             $statusCode = 404;
         }
 
         return [
             'statusCode' => $statusCode,
-            'item' => $course
+            'item' => $news
         ];
     }
 
     public function create($request)
     {
-        $course = $this->newsRepository->create($request);
+        $news = $this->newsRepository->create($request);
 
         $statusCode = 201;
-        if (!$course) {
+        if (!$news) {
             $statusCode = 500;
         }
 
         return [
             'statusCode' => $statusCode,
-            'item' => $course
+            'item' => $news
         ];
     }
 
@@ -68,12 +68,12 @@ class NewService implements NewServiceInterface
 
     public function destroy($id)
     {
-        $course = $this->newsRepository->findById($id);
+        $news = $this->newsRepository->findById($id);
 
         $statusCode = 404;
         $message = "User not found";
-        if ($course) {
-            $this->newsRepository->destroy($course);
+        if ($news) {
+            $this->newsRepository->destroy($news);
             $statusCode = 200;
             $message = "Delete success!";
         }
@@ -86,16 +86,16 @@ class NewService implements NewServiceInterface
 
     public function findBySlug($id)
     {
-        $course = $this->newsRepository->findBySlug($id);
+        $news = $this->newsRepository->findBySlug($id);
 
         $statusCode = 200;
-        if (!$course) {
+        if (!$news) {
             $statusCode = 404;
         }
 
         return [
             'statusCode' => $statusCode,
-            'item' => $course
+            'item' => $news
         ];
     }
 }
