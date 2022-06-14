@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserGroupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,13 @@ Route::get('/website', function () {
 Route::get('/login', function () {
     return view('backend.layouts.login');
 });
+
+Route::resource('userGroups',UserGroupController::class);
+
+Route::prefix('userGroups')->group(function () {
+    Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
+    Route::delete('/force_destroy/{id}', [UserGroupController::class, 'force_destroy'])->name('userGroups.force_destroy');
+    Route::get('/restore/{id}', [UserGroupController::class, 'restore'])->name('userGroups.restore');
+});
+
 
