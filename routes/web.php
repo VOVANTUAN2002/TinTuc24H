@@ -27,4 +27,4 @@ Route::get('/login', function () {
     return view('backend.layouts.login');
 });
 
-// Route::resource('news', NewsController::class);
+Route::resource('news', NewsController::class);

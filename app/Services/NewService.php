@@ -83,19 +83,4 @@ class NewService implements NewServiceInterface
             'message' => $message
         ];
     }
-
-    public function findBySlug($id)
-    {
-        $news = $this->newsRepository->findBySlug($id);
-
-        $statusCode = 200;
-        if (!$news) {
-            $statusCode = 404;
-        }
-
-        return [
-            'statusCode' => $statusCode,
-            'item' => $news
-        ];
-    }
 }
