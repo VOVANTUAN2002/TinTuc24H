@@ -2,15 +2,12 @@
 
 namespace App\Providers;
 
+use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\NewInterface;
+use App\Repositories\Interfaces\RepositoryInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\NewService;
-
-use App\Repositories\Interfaces\RepositoryInterface;
-use App\Repositories\Eloquent\EloquentRepository;
-
-use Illuminate\Support\ServiceProvider;
-
+use Carbon\Laravel\ServiceProvider;
 use NewRepository;
 
 class AppServiceProvider extends ServiceProvider

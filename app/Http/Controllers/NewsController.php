@@ -6,7 +6,7 @@ use App\Models\News;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Services\Interfaces\NewServiceInterface;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Client\Request;
 
 class NewsController extends Controller
 {
@@ -55,15 +55,9 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news, $slug)
+    public function show(News $news)
     {
-        if (is_numeric($slug)) {
-            $item = $this->courseService->findById($slug);
-        } else {
-            $item = $this->courseService->findBySlug($slug);
-        }
-
-        return response()->json($item, 200);
+        
     }
 
     /**
