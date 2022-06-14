@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,4 @@ Route::get('/login', function () {
     return view('backend.layouts.login');
 });
 
+// Route::resource('news', NewsController::class);
