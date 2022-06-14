@@ -25,3 +25,4 @@ Route::get('/website', function () {
 Route::get('/login', function () {
     return view('backend.layouts.login');
 });
+
