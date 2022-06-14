@@ -21,10 +21,10 @@
             </div>
         </div>
         @if (Session::has('success'))
-        <div class="alert alert-success">{{session::get('success')}}</div>
+        <div class="text text-success"><b>{{session::get('success')}}</b></div>
         @endif
         @if (Session::has('error'))
-        <div class="alert alert-danger">{{session::get('error')}}</div>
+        <div class="text text-danger"><b>{{session::get('error')}}</b></div>
         @endif
         <div class="row">
             <div class="col-12 col-lg-12">

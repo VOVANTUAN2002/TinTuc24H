@@ -22,66 +22,26 @@ class CategorieService implements CategorieServiceInterface
     public function findById($id)
     {
         $categorie = $this->categorieRepository->findById($id);
-
-        $statusCode = 200;
-        if (!$categorie) {
-            $statusCode = 404;
-        }
-
-        return [
-            'statusCode' => $statusCode,
-            'item' => $categorie
-        ];
+        return $categorie;
     }
 
     public function create($request)
     {
         $categorie = $this->categorieRepository->create($request);
-
-        $statusCode = 201;
-        if (!$categorie) {
-            $statusCode = 500;
-        }
-
-        return [
-            'statusCode' => $statusCode,
-            'item' => $categorie
-        ];
+        return $categorie;
     }
 
     public function update($request, $id)
     {
         $oldCustomer = $this->categorieRepository->findById($id);
-
-        if (!$oldCustomer) {
-            $newCustomer = null;
-            $statusCode = 404;
-        } else {
-            $newCustomer = $this->categorieRepository->update($request, $oldCustomer);
-            $statusCode = 200;
-        }
-
-        return [
-            'statusCode' => $statusCode,
-            'item' => $newCustomer
-        ];
+        $this->categorieRepository->update($request, $oldCustomer);
+        return $oldCustomer;
     }
 
     public function destroy($id)
     {
         $categorie = $this->categorieRepository->findById($id);
-
-        $statusCode = 404;
-        $message = "User not found";
-        if ($categorie) {
-            $this->categorieRepository->destroy($categorie);
-            $statusCode = 200;
-            $message = "Delete success!";
-        }
-
-        return [
-            'statusCode' => $statusCode,
-            'message' => $message
-        ];
+        $this->categorieRepository->destroy($categorie);
+        return $categorie;
     }
 }

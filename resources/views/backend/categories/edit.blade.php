@@ -11,9 +11,8 @@
                     </li>
                 </ol>
             </nav>
-            <h1 class="page-title"> Chỉnh Sửa Nhóm Nhân Viên </h1>
+            <h1 class="page-title"> Chỉnh Sửa loại tinh tức</h1>
         </header>
-
         <div class="page-section">
             <form method="post" action="{{route('categories.update',$category->id)}}">
                 @csrf
@@ -22,14 +21,15 @@
                     <div class="card-body">
                         <legend>Thông tin cơ bản</legend>
                         <div class="form-group">
-                            <label for="tf1">Tên nhóm</label> <input name="name" value="{{$category->name }}" type="text" class="form-control" id="" placeholder="Nhập tên loại nhóm"> <small id="" class="form-text text-muted"></small>
+                            <label for="tf1">Tên Loại Tin</label>
+                            <input type="text" name="name" class="form-control" placeholder="Nhập tên loại nhóm" value="{{$category->name }}">
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('name') }}</p>
                             @endif
                         </div>
                         <div class="form-actions">
                             <button class="btn btn-secondary float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                            <button style="float: right;" class="btn btn-primary ml-auto" type="submit">Lưu<noscript></noscript> </button>
+                            <button style="float: right;" class="btn btn-primary ml-auto" type="submit">Lưu</button>
                         </div>
                     </div>
                 </div>

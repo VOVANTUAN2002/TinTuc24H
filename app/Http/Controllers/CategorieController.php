@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCategorieRequest;
 use App\Http\Requests\UpdateCategorieRequest;
 use App\Services\Interfaces\CategorieServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CategorieController extends Controller
 {
@@ -48,8 +49,13 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        $categories = $this->categorieService->create($request);
-        return redirect()->route('categories.index')->with('success', 'Thêm mới thành công');
+        try {
+            $categories = $this->categorieService->create($request->all());
+            return redirect()->route('categories.index')->with('success', ' Thêm sản phẩm ' . $categories->name . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('categories.index')->with('success', ' Thêm sản phẩm ' . $categories->name . 'không thành công ');
+        }
     }
 
     /**
@@ -69,9 +75,13 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(Categorie $categorie, $id)
     {
-        //
+        $category = $this->categorieService->findById($id);
+        $params = [
+            'category' => $category,
+        ];
+        return view("backend.categories.edit", $params);
     }
 
     /**
@@ -81,9 +91,15 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategorieRequest $request, Categorie $categorie)
+    public function update(UpdateCategorieRequest $request, Categorie $categorie, $id)
     {
-        //
+        try {
+            $oldCustomer = $this->categorieService->update($request->all(), $id);
+            return redirect()->route('categories.index')->with('success', ' Sửa sản phẩm ' . $oldCustomer->name . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('categories.index')->with('success', ' Sửa sản phẩm ' . $oldCustomer->name . 'không thành công ');
+        }
     }
 
     /**
@@ -92,8 +108,14 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy(Categorie $categorie, $id)
     {
-        //
+        try {
+            $categorie = $this->categorieService->destroy($id);
+            return redirect()->route('categories.index')->with('success', ' Xóa sản phẩm ' . $categorie->name . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('categories.index')->with('error', 'Xóa' . ' ' . $categorie->name . ' ' .  'không thành công');
+        }
     }
 }

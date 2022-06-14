@@ -24,7 +24,13 @@ class StoreCategorieRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'  => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required'  => "Vui lòng nhập tên loại tin"
         ];
     }
 }
