@@ -8,9 +8,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserGroup extends Model
 {
+
     use HasFactory,SoftDeletes;
     protected $table = 'user_groups';
     protected $fillable = [
         'id','name'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function roles() {
+        return $this->belongsToMany(Role::class,'user_group_roles','user_group_id','role_id');
+    }
 }

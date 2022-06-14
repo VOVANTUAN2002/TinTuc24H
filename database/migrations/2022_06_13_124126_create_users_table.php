@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('password');
             $table->string('avatar');
-            $table->string('phone');
+            $table->string('phone')->unique();
+            $table->string('email')->nullable();
             $table->string('gender');
             $table->date('start_day')->nullable();
             $table->unsignedBigInteger('user_group_id');
