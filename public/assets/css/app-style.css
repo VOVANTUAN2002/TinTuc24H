@@ -3650,7 +3650,13 @@ table.grid td {
 }
 
 
+.form-dark label {
+    color: black !important;
+}
 
+.form-dark .form-control {
+    border: 1px solid #161718 !important;
+}
 
 
 

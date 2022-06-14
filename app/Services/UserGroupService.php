@@ -25,18 +25,23 @@ class UserGroupService implements UserGroupServiceInterface
 
     public function create($request)
     {
-        $this->userGroupInterface->create($request);
+        $userGroup = $this->userGroupInterface->create($request);
+        return $userGroup;
+        
     }
 
     public function update($request, $id)
     {
         $userGroup = $this->userGroupInterface->findById($id);
         $this->userGroupInterface->update($request, $userGroup);
+        return $userGroup;
     }
 
     public function destroy($id)
     {
         $userGroup = $this->userGroupInterface->findById($id);
         $this->userGroupInterface->destroy($userGroup);
+        return $userGroup;
+        
     }
 }

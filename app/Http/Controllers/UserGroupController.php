@@ -7,6 +7,7 @@ use App\Http\Requests\StoreUserGroupRequest;
 use App\Http\Requests\UpdateUserGroupRequest;
 use App\Services\Interfaces\UserGroupServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserGroupController extends Controller
 {
@@ -24,8 +25,13 @@ class UserGroupController extends Controller
     public function index(Request $request)
     {
         $items = $this->UserGroupService->getAll($request);
+        // dd($userGroups);
         // return response()->json($items, 200);
-        return view('backend.userGroups.index');
+        // $userGroups = UserGroup::all();
+        $params =[
+            'items' => $items,
+        ];
+        return view('backend.userGroups.index',$params);
 
 
     }
@@ -37,6 +43,7 @@ class UserGroupController extends Controller
      */
     public function create()
     {
+        return view('backend.userGroups.create');
         
     }
 
@@ -46,11 +53,18 @@ class UserGroupController extends Controller
      * @param  \App\Http\Requests\StoreUserGroupRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserGroupRequest $request)
     {
-        $item = $this->UserGroupService->create($request->all());
 
-        return response()->json($item, 200);
+        try {
+            $item = $this->UserGroupService->create($request->all());  
+            return redirect()->route('userGroups.index')->with('success', 'Thêm' . ' ' . $item->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('userGroups.index')->with('error', 'Thêm' . ' ' . $item->name . ' ' .  'không thành công');
+        }
+
+        // return response()->json($item, 200);
     }
 
     /**
@@ -72,9 +86,13 @@ class UserGroupController extends Controller
      * @param  \App\Models\UserGroup  $UserGroup
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserGroup $UserGroup)
+    public function edit($id)
     {
-        //
+        $item = UserGroup::find($id);
+        $params = [
+            'item' => $item,
+        ];
+        return view('backend.userGroups.update',$params);
     }
 
     /**
@@ -84,10 +102,16 @@ class UserGroupController extends Controller
      * @param  \App\Models\UserGroup  $UserGroup
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserGroupRequest $request, $id)
     {
-        $item = $this->UserGroupService->update($request->all(), $id);
-        return response()->json($item, 200);
+ 
+        try {
+            $item = $this->UserGroupService->update($request->all(), $id); 
+            return redirect()->route('userGroups.index')->with('success', 'Sửa' . ' ' . $item->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('userGroups.index')->with('error', 'Sửa' . ' ' . $item->name . ' ' .  'không thành công');
+        }
     }
 
     /**
@@ -98,7 +122,13 @@ class UserGroupController extends Controller
      */
     public function destroy($id)
     {
-        $item = $this->UserGroupService->destroy($id);
-        return response()->json($item, 200);
+        try {
+            $item = $this->UserGroupService->destroy($id);   
+            return redirect()->route('userGroups.index')->with('success', 'Xóa' . ' ' . $item->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('userGroups.index')->with('error', 'Xóa' . ' ' . $item->name . ' ' .  'không thành công');
+        }
+
     }
 }

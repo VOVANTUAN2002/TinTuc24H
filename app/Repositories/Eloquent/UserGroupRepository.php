@@ -12,4 +12,5 @@ class UserGroupRepository extends EloquentRepository implements UserGroupInterfa
     {
         return UserGroup::class;
     }
+    
 }
