@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserGroupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,6 @@ Route::get('/website', function () {
 Route::get('/login', function () {
     return view('backend.layouts.login');
 });
+
+Route::resource('userGroups',UserGroupController::class);
 
