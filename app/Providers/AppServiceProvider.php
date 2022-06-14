@@ -7,8 +7,8 @@ use App\Repositories\Interfaces\NewInterface;
 use App\Repositories\Interfaces\RepositoryInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\NewService;
-use Carbon\Laravel\ServiceProvider;
-use NewRepository;
+use Illuminate\Support\ServiceProvider;
+use App\Repositories\Eloquent\NewRepository;
 
 class AppServiceProvider extends ServiceProvider
 {

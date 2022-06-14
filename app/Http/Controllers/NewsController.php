@@ -6,15 +6,15 @@ use App\Models\News;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Services\Interfaces\NewServiceInterface;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    protected $newsRepository;
+    protected $newsService;
 
-    public function __construct(NewServiceInterface $newsRepository)
+    public function __construct(NewServiceInterface $newsService)
     {
-        $this->newsRepository = $newsRepository;
+        $this->newsService = $newsService;
     }
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class NewsController extends Controller
 
     public function index(Request $request)
     {
-        $items = $this->newsRepository->getAll($request);
+        $items = $this->newsService->getAll($request);
         return response()->json($items, 200);
     }
 
