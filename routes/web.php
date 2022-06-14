@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\UserGroupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,12 @@ Route::get('/login', function () {
 
 Route::resource('news', NewsController::class);
 Route::resource('categorie', CategorieController::class);
+
+Route::resource('userGroups',UserGroupController::class);
+
+Route::prefix('userGroups')->group(function () {
+    Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
+    Route::delete('/force_destroy/{id}', [UserGroupController::class, 'force_destroy'])->name('userGroups.force_destroy');
+    Route::get('/restore/{id}', [UserGroupController::class, 'restore'])->name('userGroups.restore');
+});
+
