@@ -5,17 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Categorie;
 use App\Http\Requests\StoreCategorieRequest;
 use App\Http\Requests\UpdateCategorieRequest;
+use App\Services\Interfaces\CategorieServiceInterface;
+use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
+    protected $categorieService;
+
+    public function __construct(CategorieServiceInterface $categorieService)
+    {
+        $this->categorieService = $categorieService;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $items = $this->categorieService->getAll($request);
+        return response()->json($items, 200);
     }
 
     /**
