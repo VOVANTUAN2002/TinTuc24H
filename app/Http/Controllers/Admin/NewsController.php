@@ -55,6 +55,7 @@ class NewsController extends Controller
             'users' => $users
         ];
         return view('backend.news.create', $params);
+    }
 
 
 
@@ -105,6 +106,7 @@ class NewsController extends Controller
         ];
         // dd($params);
         return view('backend.news.edit', $params);
+    }
 
 
     /**
@@ -124,6 +126,7 @@ class NewsController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . 'không thành công ');
         }
+    }
 
 
 
@@ -145,4 +148,5 @@ class NewsController extends Controller
         }
 
 
+}
 }
