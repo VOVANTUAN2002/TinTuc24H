@@ -44,7 +44,7 @@
                             @foreach($news as $new)
                             <tbody>
                                 <tr>
-                                    <td>{{ $new->id}}</td>
+                                    <td>{{ $new->id }}</td>
                                     <td>{{ $new->title }}</td>
                                     <td>{{ $new->content }}</td>
                                     <td>{{ $new->hot }}</td>
@@ -58,7 +58,6 @@
                                             @method('delete')
                                         </form>
                                     </td>
-
                                 </tr>
                             </tbody>
                             @endforeach

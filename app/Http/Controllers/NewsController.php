@@ -85,10 +85,13 @@ class NewsController extends Controller
     public function edit($id)
     {
         $users = $this->usersService->getAll($id);
+        $new = $this->newsService->findById($id);
         $params = [
-            'users' => $users
+            'users' => $users,
+            'new' => $new
         ];
-        return view('backend.news.create', $params);
+        // dd($params);
+        return view('backend.news.edit', $params);
     }
 
     /**
@@ -98,14 +101,14 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateNewsRequest $request, News $news, $id)
+    public function update(UpdateNewsRequest $request, $id)
     {
         try {
-            $oldCustomer = $this->categorieService->update($request->all(), $id);
-            return redirect()->route('categories.index')->with('success', ' Sửa  tiêu đề ' . $oldCustomer->title . ' ' . ' thành công ');
+            $news = $this->newsService->update($request, $id);
+            return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('categories.index')->with('success', ' Sửa  tiêu đề ' . $oldCustomer->title . ' ' . 'không thành công ');
+            return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . 'không thành công ');
         }
     }
 
@@ -118,11 +121,11 @@ class NewsController extends Controller
     public function destroy(News $news, $id)
     {
         try {
-            $news = $this->categorieService->destroy($id);
-            return redirect()->route('categories.index')->with('success', ' Xóa tiêu đề ' . $news->name . ' thành công ');
+            $news = $this->newsService->destroy($id);
+            return redirect()->route('news.index')->with('success', ' Xóa tiêu đề ' . $news->name . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('categories.index')->with('error', 'Xóa' . 'tiêu đề' . $news->name . ' ' .  'không thành công');
+            return redirect()->route('news.index')->with('error', 'Xóa' . 'tiêu đề' . $news->name . ' ' .  'không thành công');
         }
     }
 }

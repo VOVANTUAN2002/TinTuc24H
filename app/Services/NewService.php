@@ -36,9 +36,9 @@ class NewService implements NewServiceInterface
 
     public function update($request, $id)
     {
-        $oldCustomer = $this->newsRepository->findById($id);
+        $news = $this->newsRepository->findById($id);
         $this->newsRepository->update($request, $id);
-        return $oldCustomer;
+        return $news;
     }
 
     public function destroy($id)

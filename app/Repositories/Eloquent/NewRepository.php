@@ -15,12 +15,6 @@ class NewRepository extends EloquentRepository implements NewInterface
         return $model;
     }
 
-    public function getAll($request)
-    {
-        $result = $this->model->paginate(10);
-        return $result;
-    }
-
     public function create($request)
     {
         $object = $this->model;
@@ -47,7 +41,6 @@ class NewRepository extends EloquentRepository implements NewInterface
             // dd($new_image);
             $object->image = '/front-end/images/' . $new_image;
         }
-        // dd($object);
         $object->save();
         return $object;
     }
@@ -60,7 +53,7 @@ class NewRepository extends EloquentRepository implements NewInterface
 
     public function update($request, $id)
     {
-        $object = $this->model;
+        $object = $this->model->find($id);
         $object->title    = $request->title;
         $object->description   = $request->description;
         $object->content    = $request->content;

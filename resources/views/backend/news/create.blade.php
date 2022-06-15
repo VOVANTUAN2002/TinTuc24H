@@ -82,9 +82,6 @@
                                     <p style="color:red">{{ $errors->first('view') }}</p>
                                     @endif
                                 </div>
-                                @if ($errors->any())
-                                <p style="color:red">{{ $errors->first('view') }}</p>
-                                @endif
                             </div>
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
@@ -105,6 +102,9 @@
                                         <span class="switcher-indicator"></span>
                                     </label>
                                 </div>
+                                @if ($errors->any())
+                                <p style="color:red">{{ $errors->first('hot') }}</p>
+                                @endif
                             </div>
                         </div>
 
