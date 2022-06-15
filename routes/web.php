@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserGroupController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,19 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/dashboard', function () {
-    return view('backend.home.index');
-})->name('dashboard.index');
 
 Route::get('/website', function () {
     return view('frontend.home.index');
 })->name('website.index');
 
-Route::get('/login', function () {
-    return view('backend.layouts.login');
-});
-
-Route::resource('userGroups',UserGroupController::class);
 
 Route::prefix('userGroups')->group(function () {
     Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
@@ -35,4 +28,17 @@ Route::prefix('userGroups')->group(function () {
     Route::get('/restore/{id}', [UserGroupController::class, 'restore'])->name('userGroups.restore');
 });
 
+Route::group([
+    'prefix' => 'administrator',
+    'middleware' => ['auth']
+], function () {
 
+ Route::resource('userGroups',UserGroupController::class);
+ Route::get('/dashboard', function () {
+    return view('backend.home.index');
+    })->name('dashboard.index');
+});
+
+Route::get('administrator/login', [AuthController::class, 'login'])->name('login');
+Route::post('administrator/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');
+Route::get('administrator/logout', [AuthController::class, 'logout'])->name('logout');
