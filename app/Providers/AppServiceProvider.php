@@ -45,10 +45,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(RepositoryInterface::class, EloquentRepository::class);
         $this->app->singleton(UserGroupInterface::class, UserGroupRepository::class);
         $this->app->singleton(UserGroupServiceInterface::class, UserGroupService::class);
+
         $this->app->singleton(UserInterface::class, UserRepository::class);
         $this->app->singleton(UserServiceInterface::class, UserService::class);
+
         $this->app->singleton(CategorieInterface::class, CategorieRepository::class);
         $this->app->singleton(CategorieServiceInterface::class, CategorieService::class);
+
         $this->app->singleton(NewInterface::class, NewRepository::class);
         $this->app->singleton(NewServiceInterface::class, NewService::class);
 
