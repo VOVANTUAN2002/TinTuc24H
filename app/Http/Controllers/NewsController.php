@@ -6,15 +6,19 @@ use App\Models\News;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Services\Interfaces\NewServiceInterface;
+use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class NewsController extends Controller
 {
     protected $newsService;
+    protected $usersService;
 
-    public function __construct(NewServiceInterface $newsService)
+    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService)
     {
         $this->newsService = $newsService;
+        $this->usersService = $usersService;
     }
     /**
      * Display a listing of the resource.
@@ -24,8 +28,11 @@ class NewsController extends Controller
 
     public function index(Request $request)
     {
-        $items = $this->newsService->getAll($request);
-        return response()->json($items, 200);
+        $news = $this->newsService->getAll($request);
+        $params = [
+            "news" => $news,
+        ];
+        return view('backend.news.index', $params);
     }
 
     /**
@@ -33,9 +40,13 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $users = $this->usersService->getAll($request);
+        $params = [
+            'users' => $users
+        ];
+        return view('backend.news.create', $params);
     }
 
     /**
@@ -46,7 +57,13 @@ class NewsController extends Controller
      */
     public function store(StoreNewsRequest $request)
     {
-        //
+        try {
+            $news = $this->newsService->create($request);
+            return redirect()->route('news.index')->with('success', ' Thêm tin tức ' . $request->title . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('news.index')->with('error', ' Thêm tin tức ' . $request->title . 'không thành công ');
+        }
     }
 
     /**
@@ -57,7 +74,6 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        
     }
 
     /**
@@ -66,9 +82,13 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit($id)
     {
-        //
+        $users = $this->usersService->getAll($id);
+        $params = [
+            'users' => $users
+        ];
+        return view('backend.news.create', $params);
     }
 
     /**
@@ -78,9 +98,15 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateNewsRequest $request, News $news)
+    public function update(UpdateNewsRequest $request, News $news, $id)
     {
-        dd($news);
+        try {
+            $oldCustomer = $this->categorieService->update($request->all(), $id);
+            return redirect()->route('categories.index')->with('success', ' Sửa  tiêu đề ' . $oldCustomer->title . ' ' . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('categories.index')->with('success', ' Sửa  tiêu đề ' . $oldCustomer->title . ' ' . 'không thành công ');
+        }
     }
 
     /**
@@ -89,8 +115,14 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(News $news, $id)
     {
-        //
+        try {
+            $news = $this->categorieService->destroy($id);
+            return redirect()->route('categories.index')->with('success', ' Xóa tiêu đề ' . $news->name . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('categories.index')->with('error', 'Xóa' . 'tiêu đề' . $news->name . ' ' .  'không thành công');
+        }
     }
 }

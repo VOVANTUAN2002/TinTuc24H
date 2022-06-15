@@ -65,7 +65,9 @@
                         </table>
                     </div>
                 </div>
-
+                <div style="float:right">
+                    {{ $news->links() }}
+                </div>
             </div>
         </div>
         <!--End Row-->

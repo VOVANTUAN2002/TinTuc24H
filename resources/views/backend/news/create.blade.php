@@ -15,7 +15,7 @@
         </header>
 
         <div class="page-section">
-            <form method="post" action="{{route('news.store')}}">
+            <form method="post" action="{{route('news.store')}}" enctype="multipart/form-data" >
                 @csrf
                 <div class="card">
                     <div class="card-body">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label>Hình Ảnh:</label>
-                            <input type="file" name="image" id="upload_file_input" class="form-control">
+                            <input type="file" name="image" class="form-control">
                             @if ($errors)
                             <div class="text-danger">{{$errors->first('image')}}</div>
                             @endif
@@ -64,8 +64,11 @@
                             <div class="form-group">
                                 <label>Người đăng</label>
                                 <select type="text" class="form-control" placeholder="danh mục" name="user_id">
-                                    <option value="0">Tên</option>
+                                    @foreach($users as $user)
+                                    <option value="{{$user->id}}">{{$user->name}}</option>
+                                    @endforeach
                                 </select>
+
                             </div>
                         </div>
 

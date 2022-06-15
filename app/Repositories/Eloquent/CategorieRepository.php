@@ -10,6 +10,7 @@ class CategorieRepository extends EloquentRepository implements CategorieInterfa
 {
     public function getModel()
     {
-        return Categorie::class;
+        $model = Categorie::class;
+        return $model;
     }
 }

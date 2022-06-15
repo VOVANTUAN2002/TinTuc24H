@@ -16,30 +16,35 @@ class NewService implements NewServiceInterface
 
     public function getAll($request)
     {
-        return $this->newsRepository->getAll($request);
+        $news = $this->newsRepository->getAll($request);
+        return $news;
     }
 
     public function findById($id)
     {
         $news = $this->newsRepository->findById($id);
+        $this->newsRepository->findById($id);
         return $news;
     }
 
     public function create($request)
     {
         $news = $this->newsRepository->create($request);
+        $this->newsRepository->create($request);
         return $news;
     }
 
     public function update($request, $id)
     {
         $oldCustomer = $this->newsRepository->findById($id);
+        $this->newsRepository->update($request, $id);
         return $oldCustomer;
     }
 
     public function destroy($id)
     {
         $news = $this->newsRepository->findById($id);
+        $this->newsRepository->destroy($news);
         return $news;
     }
 }
