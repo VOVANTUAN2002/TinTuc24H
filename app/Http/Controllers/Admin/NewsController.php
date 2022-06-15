@@ -137,7 +137,7 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy(News $news, $id)
+    public function destroy( $id)
     {
         try {
             $news = $this->newsService->destroy($id);
@@ -146,8 +146,43 @@ class NewsController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('news.index')->with('error', 'Xóa' . 'tiêu đề' . $news->name . ' ' .  'không thành công');
         }
+    }
 
+    public function trashedItems()
+    {
+        // dd($request);
+        $news = $this->newsService->trashedItems();
+        // dd($items);
+        $params = [
+            'news' => $news,
+            // 'userGroup'=>$userGroup
+        ];
+        return view('backend.news.trash',$params);
+    }
 
+    public function restore($id)
+    {
+        try {
+            $this->newsService->restore($id);
+            return redirect()->route('news.trash')->with('success', 'Khôi phục thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('news.trash')->with('success', 'Khôi phục thành công');
+        }
+    }
+
+    public function force_destroy($id)
+    {
+
+        try {
+            $news = $this->newsService->force_destroy($id);
+
+            return redirect()->route('news.trash')->with('success', 'Xóa' . ' ' . $news->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('news.trash')->with('error', 'Xóa' . ' ' . $news->name . ' ' .  'không thành công');
+        }
+        
     }
 }
 

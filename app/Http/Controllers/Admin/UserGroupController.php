@@ -130,8 +130,5 @@ class UserGroupController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('userGroups.index')->with('error', 'Xóa' . ' ' . $item->name . ' ' .  'không thành công');
         }
-
     }
-
-   
 }

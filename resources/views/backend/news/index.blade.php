@@ -20,6 +20,20 @@
                 </a>
             </div>
         </div>
+        <div class="card-body">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('news.index')}}">Tất Cả</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{route('news.trash')}}">Thùng Rác</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
         @if (Session::has('success'))
         <div class="text text-success"><b>{{session::get('success')}}</b></div>
         @endif
