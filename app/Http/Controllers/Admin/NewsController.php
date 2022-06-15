@@ -6,16 +6,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Services\Interfaces\NewServiceInterface;
+
+use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
 use App\Models\News;
+use Illuminate\Support\Facades\Log;
+
 
 class NewsController extends Controller
 {
     protected $newsService;
 
-    public function __construct(NewServiceInterface $newsService)
+    protected $usersService;
+
+    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService)
     {
         $this->newsService = $newsService;
+        $this->usersService = $usersService;
+
     }
     /**
      * Display a listing of the resource.
@@ -25,8 +33,13 @@ class NewsController extends Controller
 
     public function index(Request $request)
     {
-        $items = $this->newsService->getAll($request);
-        return response()->json($items, 200);
+
+        $news = $this->newsService->getAll($request);
+        $params = [
+            "news" => $news,
+        ];
+        return view('backend.news.index', $params);
+
     }
 
     /**
@@ -34,10 +47,16 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+    public function create(Request $request)
     {
-        //
-    }
+        $users = $this->usersService->getAll($request);
+        $params = [
+            'users' => $users
+        ];
+        return view('backend.news.create', $params);
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -47,7 +66,15 @@ class NewsController extends Controller
      */
     public function store(StoreNewsRequest $request)
     {
-        //
+
+        try {
+            $news = $this->newsService->create($request);
+            return redirect()->route('news.index')->with('success', ' Thêm tin tức ' . $request->title . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('news.index')->with('error', ' Thêm tin tức ' . $request->title . 'không thành công ');
+        }
+
     }
 
     /**
@@ -67,10 +94,18 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+
+    public function edit($id)
     {
-        //
-    }
+        $users = $this->usersService->getAll($id);
+        $new = $this->newsService->findById($id);
+        $params = [
+            'users' => $users,
+            'new' => $new
+        ];
+        // dd($params);
+        return view('backend.news.edit', $params);
+
 
     /**
      * Update the specified resource in storage.
@@ -79,10 +114,18 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateNewsRequest $request, News $news)
+
+    public function update(UpdateNewsRequest $request, $id)
     {
-        dd($news);
-    }
+        try {
+            $news = $this->newsService->update($request, $id);
+            return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . 'không thành công ');
+        }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -90,8 +133,16 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+
+    public function destroy(News $news, $id)
     {
-        //
-    }
+        try {
+            $news = $this->newsService->destroy($id);
+            return redirect()->route('news.index')->with('success', ' Xóa tiêu đề ' . $news->name . ' thành công ');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('news.index')->with('error', 'Xóa' . 'tiêu đề' . $news->name . ' ' .  'không thành công');
+        }
+
+
 }

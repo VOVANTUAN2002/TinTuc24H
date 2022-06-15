@@ -106,7 +106,6 @@
 
     </div>
     <!--End wrapper-->
-    @include('backend.includes.footer')
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/popper.min.js')}}"></script>
