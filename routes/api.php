@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserGroupController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\UserGroupController;
 use Illuminate\Http\Request;
@@ -21,12 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::resource('userGroups', UserGroupController::class);
+Route::resource('users',UserController::class);
 Route::resource('news',NewsController::class);
-
 Route::resource('categories',CategorieController::class);
-
 Route::resource('categorie',CategorieController::class);
 
-Route::resource('userGroups', UserGroupController::class);
+
 
