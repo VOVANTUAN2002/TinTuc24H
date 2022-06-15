@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Pagination\Paginator;
+
 use App\Repositories\Eloquent\CategorieRepository;
 use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Eloquent\UserGroupRepository;
@@ -12,7 +12,6 @@ use App\Repositories\Interfaces\NewInterface;
 use App\Repositories\Interfaces\RepositoryInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\NewService;
-use App\Repositories\Eloquent\UserGroupRepository;
 use App\Repositories\Interfaces\UserGroupInterface;
 use App\Repositories\Interfaces\UserInterface;
 use App\Services\Interfaces\UserGroupServiceInterface;
