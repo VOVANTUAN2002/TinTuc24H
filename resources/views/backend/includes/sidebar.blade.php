@@ -7,25 +7,32 @@
      </a>
    </div>
    <ul class="sidebar-menu do-nicescrol">
-      <li class="sidebar-header">MAIN NAVIGATION</li>
+
       <li>
         <a href="{{route('dashboard.index')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+          <i class="zmdi zmdi-view-dashboard"></i> <span>Trang Chủ</span>
         </a>
       </li>
       <li>
         <a href="index.html">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Categories</span>
+          <i class="zmdi zmdi-view-dashboard"></i> <span>Loại Tin Tức</span>
         </a>
       </li>
       <li>
         <a href="index.html">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Products</span>
+          <i class="zmdi zmdi-view-dashboard"></i>
+          <span class="menu-icon oi oi-list-rich"></span>
+          <span>Tin Tức</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ route('userGroups.index')}}">
+          <i class="zmdi zmdi-view-dashboard"></i> <span>Nhóm Nhân Viên</span>
         </a>
       </li>
       <li>
         <a href="index.html">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Admin</span>
+          <i class="zmdi zmdi-view-dashboard"></i> <span>Nhân Viên</span>
         </a>
       </li>
 
