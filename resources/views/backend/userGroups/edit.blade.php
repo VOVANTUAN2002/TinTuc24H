@@ -7,7 +7,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item active">
                 <a href="{{route('userGroups.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Lý
-                    nhóm</a>
+                    Nhóm Nhân Viên</a>
             </li>
         </ol>
     </nav>
