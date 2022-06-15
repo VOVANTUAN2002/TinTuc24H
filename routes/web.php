@@ -30,11 +30,6 @@ Route::group([
     'middleware' => ['auth']
 ], function () {
 
-
-    Route::get('/website', function () {
-        return view('frontend.home.index');
-    })->name('website.index');
-
     Route::get('/dashboard', function () {
         return view('backend.home.index');
     })->name('dashboard.index');
@@ -52,7 +47,9 @@ Route::group([
     Route::resource('users', UserController::class);
     Route::resource('userGroups', UserGroupController::class);
 });
-
+Route::get('/website', function () {
+    return view('frontend.home.index');
+})->name('website.index');
 
 Route::get('administrator/login', [AuthController::class, 'login'])->name('login');
 Route::post('administrator/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');
