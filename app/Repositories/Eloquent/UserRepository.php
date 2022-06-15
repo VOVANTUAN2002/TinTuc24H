@@ -67,9 +67,9 @@ class UserRepository extends EloquentRepository implements UserInterface
     public function trashedItems(){
 
         $query = $this->model->onlyTrashed();
-        //sắp xếp thứ tự lên trước khi update
+
         $query->orderBy('id', 'desc');
-        $users = $query->paginate(2);
+        $users = $query->paginate(5);
         return $users;
     }
 
