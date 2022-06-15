@@ -20,6 +20,7 @@
                 </a>
             </div>
         </div>
+
         <div class="card-body">
             <div class="row mb-2">
                 <div class="col">
@@ -35,8 +36,18 @@
                     </form>
                 </div>
             </div>
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active " href="{{route('users.index')}}">Tất Cả</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{route('users.trash')}}">Thùng Rác</a>
+                    </li>
+                </ul>
             </div>
- 
+            </div>
             @if (Session::has('success'))
         </div>
          <div class="text text-success"><b>{{session::get('success')}}</b></div>

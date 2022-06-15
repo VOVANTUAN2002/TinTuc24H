@@ -15,7 +15,7 @@ class UserRepository extends EloquentRepository implements UserInterface
     }
     public function create($request)
     {
- 
+
         try {
             $object = $this->model;
             $object->name = $request->name;
@@ -64,6 +64,13 @@ class UserRepository extends EloquentRepository implements UserInterface
         return $object;
     }
 
+    public function trashedItems(){
 
-    
+        $query = $this->model->onlyTrashed();
+        //sắp xếp thứ tự lên trước khi update
+        $query->orderBy('id', 'desc');
+        $users = $query->paginate(20);
+        return $users;
+    }
+
 }

@@ -28,7 +28,7 @@ class UserService implements UserServiceInterface
         // dd($request->all());
         $user = $this->userRepository->create($request);
         return $user;
-        
+
     }
 
     public function update($request, $id)
@@ -43,6 +43,12 @@ class UserService implements UserServiceInterface
         $user = $this->userRepository->findById($id);
         $this->userRepository->destroy($user);
         return $user;
-        
+
+    }
+
+    public function trashedItems(){
+
+        return $this->userRepository->trashedItems();
+
     }
 }
