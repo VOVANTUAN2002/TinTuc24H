@@ -35,28 +35,28 @@
     </li>
     <li class="nav-item">
       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-        <span class="user-profile"><img src="https://img.freepik.com/free-vector/red-rose-with-green-leaf_43623-944.jpg?w=2000" class="img-circle" alt="user avatar"></span>
+        <span class="user-profile"> <img src="{{asset($current_user->avatar)}}" alt=""></span>
       </a>
       <ul class="dropdown-menu dropdown-menu-right">
        <li class="dropdown-item user-details">
         <a href="javaScript:void();">
            <div class="media">
-             <div class="avatar"><img class="align-self-start mr-3" src="https://img.freepik.com/free-vector/red-rose-with-green-leaf_43623-944.jpg?w=2000" alt="user avatar"></div>
+             <div class="avatar"> <img src="{{asset($current_user->avatar)}}" alt=""></div>
             <div class="media-body">
-            <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-            <p class="user-subtitle">mccoy@example.com</p>
+                <a href="{{ route('users.index',$current_user->id)}}" class="account-name">{{ $current_user->name}}</a>
+            <p class="user-subtitle">{{ $current_user->userGroup->name }}</p>
             </div>
            </div>
           </a>
         </li>
         <li class="dropdown-divider"></li>
-        <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
+        <a href="{{route('users.update',$current_user->id)}}/edit" <li  class="dropdown-item"><i class="icon-settings mr-2"></i>Thông tin cá nhân</li></a>
         <li class="dropdown-divider"></li>
-        <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
+        {{-- <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
         <li class="dropdown-divider"></li>
         <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
-        <li class="dropdown-divider"></li>
-        <a <li class="dropdown-item" href="{{ route('logout') }}"><i class="icon-power mr-2" ></i> Logout</li></a>
+        <li class="dropdown-divider"></li> --}}
+        <a <li class="dropdown-item" href="{{ route('logout') }}"><i class="icon-power mr-2" ></i>Thoát</li></a>
       </ul>
     </li>
   </ul>

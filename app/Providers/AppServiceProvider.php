@@ -32,6 +32,8 @@ use App\Repositories\Interfaces\CategorieInterface;
 use App\Services\CategorieService;
 use App\Services\Interfaces\CategorieServiceInterface;
 
+use App\Views\Composers\ProfileComposer;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -68,6 +70,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        view()->composer(
+            ['*'],
+            ProfileComposer::class
+        );
         Paginator::useBootstrapFive();
         Paginator::useBootstrapFour();
         Schema::defaultStringLength(191);
