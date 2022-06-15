@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\UserGroupController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +32,9 @@ Route::get('/login', function () {
     return view('backend.layouts.login');
 });
 
+Route::resource('news', NewsController::class);
+Route::resource('categories', CategorieController::class);
 Route::resource('userGroups',UserGroupController::class);
 Route::resource('users',UserController::class);
-
 
 
