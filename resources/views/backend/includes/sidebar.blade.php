@@ -18,7 +18,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html">
+        <a href="{{ route('news.index')}}">
           <i class="zmdi zmdi-view-dashboard"></i>
           <span class="menu-icon oi oi-list-rich"></span>
           <span>Tin Tức</span>
@@ -42,7 +42,7 @@
       <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
 
     </ul>
-   
+
    </div>
    <!--End sidebar-wrapper-->
 
