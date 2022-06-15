@@ -7,41 +7,59 @@ use App\Services\Interfaces\UserServiceInterface;
 
 class UserService implements UserServiceInterface
 {
-    protected $userInterface;
+    protected $userRepository;
 
-    public function __construct(UserInterface $userInterface)
+    public function __construct(UserInterface $userRepository)
     {
-        $this->userInterface = $userInterface;
+        $this->userRepository = $userRepository;
     }
 
     public function getAll($request)
     {
-        return $this->userInterface->getAll($request);
+        return $this->userRepository->getAll($request);
     }
     public function findById($id)
     {
-        return $this->userInterface->findById($id);
+        return $this->userRepository->findById($id);
     }
 
     public function create($request)
     {
-        $user = $this->userInterface->create($request);
+        // dd($request->all());
+        $user = $this->userRepository->create($request);
         return $user;
-        
+
     }
 
     public function update($request, $id)
     {
-        $user = $this->userInterface->findById($id);
-        $this->userInterface->update($request, $user);
+        $user = $this->userRepository->findById($id);
+        $this->userRepository->update($request, $id);
         return $user;
     }
 
     public function destroy($id)
     {
-        $user = $this->userInterface->findById($id);
-        $this->userInterface->destroy($user);
+        $user = $this->userRepository->findById($id);
+        $this->userRepository->destroy($user);
         return $user;
-        
+
+    }
+
+    public function trashedItems(){
+
+        return $this->userRepository->trashedItems();
+
+    }
+
+    public function restore($id){
+
+        return $this->userRepository->restore($id);
+
+    }
+    public function force_destroy($id){
+
+        return $this->userRepository->force_destroy($id);
+
     }
 }

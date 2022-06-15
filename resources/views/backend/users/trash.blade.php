@@ -12,14 +12,15 @@
             </ol>
         </nav>
         <div class="d-md-flex align-items-md-start">
-            <h1 class="page-title mr-sm-auto"> Quản Lý Nhóm Tin Tức</h1>
+            <h1 class="page-title mr-sm-auto"> Quản Lý Nhân Viên</h1>
             <div class="btn-toolbar">
-                <a href="{{ route('userGroups.create') }}" class="btn btn-primary">
+                <a href="{{ route('users.create') }}" class="btn btn-primary">
                     <i class="fa-solid fa fa-plus"></i>
                     <span class="ml-1">Thêm Mới</span>
                 </a>
             </div>
         </div>
+
         <div class="card-body">
             <div class="row mb-2">
                 <div class="col">
@@ -31,12 +32,25 @@
                                   </button>
                             </div>
                         </div>
-                        @include('backend.userGroups.modals.modalSearch')
+                        @include('backend.users.modals.modalSearch')
                     </form>
                 </div>
             </div>
-        @if (Session::has('success'))
-        <div class="text text-success"><b>{{session::get('success')}}</b></div>
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('users.index')}}">Tất Cả</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('users.trash')}}">Thùng Rác</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            @if (Session::has('success'))
+        </div>
+         <div class="text text-success"><b>{{session::get('success')}}</b></div>
         @endif
         @if (Session::has('error'))
         <div class="text text-danger">{{session::get('error')}}</div>
@@ -49,7 +63,11 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Tên nhóm</th>
+                                    <th>Ảnh đại diện</th>
+                                    <th>Tên nhân viên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Nhóm nhân viên</th>
                                     <th>Chức năng</th>
                                 </tr>
                             </thead>
@@ -57,17 +75,16 @@
                             <tbody>
                                 <tr>
                                     <td>{{ ++$key}}</td>
+                                    <td><img src="{{$item->avatar}}" style="width:80px;height:80px" alt=""></td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->address }}</td>
+                                    <td>{{ $item->phone }}</td>
+                                    <td>{{ $item->userGroup->name }}</td>
                                     <td>
-                                        <span class="sr-only">Edit</span></a> <a
-                                            href="{{route('userGroups.edit',$item->id)}}"
-                                            class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
-                                            <span class="sr-only">Remove</span></a>
-                                        <form action="{{ route('userGroups.destroy',$item->id )}}"
-                                            style="display:inline" method="post">
-                                            <button onclick="return confirm('Xóa {{$item->name}} ?')"
-                                                class="btn btn-sm btn-icon btn-secondary"><i
-                                                    class="far fa-trash-alt"></i></button>
+                                        <span class="sr-only">Edit</span></a> <a href="{{route('users.restore',$item->id)}}"
+                                        class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
+                                        <form action="{{ route('users.force_destroy',$item->id )}}" style="display:inline" method="post">
+                                            <button onclick="return confirm('Xóa vĩnh viễn {{$item->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>
@@ -88,5 +105,6 @@
         <!--End Row-->
     </div>
 </div>
+
 
 @endsection

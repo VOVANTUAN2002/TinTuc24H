@@ -45,7 +45,7 @@ class UserGroupController extends Controller
     public function create()
     {
         return view('backend.userGroups.create');
-        
+
     }
 
     /**
@@ -58,7 +58,7 @@ class UserGroupController extends Controller
     {
 
         try {
-            $item = $this->UserGroupService->create($request->all());  
+            $item = $this->UserGroupService->create($request->all());
             return redirect()->route('userGroups.index')->with('success', 'Thêm' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -93,7 +93,7 @@ class UserGroupController extends Controller
         $params = [
             'item' => $item,
         ];
-        return view('backend.userGroups.update',$params);
+        return view('backend.userGroups.edit',$params);
     }
 
     /**
@@ -105,9 +105,9 @@ class UserGroupController extends Controller
      */
     public function update(UpdateUserGroupRequest $request, $id)
     {
- 
+
         try {
-            $item = $this->UserGroupService->update($request->all(), $id); 
+            $item = $this->UserGroupService->update($request->all(), $id);
             return redirect()->route('userGroups.index')->with('success', 'Sửa' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -124,7 +124,7 @@ class UserGroupController extends Controller
     public function destroy($id)
     {
         try {
-            $item = $this->UserGroupService->destroy($id);   
+            $item = $this->UserGroupService->destroy($id);
             return redirect()->route('userGroups.index')->with('success', 'Xóa' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -132,4 +132,6 @@ class UserGroupController extends Controller
         }
 
     }
+
+   
 }

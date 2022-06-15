@@ -1,9 +1,14 @@
 <?php
 
-use App\Http\Controllers\Admin\UserController;
+
+use App\Http\Controllers\Admin\AuthController;
+
 use App\Http\Controllers\Admin\UserGroupController;
-use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Admin\UserController;
+
+
+use App\Http\Controllers\Admin\CategorieController;
+use App\Http\Controllers\Admin\NewsController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -20,21 +25,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/dashboard', function () {
-    return view('backend.home.index');
-})->name('dashboard.index');
+Route::group([
+    'prefix' => 'administrator',
+    'middleware' => ['auth']
+], function () {
 
+    Route::get('/dashboard', function () {
+        return view('backend.home.index');
+    })->name('dashboard.index');
+
+
+    Route::prefix('userGroups')->group(function () {
+        Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
+        Route::delete('/force_destroy/{id}', [UserGroupController::class, 'force_destroy'])->name('userGroups.force_destroy');
+        Route::get('/restore/{id}', [UserGroupController::class, 'restore'])->name('userGroups.restore');
+    });
+
+    Route::prefix('users')->group(function () {
+        Route::get('/trash', [UserController::class, 'trashedItems'])->name('users.trash');
+        Route::delete('/force_destroy/{id}', [UserController::class, 'force_destroy'])->name('users.force_destroy');
+        Route::get('/restore/{id}', [UserController::class, 'restore'])->name('users.restore');
+    });
+
+    Route::resource('news', NewsController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('categories', CategorieController::class);
+    Route::resource('userGroups', UserGroupController::class);
+});
 Route::get('/website', function () {
     return view('frontend.home.index');
 })->name('website.index');
 
-Route::get('/login', function () {
-    return view('backend.layouts.login');
-});
-
-Route::resource('news', NewsController::class);
-Route::resource('categories', CategorieController::class);
-Route::resource('userGroups',UserGroupController::class);
-Route::resource('users',UserController::class);
-
-
+Route::get('administrator/login', [AuthController::class, 'login'])->name('login');
+Route::post('administrator/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');
+Route::get('administrator/logout', [AuthController::class, 'logout'])->name('logout');

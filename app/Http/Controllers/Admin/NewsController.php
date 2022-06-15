@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\News;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
+use App\Models\News;
 use Illuminate\Support\Facades\Log;
 
 class NewsController extends Controller
