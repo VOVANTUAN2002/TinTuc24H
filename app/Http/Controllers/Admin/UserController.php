@@ -144,4 +144,28 @@ class UserController extends Controller
         ];
         return view('backend.users.trash',$params);
     }
+
+    public function restore($id)
+    {
+        try {
+            $this->UserService->restore($id);
+            return redirect()->route('users.trash')->with('success', 'Khôi phục thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('users.trash')->with('success', 'Khôi phục thành công');
+        }
+    }
+
+    public function force_destroy($id)
+    {
+
+        try {
+            $user = $this->UserService->force_destroy($id);
+            dd($user);
+            return redirect()->route('users.trash')->with('success', 'Xóa' . ' ' . $user->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('users.trash')->with('error', 'Xóa' . ' ' . $user->name . ' ' .  'không thành công');
+        }
+    }
 }
