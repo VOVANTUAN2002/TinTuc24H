@@ -1,14 +1,14 @@
 <?php
 
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\AuthController;
 
 use App\Http\Controllers\Admin\UserGroupController;
 use App\Http\Controllers\Admin\UserController;
 
 
-use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Admin\CategorieController;
+use App\Http\Controllers\Admin\NewsController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -39,7 +39,7 @@ Route::group([
         return view('backend.home.index');
     })->name('dashboard.index');
 
-    
+
     Route::prefix('userGroups')->group(function () {
         Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
         Route::delete('/force_destroy/{id}', [UserGroupController::class, 'force_destroy'])->name('userGroups.force_destroy');
