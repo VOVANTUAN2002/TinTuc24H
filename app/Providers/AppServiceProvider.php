@@ -23,11 +23,9 @@ use App\Repositories\Eloquent\AuthRepository;
 use App\Repositories\Interfaces\AuthInterface;
 use App\Services\AuthService;
 use App\Services\Interfaces\AuthServiceInterface;
-
-
 use App\Services\UserService;
-
 use Illuminate\Pagination\Paginator;
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Interfaces\CategorieInterface;

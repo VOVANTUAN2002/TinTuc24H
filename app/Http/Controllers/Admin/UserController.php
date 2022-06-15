@@ -6,16 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Services\Interfaces\UserGroupServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
     protected $userService;
 
-    public function __construct(UserServiceInterface $userService)
+    public function __construct(UserServiceInterface $userService, UserGroupServiceInterface $userGroupService)
     {
         $this->UserService = $userService;
+        $this->UserGroupService = $userGroupService;
     }
     /**
      * Display a listing of the resource.
@@ -25,8 +28,14 @@ class UserController extends Controller
     public function index( Request $request)
     {
         $items = $this->UserService->getAll($request);
+        $userGroup = $this->UserGroupService->getAll($request);
         // dd($users);
-        return response()->json($items, 200);
+        // return response()->json($items, 200);
+        $params =[
+            'items' => $items,
+            'userGroup' => $userGroup,
+        ];
+        return view('backend.users.index',$params);
     }
 
     /**
@@ -34,9 +43,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $items = $this->UserGroupService->getAll($request);
+        $params = [
+            'items' => $items,
+        ];
+        return view('backend.users.create',$params);
     }
 
     /**
@@ -47,7 +60,13 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        //
+        try {
+            $item = $this->UserService->create($request);  
+            return redirect()->route('users.index')->with('success', 'Thêm' . ' ' . $item->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('users.index')->with('error', 'Thêm' . ' ' . $item->name . ' ' .  'không thành công');
+        }
     }
 
     /**
@@ -67,9 +86,16 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Request $request ,$id)
     {
-        //
+        $items = $this->UserGroupService->getAll($request);
+        $item = User::find($id);
+      
+        $params = [
+            'item' => $item,
+            'items' => $items,
+        ];
+        return view('backend.users.edit',$params);
     }
 
     /**
@@ -79,9 +105,15 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateUserRequest $request, $id)
     {
-        //
+        try {
+            $item = $this->UserService->update($request, $id); 
+            return redirect()->route('users.index')->with('success', 'Sửa' . ' ' . $request->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('users.index')->with('error', 'Sửa' . ' ' . $request->name . ' ' .  'không thành công');
+        }
     }
 
     /**
@@ -90,8 +122,14 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        try {
+            $item = $this->UserService->destroy($id);   
+            return redirect()->route('users.index')->with('success', 'Xóa' . ' ' . $item->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('users.index')->with('error', 'Xóa' . ' ' . $item->name . ' ' .  'không thành công');
+        }
     }
 }

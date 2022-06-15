@@ -93,7 +93,7 @@ class UserGroupController extends Controller
         $params = [
             'item' => $item,
         ];
-        return view('backend.userGroups.update',$params);
+        return view('backend.userGroups.edit',$params);
     }
 
     /**
