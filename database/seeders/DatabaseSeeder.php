@@ -20,8 +20,23 @@ class DatabaseSeeder extends Seeder
     {
         $this->importRoles();
         $this->importUserGroups();
-        $this->importUserGroupRoles();
         $this->importUser();
+        $this->importUserGroupRoles();
+    }
+
+    public function importRoles()
+    {
+        $groups     = ['New', 'Categorie', 'User', 'UserGroup', 'Role', 'Category_new'];
+        $actions    = ['viewAny', 'view', 'create', 'update', 'delete', 'restore', 'forceDelete'];
+        foreach ($groups as $group) {
+            foreach ($actions as $action) {
+                DB::table('roles')->insert([
+                    'name' => $group . '_' . $action,
+                    'group_name' => $group,
+
+                ]);
+            }
+        }
     }
 
     public function importUserGroups()
@@ -37,31 +52,6 @@ class DatabaseSeeder extends Seeder
         $userGroup = new UserGroup();
         $userGroup->name = 'Giám Đốc';
         $userGroup->save();
-    }
-
-    public function importRoles()
-    {
-        $groups     = ['New', 'Categorie', 'User', 'UserGroup' , 'Role', 'Category_new'];
-        $actions    = ['viewAny', 'view', 'create', 'update', 'delete', 'restore', 'forceDelete'];
-        foreach ($groups as $group) {
-            foreach ($actions as $action) {
-                DB::table('roles')->insert([
-                    'group_name' => $group,
-                    'name' => $group . '_' . $action,
-
-                ]);
-            }
-        }
-    }
-
-    public function importUserGroupRoles()
-    {
-        for ($i = 1; $i <= 84; $i++) {
-            DB::table('user_group_roles')->insert([
-                'user_group_id' => 1,
-                'role_id' => $i,
-            ]);
-        }
     }
 
     public function importUser()
@@ -107,8 +97,13 @@ class DatabaseSeeder extends Seeder
         $user->save();
     }
 
-
-
-
-
+    public function importUserGroupRoles()
+    {
+        for ($i = 1; $i <= 84; $i++) {
+            DB::table('user_group_roles')->insert([
+                'user_group_id' => 1,
+                'role_id' => $i,
+            ]);
+        }
+    }
 }

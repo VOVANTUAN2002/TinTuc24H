@@ -25,17 +25,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Request $request)
+    public function index(Request $request)
     {
         $items = $this->UserService->getAll($request);
         $userGroup = $this->UserGroupService->getAll($request);
         // dd($users);
         // return response()->json($items, 200);
-        $params =[
+        $params = [
             'items' => $items,
             'userGroup' => $userGroup,
         ];
-        return view('backend.users.index',$params);
+        return view('backend.users.index', $params);
     }
 
     /**
@@ -49,7 +49,7 @@ class UserController extends Controller
         $params = [
             'items' => $items,
         ];
-        return view('backend.users.create',$params);
+        return view('backend.users.create', $params);
     }
 
     /**
@@ -61,7 +61,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         try {
-            $item = $this->UserService->create($request);  
+            $item = $this->UserService->create($request);
             return redirect()->route('users.index')->with('success', 'Thêm' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -86,16 +86,16 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request ,$id)
+    public function edit(Request $request, $id)
     {
         $items = $this->UserGroupService->getAll($request);
         $item = User::find($id);
-      
+
         $params = [
             'item' => $item,
             'items' => $items,
         ];
-        return view('backend.users.edit',$params);
+        return view('backend.users.edit', $params);
     }
 
     /**
@@ -108,7 +108,7 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, $id)
     {
         try {
-            $item = $this->UserService->update($request, $id); 
+            $item = $this->UserService->update($request, $id);
             return redirect()->route('users.index')->with('success', 'Sửa' . ' ' . $request->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -125,11 +125,23 @@ class UserController extends Controller
     public function destroy($id)
     {
         try {
-            $item = $this->UserService->destroy($id);   
+            $item = $this->UserService->destroy($id);
             return redirect()->route('users.index')->with('success', 'Xóa' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return redirect()->route('users.index')->with('error', 'Xóa' . ' ' . $item->name . ' ' .  'không thành công');
         }
+    }
+
+    public function trashedItems()
+    {
+        // dd($request);
+        $items = $this->UserService->trashedItems();
+        // dd($items);
+        $params = [
+            'items' => $items,
+            // 'userGroup'=>$userGroup
+        ];
+        return view('backend.users.trash',$params);
     }
 }

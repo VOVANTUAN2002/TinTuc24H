@@ -24,8 +24,11 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('gender');
             $table->date('start_day')->nullable();
+
             $table->unsignedBigInteger('user_group_id');
             $table->foreign('user_group_id')->references('id')->on('user_groups');
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }
