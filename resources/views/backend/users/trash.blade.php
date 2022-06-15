@@ -81,15 +81,10 @@
                                     <td>{{ $item->phone }}</td>
                                     <td>{{ $item->userGroup->name }}</td>
                                     <td>
-                                        <span class="sr-only">Edit</span></a> <a
-                                            href="{{route('users.edit',$item->id)}}"
-                                            class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
-                                            <span class="sr-only">Remove</span></a>
-                                        <form action="{{ route('users.destroy',$item->id )}}"
-                                            style="display:inline" method="post">
-                                            <button onclick="return confirm('Xóa {{$item->name}} ?')"
-                                                class="btn btn-sm btn-icon btn-secondary"><i
-                                                    class="far fa-trash-alt"></i></button>
+                                        <span class="sr-only">Edit</span></a> <a href="{{route('users.restore',$item->id)}}"
+                                        class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
+                                        <form action="{{ route('users.force_destroy',$item->id )}}" style="display:inline" method="post">
+                                            <button onclick="return confirm('Xóa vĩnh viễn {{$item->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>

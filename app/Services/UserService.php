@@ -51,4 +51,15 @@ class UserService implements UserServiceInterface
         return $this->userRepository->trashedItems();
 
     }
+
+    public function restore($id){
+
+        return $this->userRepository->restore($id);
+
+    }
+    public function force_destroy($id){
+
+        return $this->userRepository->force_destroy($id);
+
+    }
 }

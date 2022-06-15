@@ -69,8 +69,30 @@ class UserRepository extends EloquentRepository implements UserInterface
         $query = $this->model->onlyTrashed();
         //sắp xếp thứ tự lên trước khi update
         $query->orderBy('id', 'desc');
-        $users = $query->paginate(20);
+        $users = $query->paginate(2);
         return $users;
     }
 
+    public function restore($id){
+
+        $user = $this->model->withTrashed()->find($id);
+
+        if($user){
+            $user->restore();
+            return true;
+        }else{
+            return false;
+        }
+        return $user;
+    }
+
+    public function force_destroy($id){
+        $user= $this->model->withTrashed()->find($id);
+        if($user){
+            $user->forceDelete();
+            return $user;
+        }else{
+            return false;
+        }
+    }
 }
