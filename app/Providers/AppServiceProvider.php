@@ -17,7 +17,16 @@ use App\Repositories\Interfaces\UserInterface;
 use App\Services\Interfaces\UserGroupServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use App\Services\UserGroupService;
+
+
+use App\Repositories\Eloquent\AuthRepository;
+use App\Repositories\Interfaces\AuthInterface;
+use App\Services\AuthService;
+use App\Services\Interfaces\AuthServiceInterface;
+
+
 use App\Services\UserService;
+
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -44,6 +53,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(CategorieServiceInterface::class, CategorieService::class);
         $this->app->singleton(NewInterface::class, NewRepository::class);
         $this->app->singleton(NewServiceInterface::class, NewService::class);
+
+        //Auth
+        $this->app->singleton(AuthInterface::class,AuthRepository::class);
+        $this->app->singleton(AuthServiceInterface::class, AuthService::class);
 
     }
 

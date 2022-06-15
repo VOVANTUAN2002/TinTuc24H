@@ -27,7 +27,7 @@ class UserGroupService implements UserGroupServiceInterface
     {
         $userGroup = $this->userGroupInterface->create($request);
         return $userGroup;
-        
+
     }
 
     public function update($request, $id)
@@ -42,6 +42,7 @@ class UserGroupService implements UserGroupServiceInterface
         $userGroup = $this->userGroupInterface->findById($id);
         $this->userGroupInterface->destroy($userGroup);
         return $userGroup;
-        
+
     }
+
 }
