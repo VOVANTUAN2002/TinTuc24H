@@ -48,9 +48,9 @@ Route::group([
     });
 
     Route::prefix('news')->group(function () {
-        Route::get('/trash', [UserController::class, 'trashedItems'])->name('users.trash');
-        Route::delete('/force_destroy/{id}', [UserController::class, 'force_destroy'])->name('users.force_destroy');
-        Route::get('/restore/{id}', [UserController::class, 'restore'])->name('users.restore');
+        Route::get('/trash', [NewsController::class, 'trashedItems'])->name('news.trash');
+        Route::delete('/force_destroy/{id}', [NewsController::class, 'force_destroy'])->name('news.force_destroy');
+        Route::get('/restore/{id}', [NewsController::class, 'restore'])->name('news.restore');
     });
 
     Route::resource('news', NewsController::class);

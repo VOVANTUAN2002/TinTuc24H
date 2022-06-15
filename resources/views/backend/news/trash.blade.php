@@ -13,22 +13,16 @@
         </nav>
         <div class="d-md-flex align-items-md-start">
             <h1 class="page-title mr-sm-auto"> Quản Lý Tin Tức</h1>
-            <div class="btn-toolbar">
-                <a href="{{ route('news.create') }}" class="btn btn-primary">
-                    <i class="fa-solid fa fa-plus"></i>
-                    <span class="ml-1">Thêm Mới</span>
-                </a>
-            </div>
         </div>
         <div class="card-body">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('news.index')}}">Tất Cả</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="{{route('news.trash')}}">Thùng Rác</a>
+                        <a class="nav-link active" href="{{route('news.trash')}}">Thùng Rác</a>
                     </li>
                 </ul>
             </div>
@@ -64,10 +58,10 @@
                                     <td>{{ $new->hot }}</td>
                                     <td>{{ $new->puplish_date }}</td>
                                     <td>
-                                        <span class="sr-only">Edit</span></a> <a href="{{route('news.edit',$new->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
-                                            <span class="sr-only">Remove</span></a>
-                                        <form action="{{ route('news.destroy',$new->id )}}" style="display:inline" method="post">
-                                            <button onclick="return confirm('Xóa {{$new->title}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
+                                        <span class="sr-only">Edit</span></a> <a href="{{route('news.restore',$new->id)}}"
+                                        class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
+                                        <form action="{{ route('news.force_destroy',$new->id )}}" style="display:inline" method="post">
+                                            <button onclick="return confirm('Xóa vĩnh viễn {{$new->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>

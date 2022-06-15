@@ -11,8 +11,7 @@ class NewRepository extends EloquentRepository implements NewInterface
 {
     public function getModel()
     {
-        $model = News::class;
-        return $model;
+        return News::class;
     }
 
     public function create($request)
@@ -81,10 +80,36 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->save();
         return $object;
     }
-    public function destroy($id)
-    {
-        $news  = News::find($id);
-        $news->delete();
+
+    public function trashedItems(){
+
+        $query = $this->model->onlyTrashed();
+
+        $query->orderBy('id', 'desc');
+        $news = $query->paginate(5);
         return $news;
+    }
+
+    public function restore($id){
+
+        $new = $this->model->withTrashed()->find($id);
+
+        if($new){
+            $new->restore();
+            return true;
+        }else{
+            return false;
+        }
+        return $new;
+    }
+
+    public function force_destroy($id){
+        $new= $this->model->withTrashed()->find($id);
+        if($new){
+            $new->forceDelete();
+            return $new;
+        }else{
+            return false;
+        }
     }
 }

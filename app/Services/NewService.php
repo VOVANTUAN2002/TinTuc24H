@@ -47,4 +47,21 @@ class NewService implements NewServiceInterface
         $this->newsRepository->destroy($news);
         return $news;
     }
+
+    public function trashedItems(){
+
+        return $this->newsRepository->trashedItems();
+
+    }
+
+    public function restore($id){
+
+        return $this->newsRepository->restore($id);
+
+    }
+    public function force_destroy($id){
+
+        return $this->newsRepository->force_destroy($id);
+
+    }
 }

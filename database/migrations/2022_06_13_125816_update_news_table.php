@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('news', function (Blueprint $table) {
-            
+
+            $table->softDeletes();
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
