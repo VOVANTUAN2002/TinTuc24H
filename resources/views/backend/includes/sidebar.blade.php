@@ -13,12 +13,12 @@
         </a>
       </li>
       <li>
-        <a href="index.html">
+        <a href="{{ route('categories.index')}}">
           <i class="zmdi zmdi-view-dashboard"></i> <span>Loại Tin Tức</span>
         </a>
       </li>
       <li>
-        <a href="index.html">
+        <a href="{{ route('news.index')}}">
           <i class="zmdi zmdi-view-dashboard"></i>
           <span class="menu-icon oi oi-list-rich"></span>
           <span>Tin Tức</span>

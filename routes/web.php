@@ -9,8 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 
 use App\Http\Controllers\Admin\CategorieController;
 use App\Http\Controllers\Admin\NewsController;
-
-
+use App\Http\Controllers\Frontend\DetailNewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +54,10 @@ Route::group([
 Route::get('/website', function () {
     return view('frontend.home.index');
 })->name('website.index');
+// Route::get('/detailNews', function () {
+//     return view('frontend.home.detailNews');
+// })->name('website.detailNews');
+Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
 
 Route::get('administrator/login', [AuthController::class, 'login'])->name('login');
 Route::post('administrator/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');
