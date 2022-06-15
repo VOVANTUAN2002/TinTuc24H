@@ -1,7 +1,16 @@
 <?php
 
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserGroupController;
+
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserGroupController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\NewsController;
+
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +31,22 @@ Route::get('/website', function () {
 })->name('website.index');
 
 
+
 Route::prefix('userGroups')->group(function () {
     Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
     Route::delete('/force_destroy/{id}', [UserGroupController::class, 'force_destroy'])->name('userGroups.force_destroy');
     Route::get('/restore/{id}', [UserGroupController::class, 'restore'])->name('userGroups.restore');
 });
+
+Route::get('/login', function () {
+    return view('backend.layouts.login');
+});
+
+Route::resource('news', NewsController::class);
+Route::resource('categories', CategorieController::class);
+Route::resource('userGroups',UserGroupController::class);
+Route::resource('users',UserController::class);
+
 
 Route::group([
     'prefix' => 'administrator',

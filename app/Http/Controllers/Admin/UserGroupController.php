@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\UserGroup;
 use App\Http\Requests\StoreUserGroupRequest;
 use App\Http\Requests\UpdateUserGroupRequest;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 
 class UserGroupController extends Controller
 {
-    protected $UserGroupService;
+    protected $userGroupService;
 
     public function __construct(UserGroupServiceInterface $userGroupService)
     {
