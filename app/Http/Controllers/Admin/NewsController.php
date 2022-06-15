@@ -182,6 +182,7 @@ class NewsController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('news.trash')->with('error', 'Xóa' . ' ' . $news->name . ' ' .  'không thành công');
         }
+        
     }
 }
 
