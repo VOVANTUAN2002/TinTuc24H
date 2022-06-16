@@ -14,7 +14,7 @@
         <div class="d-md-flex align-items-md-start">
             <h1 class="page-title mr-sm-auto"> Quản Lý Nhóm </h1>
             <div class="btn-toolbar">
-                <a href="{{ route('userGroups.create') }}" class="btn btn-primary">
+                <a href="{{ route('userGroups.create') }}" class="btn btn-dark">
                     <i class="fa-solid fa fa-plus"></i>
                     <span class="ml-1">Thêm Mới</span>
                 </a>
@@ -26,7 +26,7 @@
                     <form action="" method="GET" id="form-search" class="form-dark">
                         <div class="input-group input-group-alt">
                             <div class="input-group-prepend">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                    Tìm nâng cao
                                   </button>
                             </div>

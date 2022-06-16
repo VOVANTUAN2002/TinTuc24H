@@ -132,7 +132,7 @@
                 </div>
                 <div class="form-actions">
                     <button class="btn btn-secondary float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                    <button class="btn btn-primary ml-auto" type="submit">Lưu</button>
+                    <button class="btn btn-dark ml-auto" type="submit">Lưu</button>
                 </div>
             </div>
 
