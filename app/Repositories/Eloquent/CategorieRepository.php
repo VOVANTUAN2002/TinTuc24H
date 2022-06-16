@@ -13,5 +13,13 @@ class CategorieRepository extends EloquentRepository implements CategorieInterfa
         $model = Categorie::class;
         return $model;
     }
-
+    public function getAll($request)
+    {
+        $categories = $this->model->select('*');
+        if (isset($request->name) && $request->name) {
+            $name = $request->name;
+            $categories->where('name', 'LIKE', '%' . $name . '%');
+        }
+        return $categories->orderBy('id', 'desc')->paginate(5);
+    }
 }
