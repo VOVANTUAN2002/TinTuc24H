@@ -39,6 +39,11 @@
           <i class="fa fa-comments"></i> <span>Bình Luận</span>
         </a>
       </li>
+      <li>
+        <a href="{{ route('email.index')}}">
+          <i class="fa fa-envelope"></i> <span>Email Đăng Ký</span>
+        </a>
+      </li>
 
 
       <li class="sidebar-header">LABELS</li>

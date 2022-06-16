@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Frontend\DetailNewsController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\CommentController;
+use App\Http\Controllers\Admin\EmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,7 @@ Route::group([
     Route::resource('news', NewsController::class);
     Route::resource('users', UserController::class);
     Route::resource('comments', CommentController::class);
+    Route::resource('email', EmailController::class);
     Route::resource('categories', CategorieController::class);
     Route::resource('userGroups', UserGroupController::class);
 });
