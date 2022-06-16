@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Repositories\Eloquent;
 
+use App\Events\UserSubmitEvent;
 use App\Models\User;
 use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\UserInterface;
@@ -39,7 +41,7 @@ class UserRepository extends EloquentRepository implements UserInterface
 
         return $users;
     }
-    
+
     public function create($request)
     {
 
@@ -47,7 +49,7 @@ class UserRepository extends EloquentRepository implements UserInterface
             $object = $this->model;
             $object->name = $request->name;
             $object->phone = $request->phone;
-            $object->password= Hash::make($request->password);
+            $object->password = Hash::make($request->password);
             $object->gender = $request->gender;
             $object->day_of_birth = $request->day_of_birth;
             $object->address = $request->address;
@@ -58,10 +60,11 @@ class UserRepository extends EloquentRepository implements UserInterface
             if ($request->hasFile('avatar')) {
                 $avatar = $request->file('avatar');
                 $storedPath = $avatar->move('avatars', $avatar->getClientOriginalName());
-                $object->avatar           = 'upload/'.$avatar->getClientOriginalName();
+                $object->avatar           = 'upload/' . $avatar->getClientOriginalName();
             }
             $object->save();
-
+            $object->active = 'store';
+            event(new UserSubmitEvent($object));
         } catch (\Exception $e) {
             return null;
         }
@@ -73,7 +76,7 @@ class UserRepository extends EloquentRepository implements UserInterface
         $object = $this->model->find($id);
         $object->name = $request->name;
         $object->phone = $request->phone;
-        $object->password= Hash::make($request->password);
+        $object->password = Hash::make($request->password);
         $object->gender = $request->gender;
         $object->day_of_birth = $request->day_of_birth;
         $object->address = $request->address;
@@ -84,14 +87,29 @@ class UserRepository extends EloquentRepository implements UserInterface
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $storedPath = $avatar->move('avatars', $avatar->getClientOriginalName());
-            $object->avatar           = 'upload/'.$avatar->getClientOriginalName();
+            $object->avatar           = 'upload/' . $avatar->getClientOriginalName();
         }
         $object->save();
+        $object->active = 'update';
 
+        event(new UserSubmitEvent($object));
         return $object;
     }
 
-    public function trashedItems(){
+    public function destroy($id)
+    {
+        $object = $this->model->find($id)->first();
+        // dd($object);
+        $object->delete();
+        $object->active = 'destroy';
+        event(new UserSubmitEvent($object));
+        return $object;
+    }
+
+
+
+    public function trashedItems()
+    {
 
         $query = $this->model->onlyTrashed();
 
@@ -100,25 +118,27 @@ class UserRepository extends EloquentRepository implements UserInterface
         return $users;
     }
 
-    public function restore($id){
+    public function restore($id)
+    {
 
         $user = $this->model->withTrashed()->find($id);
 
-        if($user){
+        if ($user) {
             $user->restore();
             return true;
-        }else{
+        } else {
             return false;
         }
         return $user;
     }
 
-    public function force_destroy($id){
-        $user= $this->model->withTrashed()->find($id);
-        if($user){
+    public function force_destroy($id)
+    {
+        $user = $this->model->withTrashed()->find($id);
+        if ($user) {
             $user->forceDelete();
             return $user;
-        }else{
+        } else {
             return false;
         }
     }
