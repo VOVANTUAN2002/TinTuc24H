@@ -94,7 +94,7 @@
                                 @endif
                             </div>
                             <div class="col-lg-4">
-                                <label>Sản phẩm HOT</label>
+                                <label>Tin Tức HOT</label>
                                 <div class="form-group">
                                     <label class="switcher-control">
                                         <input type="hidden" name="hot" value="0">
