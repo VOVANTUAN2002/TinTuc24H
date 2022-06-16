@@ -7,8 +7,8 @@
         <div class="d-flex flex-column flex-md-row">
 
             <p class="lead">
-                <span class="font-weight-bold">Xin chào, {{ $current_user->name}}.</span>
-                <span class="d-block text-muted">Chúc bạn một ngày làm việc tốt lành !</span>
+                <span class="font-weight-bold">Xin chào, {{ $current_user->name}}.</span><br>
+                <span style="color: rgb(237, 238, 231)">Chúc bạn một ngày làm việc tốt lành !</span>
             </p>
             <div class="ml-auto">
 

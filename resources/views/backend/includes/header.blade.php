@@ -35,13 +35,13 @@
     </li>
     <li class="nav-item">
       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-        <span class="user-profile"> <img src="{{asset($current_user->avatar)}}" alt=""></span>
+        <span class="user-profile"> <img src="{{asset($current_user->avatar)}}" style="width:55px; height:45px" alt=""></span>
       </a>
       <ul class="dropdown-menu dropdown-menu-right">
        <li class="dropdown-item user-details">
         <a href="javaScript:void();">
            <div class="media">
-             <div class="avatar"> <img src="{{asset($current_user->avatar)}}" alt=""></div>
+             <div class="avatar"> <img src="{{asset($current_user->avatar)}}" style="width:55px; height:45px" alt=""></div>
             <div class="media-body">
                 <a href="{{ route('users.index',$current_user->id)}}" class="account-name">{{ $current_user->name}}</a>
             <p class="user-subtitle">{{ $current_user->userGroup->name }}</p>
