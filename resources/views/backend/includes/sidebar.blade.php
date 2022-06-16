@@ -14,24 +14,25 @@
       </li>
       <li>
         <a href="{{ route('categories.index')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Loại Tin Tức</span>
+          <span class="menu-icon fas fa-dice-d20"></span> 
+          <span>Loại Tin Tức</span>
         </a>
       </li>
       <li>
         <a href="{{ route('news.index')}}">
-          <i class="zmdi zmdi-view-dashboard"></i>
-          <span class="menu-icon oi oi-list-rich"></span>
+          <span class="menu-icon fas fa-dice-d6"></span>
           <span>Tin Tức</span>
         </a>
       </li>
       <li>
         <a href="{{ route('userGroups.index')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Nhóm Nhân Viên</span>
+          <span class="menu-icon fas fa-user-friends"></span> <span>Nhóm Nhân Viên</span>
+         
         </a>
       </li>
       <li>
         <a href="{{ route('users.index')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Nhân Viên</span>
+          <span class="menu-icon fas fa-user-alt"></span> <span>Nhân Viên</span>
         </a>
       </li>
 
