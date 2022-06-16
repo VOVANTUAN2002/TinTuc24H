@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 
 
 use App\Http\Controllers\Admin\CategorieController;
+use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Frontend\DetailNewsController;
 use Illuminate\Support\Facades\Route;
@@ -29,9 +30,7 @@ Route::group([
     'middleware' => ['auth']
 ], function () {
 
-    Route::get('/dashboard', function () {
-        return view('backend.home.index');
-    })->name('dashboard.index');
+    Route::get('/dashboard', [IndexController::class, 'index'])->name('dashboard.index');
 
 
     Route::prefix('userGroups')->group(function () {
