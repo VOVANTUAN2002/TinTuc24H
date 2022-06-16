@@ -11,7 +11,7 @@
                     </li>
                 </ol>
             </nav>
-            <h1 class="page-title"> Thêm Nhóm Tin Tức </h1>
+            <h1 class="page-title"> Thêm Mới Tin Tức </h1>
         </header>
 
         <div class="page-section">

@@ -6,8 +6,8 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active">
-                        <a href="{{route('categories.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Lý
-                            nhóm</a>
+                        <a href="{{route('categories.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Tinh Tức
+                            </a>
                     </li>
                 </ol>
             </nav>
@@ -22,7 +22,7 @@
                         <legend>Thông tin cơ bản</legend>
                         <div class="form-group">
                             <label for="tf1">Tên Loại Tin</label>
-                            <input type="text" name="name" class="form-control" placeholder="Nhập tên loại nhóm" value="{{$category->name }}">
+                            <input type="text" name="name" class="form-control" placeholder="Nhập tên loại tin" value="{{$category->name }}">
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('name') }}</p>
                             @endif

@@ -34,9 +34,14 @@ use App\Services\Interfaces\CategorieServiceInterface;
 
 use App\Repositories\Interfaces\CommentInterface;
 use App\Services\Interfaces\CommentServiceInterface;
-
 use App\Services\CommentService;
 use App\Repositories\Eloquent\CommentRepository;
+
+use App\Repositories\Interfaces\EmailInterface;
+use App\Repositories\Eloquent\EmailRepository;
+use App\Services\Interfaces\EmailServiceInterface;
+use App\Services\EmailService;
+
 use App\Views\Composers\ProfileComposer;
 
 class AppServiceProvider extends ServiceProvider
@@ -48,17 +53,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        //UserGroup
         $this->app->singleton(RepositoryInterface::class, EloquentRepository::class);
         $this->app->singleton(UserGroupInterface::class, UserGroupRepository::class);
         $this->app->singleton(UserGroupServiceInterface::class, UserGroupService::class);
 
+        //User
         $this->app->singleton(UserInterface::class, UserRepository::class);
         $this->app->singleton(UserServiceInterface::class, UserService::class);
 
+        //Categorie
         $this->app->singleton(CategorieInterface::class, CategorieRepository::class);
         $this->app->singleton(CategorieServiceInterface::class, CategorieService::class);
 
+        //New
         $this->app->singleton(NewInterface::class, NewRepository::class);
         $this->app->singleton(NewServiceInterface::class, NewService::class);
 
@@ -69,6 +77,10 @@ class AppServiceProvider extends ServiceProvider
         //Comment
         $this->app->singleton(CommentInterface::class,CommentRepository::class);
         $this->app->singleton(CommentServiceInterface::class, CommentService::class);
+
+        //Email
+        $this->app->singleton(EmailInterface::class,EmailRepository::class);
+        $this->app->singleton(EmailServiceInterface::class, EmailService::class);
 
     }
 

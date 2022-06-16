@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\News;
+use App\Models\Newsletter;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class IndexController extends Controller
         $comment_count = Comment::count();
         $like_count = Comment::count();
         $user_count = User::count();
+        $newletters = Newsletter::take(5)->orderBy('id','DESC')->get();
         $news = News::take(5)->orderBy('id','DESC')->get();
 
         $param =[
@@ -25,6 +27,7 @@ class IndexController extends Controller
             'like_count' => $like_count,
             'news' => $news,
             'user_count'=>$user_count,
+            'newletters'=>$newletters,
         ];
 
         return view('backend/home/index',$param);
