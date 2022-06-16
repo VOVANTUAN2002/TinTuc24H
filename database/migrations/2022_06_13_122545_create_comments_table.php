@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->text('content');
+            $table->string('startus');
             $table->unsignedBigInteger('new_id');
             $table->foreign('new_id')
             ->references('id')
