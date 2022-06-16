@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Services\Interfaces\CategorieServiceInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
@@ -10,13 +11,14 @@ use Illuminate\Http\Request;
 class DetailNewsController extends Controller
 {
     protected $newsService;
-
+    protected $categorieService;
     protected $usersService;
 
-    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService)
+    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService,CategorieServiceInterface $categorieService)
     {
         $this->newsService = $newsService;
         $this->usersService = $usersService;
+        $this->categorieService = $categorieService;
 
     }
     /**
@@ -29,8 +31,10 @@ class DetailNewsController extends Controller
     {
 
         $news = $this->newsService->getAll($request);
+        $categories = $this->categorieService->getAll($request);
         $params = [
             "news" => $news,
+            "categories" => $categories,
         ];
         return view('frontend.home.detailNews', $params);
 
