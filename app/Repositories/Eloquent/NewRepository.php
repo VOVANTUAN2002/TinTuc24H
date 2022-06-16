@@ -5,6 +5,7 @@ namespace App\Repositories\Eloquent;
 use App\Models\News;
 use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\NewInterface;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class NewRepository extends EloquentRepository implements NewInterface
@@ -100,5 +101,15 @@ class NewRepository extends EloquentRepository implements NewInterface
         } else {
             return false;
         }
+    }
+
+    public function getAll($request)
+    {
+        $news = $this->model->select('*');
+        if (isset($request->title) && $request->title) {
+            $title = $request->title;
+            $news->where('title', 'LIKE', '%' . $title . '%');
+        }
+        return $news->orderBy('id', 'desc')->paginate(5);
     }
 }

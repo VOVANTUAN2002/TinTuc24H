@@ -32,6 +32,11 @@ use App\Repositories\Interfaces\CategorieInterface;
 use App\Services\CategorieService;
 use App\Services\Interfaces\CategorieServiceInterface;
 
+use App\Repositories\Interfaces\CommentInterface;
+use App\Services\Interfaces\CommentServiceInterface;
+
+use App\Services\CommentService;
+use App\Repositories\Eloquent\CommentRepository;
 use App\Views\Composers\ProfileComposer;
 
 class AppServiceProvider extends ServiceProvider
@@ -60,6 +65,10 @@ class AppServiceProvider extends ServiceProvider
         //Auth
         $this->app->singleton(AuthInterface::class,AuthRepository::class);
         $this->app->singleton(AuthServiceInterface::class, AuthService::class);
+
+        //Comment
+        $this->app->singleton(CommentInterface::class,CommentRepository::class);
+        $this->app->singleton(CommentServiceInterface::class, CommentService::class);
 
     }
 

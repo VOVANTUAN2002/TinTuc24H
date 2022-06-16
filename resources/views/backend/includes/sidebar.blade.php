@@ -9,30 +9,39 @@
 
       <li>
         <a href="{{route('dashboard.index')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Trang Chủ</span>
+          <i class="fa fa-home"></i> <span>Trang Chủ</span>
         </a>
       </li>
       <li>
         <a href="{{ route('categories.index')}}">
           <span class="menu-icon fas fa-dice-d20"></span> 
           <span>Loại Tin Tức</span>
+          <i class="fa fa-file-text-o"></i> <span>Loại Tin Tức</span>
         </a>
       </li>
       <li>
         <a href="{{ route('news.index')}}">
           <span class="menu-icon fas fa-dice-d6"></span>
+          <i class="fa fa-newspaper-o"></i>
+          <span class=""></span>
           <span>Tin Tức</span>
         </a>
       </li>
       <li>
         <a href="{{ route('userGroups.index')}}">
           <span class="menu-icon fas fa-user-friends"></span> <span>Nhóm Nhân Viên</span>
-         
+          <i class="fa fa-id-badge"></i> <span>Nhóm Nhân Viên</span>
         </a>
       </li>
       <li>
         <a href="{{ route('users.index')}}">
           <span class="menu-icon fas fa-user-alt"></span> <span>Nhân Viên</span>
+          <i class="fa fa-user"></i> <span>Nhân Viên</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ route('comments.index')}}">
+          <i class="fa fa-comments"></i> <span>Bình Luận</span>
         </a>
       </li>
 
