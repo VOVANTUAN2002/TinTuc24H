@@ -1,7 +1,7 @@
   <!--Start sidebar-wrapper-->
   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
      <div class="brand-logo">
-      <a href="{{route('website.index')}}">
+      <a href="{{route('website.home')}}">
        <img src="{{ asset('img/logo1.png')}}" style="width: 200px; height: 50px" class="logo-icon" alt="logo icon">
      </a>
    </div>
