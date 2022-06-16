@@ -148,12 +148,13 @@ class DatabaseSeeder extends Seeder
         $new->content = 'Sáng 16/6, Quốc hội thông qua nghị quyết về chủ trương đầu tư dự án xây dựng đường Vành đai 4 vùng thủ đô. Tuyến đường dài 112,8 km, chia làm 7 dự án thành phần, đi qua Hà Nội, Hưng Yên, Bắc Ninh; nhu cầu sử dụng đất hơn 1.300 ha. Khi đưa vào khai thác, tuyến đường sẽ áp dụng thu phí tự động không dừng.
         Sơ bộ tổng mức đầu tư của dự án là 85.800 tỷ đồng. Nguồn ngân sách nhà nước giai đoạn 2021-2025 là 41.860 tỷ đồng, bao gồm hơn 19.380 tỷ đồng từ nguồn vốn ngân sách trung ương trong kế hoạch đầu tư công trung hạn giai đoạn 2021-2025; nguồn vốn ngân sách địa phương là hơn 22.470 tỷ đồng (Hà Nội hơn 19.470 tỷ; Hưng Yên 1.000 tỷ; Bắc Ninh 2.000 tỷ).
         Nguồn ngân sách nhà nước giai đoạn 2026-2030 hơn 14.500 tỷ đồng, bao gồm 8.790 tỷ đồng từ nguồn vốn ngân sách trung ương; nguồn vốn ngân sách địa phương là hơn 5.710 tỷ đồng. Vốn do nhà đầu tư thu xếp hơn 29.440 tỷ đồng.
-        Dự án được chuẩn bị đầu tư từ năm 2022, cơ bản hoàn thành năm 2026, khai thác năm 2027. UBND TP Hà Nội là cơ quan đầu mối tổ chức thực hiện dự án. Trong hai năm kể từ khi nghị quyết được thông qua, Quốc hội cho phép người đứng đầu cơ quan có thẩm quyền xem xét, quyết định chỉ định thầu với các gói thầu tư vấn, phục vụ di dời hạ tầng kỹ thuật; 
+        Dự án được chuẩn bị đầu tư từ năm 2022, cơ bản hoàn thành năm 2026, khai thác năm 2027. UBND TP Hà Nội là cơ quan đầu mối tổ chức thực hiện dự án. Trong hai năm kể từ khi nghị quyết được thông qua, Quốc hội cho phép người đứng đầu cơ quan có thẩm quyền xem xét, quyết định chỉ định thầu với các gói thầu tư vấn, phục vụ di dời hạ tầng kỹ thuật;
         bồi thường, hỗ trợ, tái định cư. Trong thời gian này, nhà thầu thi công không phải thực hiện thủ tục cấp phép khai thác mỏ khoáng sản làm vật liệu xây dựng thông thường.';
         $new->status = 'Đã Duyệt';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
+        $new->user_id = 1;
         $new->save();
 
 
@@ -164,15 +165,16 @@ class DatabaseSeeder extends Seeder
         $new->content = 'Liên quan đến vụ án trên, ngày 16/6, Cục Cảnh sát điều tra tội phạm về ma túy (C04, Bộ Công an) cho biết đã bắt giữ 7 đối tượng, thu giữ 115 kg ma túy tổng hợp các loại, cùng nhiều tài liệu liên quan khác.
         Trước đó, ban chuyên án phát hiện đường dây mua bán, vận chuyển trái phép chất ma túy từ Campuchia về TP.HCM tiêu thụ.
         Điều hành đường dây là một đối tượng ở Campuchia, thông qua mạng xã hội chỉ đạo Trần Văn Hải (52 tuổi) và Nguyễn Thành Vinh (55 tuổi ở TP.HCM) phân phối cho các chân rết tiêu thụ trên địa bàn.
-        Các đối tượng Hải, Vinh từng đi tù vì cướp giật tài sản. Sau khi ra tù, Hải tiếp tục thụ án 10 năm tù về tội mua bán trái phép chất ma túy, đến đầu năm 2022 đối tượng này được ra tù. 
-        Quá trình điều tra xác định, sau khi nhận ma túy từ Campuchia, các đối tượng vận chuyển về cất giấu tại kho ở Tôn Thất Thuyết, quận 4, TP.HCM. Tại đây, ma túy được chia nhỏ rồi bán cho Trần Trọng Khôi, Lê Minh Hảo, Trần Ngọc Diệp (vợ của Hảo), cả 2 người này đều SN 1992, trú tại TP.HCM và các chân rết khác theo sự chỉ đạo của đối tượng cầm đầu tại Campuchia. 
+        Các đối tượng Hải, Vinh từng đi tù vì cướp giật tài sản. Sau khi ra tù, Hải tiếp tục thụ án 10 năm tù về tội mua bán trái phép chất ma túy, đến đầu năm 2022 đối tượng này được ra tù.
+        Quá trình điều tra xác định, sau khi nhận ma túy từ Campuchia, các đối tượng vận chuyển về cất giấu tại kho ở Tôn Thất Thuyết, quận 4, TP.HCM. Tại đây, ma túy được chia nhỏ rồi bán cho Trần Trọng Khôi, Lê Minh Hảo, Trần Ngọc Diệp (vợ của Hảo), cả 2 người này đều SN 1992, trú tại TP.HCM và các chân rết khác theo sự chỉ đạo của đối tượng cầm đầu tại Campuchia.
         Ngày 4/6, tại địa phận xã Phú Xuân, huyện Nhà Bè, Cục C04 phối hợp với Công an TP.HCM, Bộ Tư lệnh Cảnh sát biển bắt quả tang Nguyễn Thành Vinh đang vận chuyển 100kg ma túy đựng trong 6 bao tải. Cùng thời điểm, tổ công tác bắt giữ Hải, thu giữ 1kg ma túy tổng hợp.
-        Khám xét tại kho chứa ma túy do Hải thuê tại số 7 Tôn Thất Thuyết, thu giữ thêm 3 kg và 2.000 viên ma túy tổng hợp. 
+        Khám xét tại kho chứa ma túy do Hải thuê tại số 7 Tôn Thất Thuyết, thu giữ thêm 3 kg và 2.000 viên ma túy tổng hợp.
         Tiếp tục đấu tranh mở rộng vụ án, ngày 5/6, ban chuyên án bắt quả tang Lê Minh Hảo và Vũ Quốc Duy đang giao nhận 100 gói ma túy “đông trùng”. ';
         $new->status = 'Đã Duyệt';
         $new->view = '1,5 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
+        $new->user_id = 1;
         $new->save();
 
 
@@ -192,6 +194,7 @@ class DatabaseSeeder extends Seeder
         $new->view = '1,7 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
+        $new->user_id = 1;
         $new->save();
 
 
@@ -206,6 +209,7 @@ class DatabaseSeeder extends Seeder
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
+        $new->user_id = 1;
         $new->save();
     }
 }
