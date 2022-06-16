@@ -4,7 +4,16 @@
     <div class="container-fluid">
 
         <!--Start Dashboard Content-->
+        <div class="d-flex flex-column flex-md-row">
 
+            <p class="lead">
+                <span class="font-weight-bold">Xin chào, {{ $current_user->name}}.</span>
+                <span class="d-block text-muted">Chúc bạn một ngày làm việc tốt lành !</span>
+            </p>
+            <div class="ml-auto">
+
+            </div>
+        </div>
         <div class="card mt-3">
             <div class="card-content">
                 <div class="row row-group m-0">
