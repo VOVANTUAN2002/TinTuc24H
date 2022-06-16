@@ -173,7 +173,6 @@ class NewsController extends Controller
 
     public function force_destroy($id)
     {
-
         try {
             $news = $this->newsService->force_destroy($id);
 
