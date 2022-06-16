@@ -14,6 +14,12 @@ class NewRepository extends EloquentRepository implements NewInterface
         return News::class;
     }
 
+    public function getAll($request)
+    {
+        $news = $this->model->orderBy('id', 'desc')->paginate(5);
+        return $news;
+    }
+
     public function create($request)
     {
         $object = $this->model;

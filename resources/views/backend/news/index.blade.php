@@ -60,7 +60,6 @@
                                 <tr>
                                     <td>{{ $new->id }}</td>
                                     <td>{{ $new->title }}</td>
-                                    <td><img src="{{$new->image}}" style="width:190px;height:100px"  alt=""></td>
                                     <td>{{ $new->content }}</td>
                                     <td>{{ $new->hot }}</td>
                                     <td>{{ $new->puplish_date }}</td>
