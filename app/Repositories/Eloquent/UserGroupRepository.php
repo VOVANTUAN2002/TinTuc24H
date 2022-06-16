@@ -12,6 +12,19 @@ class UserGroupRepository extends EloquentRepository implements UserGroupInterfa
     {
         return UserGroup::class;
     }
+    public function getAll($request)
+    {
+        $userGroup = $this->model->select('*');
+        if (isset($request->name) && $request->name) {
+            $name = $request->name;
+            $userGroup->where('name', 'LIKE', '%' . $name . '%');
+
+        }
+        $userGroup->orderBy('id', 'desc');
+        $userGroups = $userGroup->paginate(4);
+
+        return $userGroups;
+    }
 
 
 }

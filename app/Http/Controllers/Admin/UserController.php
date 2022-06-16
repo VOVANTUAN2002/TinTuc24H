@@ -161,7 +161,6 @@ class UserController extends Controller
 
         try {
             $user = $this->UserService->force_destroy($id);
-            dd($user);
             return redirect()->route('users.trash')->with('success', 'Xóa' . ' ' . $user->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());

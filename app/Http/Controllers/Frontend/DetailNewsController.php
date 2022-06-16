@@ -36,7 +36,7 @@ class DetailNewsController extends Controller
             "news" => $news,
             "categories" => $categories,
         ];
-        return view('frontend.home.detailNews', $params);
+        return view('frontend.website.detailNews', $params);
 
     }
     /**

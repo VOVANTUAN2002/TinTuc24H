@@ -3657,6 +3657,8 @@ table.grid td {
 .form-dark .form-control {
     border: 1px solid #161718 !important;
 }
-
+form#form-search .modal input {
+    color: black !important;
+}
 
 

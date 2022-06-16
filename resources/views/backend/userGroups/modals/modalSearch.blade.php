@@ -6,20 +6,21 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="exampleModalLabel">Lọc Nâng Cao</h5>
         </div>
         <div class="modal-body">
- 
             <div class="mb-3">
-                <label class="form-label">Tên nhóm</label>
-                <input type="text" class="form-control">
+                <label class="form-label">Tên nhóm</label>             
+                <div class="col-lg-8">
+                  <div class="input text"><input type="text" name="name" class="form-control filter-column f-name"  id="name"></div>
+              </div>
               </div>
         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Trở về</button>
-          <button type="button" class="btn btn-primary">Tìm kiếm</button>
+          <button type="submit" class="btn btn-primary" id="apply-filter">Tìm kiếm</button>
+          <a href="{{ route('userGroups.index') }}" class="btn btn-dark ">Đặt lại</a>
         </div>
       </div>
     </div>

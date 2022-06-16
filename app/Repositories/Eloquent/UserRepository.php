@@ -13,6 +13,33 @@ class UserRepository extends EloquentRepository implements UserInterface
     {
         return User::class;
     }
+    public function getAll($request)
+    {
+        $user = $this->model->select('*');
+        if (isset($request->name) && $request->name) {
+            $name = $request->name;
+            $user->where('name', 'LIKE', '%' . $name . '%');
+        }
+        if (isset($request->phone) && $request->phone) {
+            $phone = $request->phone;
+            $user->where('phone', 'LIKE', '%' . $phone . '%');
+        }
+        if (isset($request->address) && $request->address) {
+            $address = $request->address;
+            $user->where('address', 'LIKE', '%' . $address . '%');
+        }
+        if (isset($request->name) && $request->name) {
+            $user_group_id = $request->user_group_id;
+            $user->where('user_group_id', 'LIKE', '%' . $user_group_id . '%');
+        }
+
+
+        $user->orderBy('id', 'desc');
+        $users = $user->paginate(4);
+
+        return $users;
+    }
+    
     public function create($request)
     {
 
