@@ -61,7 +61,7 @@ Route::group([
 });
 Route::get('/website', function () {
     return view('frontend.home.index');
-})->name('website.index');
+})->name('website.home');
 // Route::get('/detailNews', function () {
 //     return view('frontend.home.detailNews');
 // })->name('website.detailNews');
