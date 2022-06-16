@@ -26,7 +26,7 @@
                             @endif
                         </div>
                         <div class="form-actions">
-                            <button class="btn btn-secondary float-right" onclick="window.history.go(-1); return false;">Hủy</button>
+                            <button class="btn btn-dark float-right" onclick="window.history.go(-1); return false;">Hủy</button>
                             <button style="float: right;" class="btn btn-primary ml-auto mr-2" type="submit">Lưu<noscript></noscript> </button>
                         </div>
                     </div>

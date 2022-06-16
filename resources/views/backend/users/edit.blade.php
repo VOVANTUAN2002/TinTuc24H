@@ -88,7 +88,7 @@
                                         <span class="tile tile-circle bg-danger"><span class="oi oi-eye"></span></span>
                                     </a>
                                     <div class="figure-action">
-                                        <a href="javascript:;" class="btn btn-block btn-sm btn-primary">Xóa</a>
+                                        <a href="javascript:;" class="btn btn-block btn-sm btn-dark">Xóa</a>
                                     </div>
                                 </div>
                             </figure>
@@ -135,7 +135,7 @@
                                 @foreach($items as $userGroup)
                                 <option value="{{ $userGroup->id }}" @selected($userGroup->id == $item->user_group_id)>
                                     {{ $userGroup->name }}
-                                </option>                               
+                                </option>
                                  @endforeach
                             </select>
                             @if ($errors->any())
@@ -146,7 +146,7 @@
                 </div>
                 <div class="form-actions">
                     <button class="btn btn-secondary float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                    <button class="btn btn-primary ml-auto" type="submit">Lưu</button>
+                    <button class="btn btn-dark ml-auto" type="submit">Lưu</button>
                 </div>
             </div>
 

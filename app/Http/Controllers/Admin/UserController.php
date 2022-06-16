@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
@@ -10,6 +11,8 @@ use App\Services\Interfaces\UserGroupServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel as FacadesExcel;
+
 
 class UserController extends Controller
 {
@@ -166,5 +169,10 @@ class UserController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('users.trash')->with('error', 'Xóa' . ' ' . $user->name . ' ' .  'không thành công');
         }
+    }
+
+    public function export(){
+
+        return FacadesExcel::download( new UserExport, 'user.xlsx');
     }
 }
