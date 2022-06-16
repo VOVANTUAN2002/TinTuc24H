@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class EmailController extends Controller{
+
     protected $emailServiceInterface;
 
     public function  __construct(EmailServiceInterface $emailServiceInterface) {
+
         $this->emailServiceInterface = $emailServiceInterface;
     }
 
@@ -29,6 +31,7 @@ class EmailController extends Controller{
     }
 
     public function store(EmailRequest $request){
+
         try {
             $this->emailServiceInterface->create($request);
             return redirect()->route('email.index')->with('success', ' Thêm mới email ' . $request->email . ' thành công ');
@@ -36,9 +39,11 @@ class EmailController extends Controller{
             Log::error($e->getMessage());
             return redirect()->route('email.index')->with('error', ' Thêm mới email ' . $request->email . 'không thành công ');
         }
+
     }
 
     public function edit($id)
+
     {
         $newSletter = $this->emailServiceInterface->findById($id);
         $params = [

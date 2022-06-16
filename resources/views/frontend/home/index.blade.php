@@ -10,7 +10,7 @@
                     <div class="tn-content">
                         <div class="tn-content-inner">
                             <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                            <a class="tn-title" href="">Lorem ipsum dolor sit amet adipiscing elit</a>
+                            <a class="tn-title" href="">Lorem ipsum dolor sit amet adipiscing edit</a>
                         </div>
                     </div>
                 </div>
