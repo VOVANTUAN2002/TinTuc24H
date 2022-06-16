@@ -13,4 +13,5 @@ class CategorieRepository extends EloquentRepository implements CategorieInterfa
         $model = Categorie::class;
         return $model;
     }
+
 }

@@ -1,13 +1,12 @@
 @extends('backend.layouts.master')
 
 @section('content')
-
 <div class="content-wrapper">
     <div class="container-fluid">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active">
-                    <a href="#"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Trang Chủ</a>
+                    <a href="{{ route('news.index') }}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Trang Chủ</a>
                 </li>
             </ol>
         </nav>
@@ -32,6 +31,21 @@
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row mb-2">
+            <div class="col">
+                <form action="" method="GET" id="form-search" class="form-dark">
+                    <div class="input-group input-group-alt">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Tìm nâng cao
+                            </button>
+                        </div>
+                    </div>
+                    @include('backend.news.modals.modalSearch')
+                </form>
             </div>
         </div>
         @if (Session::has('success'))
@@ -48,9 +62,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Tên Tin</th>
-                                    <th>Nội dung</th>
-                                    <th>Hot</th>
+                                    <th>Tên bài viết</th>
+                                    <th>Tin HOT</th>
                                     <th>Ngày tạo</th>
                                     <th>Chức năng</th>
                                 </tr>
@@ -60,7 +73,6 @@
                                 <tr>
                                     <td>{{ $new->id }}</td>
                                     <td>{{ $new->title }}</td>
-                                    <td>{{ $new->content }}</td>
                                     <td>{{ $new->hot }}</td>
                                     <td>{{ $new->puplish_date }}</td>
                                     <td>

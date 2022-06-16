@@ -9,7 +9,7 @@
 
         <div class="mb-3">
           <label class="form-label">Tên Tin Tức</label>
-          <input type="text" name="title" class="form-control">
+          <input type="text" name="name" class="form-control">
         </div>
 
       </div>

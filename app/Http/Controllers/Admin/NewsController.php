@@ -57,8 +57,6 @@ class NewsController extends Controller
         return view('backend.news.create', $params);
     }
 
-
-
     /**
      * Store a newly created resource in storage.
      *
