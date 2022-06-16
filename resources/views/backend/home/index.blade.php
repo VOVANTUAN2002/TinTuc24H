@@ -71,6 +71,22 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="card card-fluid">
+                    <div class="card-header"> Email đăng ký</div><!-- .lits-group -->
+                    <div class="lits-group list-group-flush">
+                        @foreach( $newletters as $newletter )
+                        <div class="list-group-item">
+                            <div class="list-group-item-body">
+                                <h5 class="card-title">
+                                <a href="{{route('email.edit',$newletter->id)}}">{{ $newletter->id }}|&nbsp;{{ $newletter->email }}</a>
+                                </h5>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 @endsection
