@@ -75,7 +75,7 @@
                             <tbody>
                                 <tr>
                                     <td>{{ ++$key}}</td>
-                                    <td><img src="{{$item->avatar}}" style="width:80px;height:80px" alt=""></td>
+                                    <td><img src="{{ asset($item->avatar)}}" style="width:80px;height:80px" alt=""></td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->address }}</td>
                                     <td>{{ $item->phone }}</td>

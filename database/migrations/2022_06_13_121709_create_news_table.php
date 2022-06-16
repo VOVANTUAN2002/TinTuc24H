@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image');
-            $table->string('content');
+            $table->text('content');
             $table->string('status');
             $table->string('view')->default(0);
             $table->string('hot')->default(0);
