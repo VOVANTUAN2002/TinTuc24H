@@ -194,6 +194,7 @@ class DatabaseSeeder extends Seeder
         $new->view = '1,7 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
+        
         $new->user_id = 1;
         $new->save();
 
