@@ -17,6 +17,11 @@ return new class extends Migration
 
             $table->softDeletes();
 
+            $table->unsignedBigInteger('category_news');
+            $table->foreign('category_news')
+            ->references('id')
+            ->on('id');
+            
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')

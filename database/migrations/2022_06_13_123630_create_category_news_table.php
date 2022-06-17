@@ -15,12 +15,8 @@ return new class extends Migration
     {
         Schema::create('category_news', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('new_id');
-            $table->foreign('new_id')
-            ->references('id')
-            ->on('news');
-
+            
+            $table->varchar('name');
             $table->unsignedBigInteger('categorie_id');
             $table->foreign('categorie_id')
             ->references('id')
