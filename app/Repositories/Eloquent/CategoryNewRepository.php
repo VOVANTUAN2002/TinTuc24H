@@ -13,6 +13,7 @@ class CategoryNewRepository extends EloquentRepository implements CategoryNewInt
         $model = CategoryNew::class;
         return $model;
     }
+
     public function getAll($request)
     {
         $categoryNew = $this->model->select('*');
@@ -22,5 +23,5 @@ class CategoryNewRepository extends EloquentRepository implements CategoryNewInt
         }
         return $categoryNew->orderBy('id', 'desc')->paginate(5);
     }
-
+    
 }

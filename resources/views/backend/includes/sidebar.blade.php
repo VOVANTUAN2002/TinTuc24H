@@ -18,6 +18,11 @@
         </a>
       </li>
       <li>
+        <a href="{{ route('categoryNews.index')}}">
+          <i class="fa fa-file-text-o"></i> <span>Thể Loại Tin Tức</span>
+        </a>
+      </li>
+      <li>
         <a href="{{ route('news.index')}}">
           <i class="fa fa-newspaper-o"></i>
           <span class=""></span>
