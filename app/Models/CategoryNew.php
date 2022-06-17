@@ -15,6 +15,6 @@ class CategoryNew extends Model
     }
 
     public function news(){
-        return $this->belongsTo(News::class,'new_id','id');
+        return $this->hasMany(News::class,'category_New','id');
     }
 }
