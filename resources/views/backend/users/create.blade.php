@@ -76,7 +76,7 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>Hình ảnh nhân viên</label>
-                            <input type="file" name="avatar" class="form-control">
+                            <input type="file" name="avatar" class="form-control" value="{{ old('avatar') }}">
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('avatar') }}</p>
                             @endif
