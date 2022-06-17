@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Admin\SystemLogController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
 use App\Http\Controllers\API\NewImageDelete;
@@ -30,6 +30,8 @@ Route::resource('news',NewsController::class);
 Route::resource('categories',CategorieController::class);
 Route::resource('categorie',CategorieController::class);
 Route::delete('/new_images/{new_image_id}',[NewImageDelete::class,'new_images_delete']);
+Route::resource('systemLogs', SystemLogController::class);
+
 
 
 

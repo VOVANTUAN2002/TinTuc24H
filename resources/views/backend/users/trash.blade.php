@@ -12,7 +12,7 @@
             </ol>
         </nav>
         <div class="d-md-flex align-items-md-start">
-            <h1 class="page-title mr-sm-auto"> Quản Lý Nhân Viên</h1>
+            <h1 class="page-title mr-sm-auto"> Quản Lý Nhân Viên - Thùng Rác</h1>
             <div class="btn-toolbar">
                 <a href="{{ route('users.create') }}" class="btn btn-dark">
                     <i class="fa-solid fa fa-plus"></i>
