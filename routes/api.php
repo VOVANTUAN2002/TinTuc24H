@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Admin\SystemLogController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
 use App\Http\Controllers\CategorieController;
@@ -28,6 +28,7 @@ Route::resource('users',UserController::class);
 Route::resource('news',NewsController::class);
 Route::resource('categories',CategorieController::class);
 Route::resource('categorie',CategorieController::class);
+Route::resource('systemLogs', SystemLogController::class);
 
 
 
