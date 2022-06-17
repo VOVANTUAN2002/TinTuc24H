@@ -13,7 +13,6 @@ class CategoryNew extends Model
 
     public function CategoryNews(){
         return $this->belongsto(Categorie::class,'categorie_id','id');
-    }
 
     public function news(){
         return $this->hasMany(News::class);
