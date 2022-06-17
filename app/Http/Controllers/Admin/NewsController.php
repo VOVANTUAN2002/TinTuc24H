@@ -100,10 +100,12 @@ class NewsController extends Controller
     {
         $users = $this->usersService->getAll($id);
         $new = $this->newsService->findById($id);
+        $news = News::select('id','image')->get();
         $categorynews = CategoryNew::all();
         $params = [
             'users' => $users,
             'categorynews' => $categorynews,
+            'news' => $news,
             'new' => $new
         ];
         // dd($params);
