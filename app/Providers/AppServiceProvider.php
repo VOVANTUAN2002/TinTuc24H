@@ -40,11 +40,15 @@ use App\Repositories\Eloquent\CommentRepository;
 
 use App\Repositories\Interfaces\EmailInterface;
 use App\Repositories\Eloquent\EmailRepository;
+use App\Repositories\Eloquent\SystemLogRepository;
 use App\Repositories\Interfaces\CategoryNewInterface;
+use App\Repositories\Interfaces\SystemLogInterface;
 use App\Services\CategoryNewService;
 use App\Services\Interfaces\EmailServiceInterface;
 use App\Services\EmailService;
 use App\Services\Interfaces\CategoryNewServiceInterface;
+use App\Services\Interfaces\SystemLogServiceInterface;
+use App\Services\SystemLogService;
 use App\Views\Composers\ProfileComposer;
 
 class AppServiceProvider extends ServiceProvider
@@ -88,6 +92,9 @@ class AppServiceProvider extends ServiceProvider
         //CategoryNew
         $this->app->singleton(CategoryNewInterface::class, CategoryNewRepository::class);
         $this->app->singleton(CategoryNewServiceInterface::class, CategoryNewService::class);
+
+        $this->app->singleton(SystemLogInterface::class, SystemLogRepository::class);
+        $this->app->singleton(SystemLogServiceInterface::class, SystemLogService::class);
     }
 
     /**

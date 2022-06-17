@@ -7,58 +7,58 @@ use App\Services\Interfaces\UserGroupServiceInterface;
 
 class UserGroupService implements UserGroupServiceInterface
 {
-    protected $userGroupInterface;
+    protected $userGroupRepository;
 
-    public function __construct(UserGroupInterface $userGroupInterface)
+    public function __construct(UserGroupInterface $userGroupRepository)
     {
-        $this->userGroupInterface = $userGroupInterface;
+        $this->userGroupRepository = $userGroupRepository;
     }
 
     public function getAll($request)
     {
-        return $this->userGroupInterface->getAll($request);
+        return $this->userGroupRepository->getAll($request);
     }
     public function findById($id)
     {
-        return $this->userGroupInterface->findById($id);
+        return $this->userGroupRepository->findById($id);
     }
 
     public function create($request)
     {
-        $userGroup = $this->userGroupInterface->create($request);
+        $userGroup = $this->userGroupRepository->create($request);
         return $userGroup;
 
     }
 
     public function update($request, $id)
     {
-        $userGroup = $this->userGroupInterface->findById($id);
-        $this->userGroupInterface->update($request, $userGroup);
+        $userGroup = $this->userGroupRepository->findById($id);
+        $this->userGroupRepository->update($request, $userGroup);
         return $userGroup;
     }
 
     public function destroy($id)
     {
-        $userGroup = $this->userGroupInterface->findById($id);
-        $this->userGroupInterface->destroy($userGroup);
+        $userGroup = $this->userGroupRepository->findById($id);
+        $this->userGroupRepository->destroy($userGroup);
         return $userGroup;
 
     }
 
     public function trashedItems(){
 
-        return $this->userGroupInterface->trashedItems();
+        return $this->userGroupRepository->trashedItems();
 
     }
 
     public function restore($id){
 
-        return $this->userGroupInterface->restore($id);
+        return $this->userGroupRepository->restore($id);
 
     }
     public function force_destroy($id){
 
-        return $this->userGroupInterface->force_destroy($id);
+        return $this->userGroupRepository->force_destroy($id);
 
     }
 
