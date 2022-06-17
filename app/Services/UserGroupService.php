@@ -45,4 +45,21 @@ class UserGroupService implements UserGroupServiceInterface
 
     }
 
+    public function trashedItems(){
+
+        return $this->userGroupInterface->trashedItems();
+
+    }
+
+    public function restore($id){
+
+        return $this->userGroupInterface->restore($id);
+
+    }
+    public function force_destroy($id){
+
+        return $this->userGroupInterface->force_destroy($id);
+
+    }
+
 }

@@ -59,6 +59,11 @@ class DatabaseSeeder extends Seeder
         $userGroup = new UserGroup();
         $userGroup->name = 'Giám Đốc';
         $userGroup->save();
+
+
+        $userGroup = new UserGroup();
+        $userGroup->name = 'Nhân Viên';
+        $userGroup->save();
     }
 
     public function importUser()
@@ -74,7 +79,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2022/01/10';
         $user->user_group_id  = '1';
         $user->gender = 'Nam';
-        $user->avatar = 'https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png';
+        $user->avatar = 'https://haycafe.vn/wp-content/uploads/2021/12/Anh-avatar-nam-cute-deo-khau-trang.jpg';
         $user->save();
 
         $user = new User();
@@ -87,7 +92,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2021/10/29';
         $user->user_group_id  = '3';
         $user->gender = 'Nam';
-        $user->avatar = 'https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png';
+        $user->avatar = 'https://haycafe.vn/wp-content/uploads/2021/12/Hinh-anh-avatar-nam-cool-ngau-dep.jpg';
         $user->save();
 
         $user = new User();
@@ -99,6 +104,32 @@ class DatabaseSeeder extends Seeder
         $user->address = 'Quảng Trị';
         $user->start_day = '2021/10/29';
         $user->user_group_id  = '1';
+        $user->gender = 'Nam';
+        $user->avatar = 'https://pdp.edu.vn/wp-content/uploads/2021/05/hinh-anh-avatar-nam-dep-chat.jpg';
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Nguyễn Văn Quốc Việt';
+        $user->email = 'viet@gmail.com';
+        $user->password = Hash::make('123456');
+        $user->day_of_birth = '2001/03/21';
+        $user->phone = '0123456789';
+        $user->address = 'Quảng Trị';
+        $user->start_day = '2022/02/12';
+        $user->user_group_id  = '4';
+        $user->gender = 'Nam';
+        $user->avatar = 'https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png';
+        $user->save();
+
+        $user = new User();
+        $user->name = 'Trần Ngọc Linh';
+        $user->email = 'Linh@gmail.com';
+        $user->password = Hash::make('123456');
+        $user->day_of_birth = '2003/11/11';
+        $user->phone = '0123456788';
+        $user->address = 'Quảng Trị';
+        $user->start_day = '2022/02/12';
+        $user->user_group_id  = '4';
         $user->gender = 'Nam';
         $user->avatar = 'https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png';
         $user->save();

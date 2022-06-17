@@ -26,5 +26,41 @@ class UserGroupRepository extends EloquentRepository implements UserGroupInterfa
         return $userGroups;
     }
 
+    public function trashedItems()
+    {
+
+        $query = $this->model->onlyTrashed();
+
+        $query->orderBy('id', 'desc');
+        $userGroups = $query->paginate(5);
+        return $userGroups;
+    }
+
+    public function restore($id)
+    {
+
+        $userGroup = $this->model->withTrashed()->find($id);
+
+        if ($userGroup) {
+            $userGroup->restore();
+            return true;
+        } else {
+            return false;
+        }
+        return $userGroup;
+    }
+
+    public function force_destroy($id)
+    {
+        $userGroup = $this->model->withTrashed()->find($id);
+        if ($userGroup) {
+            $userGroup->forceDelete();
+            return $userGroup;
+        } else {
+            return false;
+        }
+    }
+
+
 
 }
