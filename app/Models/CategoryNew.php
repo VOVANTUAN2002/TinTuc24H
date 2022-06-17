@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryNew extends Model
 {
     use HasFactory;
-    protected $table = 'news';
+    protected $table = 'category_news';
 
     public function CategoryNews(){
-        return $this->belongsTo(Category::class,'category_new_id','id');
+        return $this->belongsTo(Categorie::class,'category_new_id','id');
     }
 
     public function news(){
