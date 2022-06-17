@@ -49,6 +49,11 @@
           <i class="fa fa-envelope"></i> <span>Email Đăng Ký</span>
         </a>
       </li>
+      <li>
+        <a href="{{ route('systemLogs.index')}}">
+          <i class="fas	fa-running"></i> <span>Hoạt Động</span>
+        </a>
+      </li>
 
 
       <li class="sidebar-header">LABELS</li>

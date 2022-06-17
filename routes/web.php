@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\DetailNewsController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\EmailController;
+use App\Http\Controllers\Admin\SystemLogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,6 +61,7 @@ Route::group([
     Route::resource('email', EmailController::class);
     Route::resource('categories', CategorieController::class);
     Route::resource('userGroups', UserGroupController::class);
+    Route::resource('systemLogs', SystemLogController::class);
 });
 Route::get('/website', function () {
     return view('frontend.home.index');

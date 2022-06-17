@@ -1,8 +1,9 @@
 <?php
 
-
+use App\Http\Controllers\Admin\SystemLogController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
+use App\Http\Controllers\API\NewImageDelete;
 use App\Http\Controllers\CategorieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,9 @@ Route::resource('users',UserController::class);
 Route::resource('news',NewsController::class);
 Route::resource('categories',CategorieController::class);
 Route::resource('categorie',CategorieController::class);
+Route::delete('/new_images/{new_image_id}',[NewImageDelete::class,'new_images_delete']);
+Route::resource('systemLogs', SystemLogController::class);
+
 
 
 
