@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
+use App\Models\CategoryNew;
 use App\Services\Interfaces\NewServiceInterface;
 
 use App\Services\Interfaces\UserServiceInterface;
@@ -33,7 +34,6 @@ class NewsController extends Controller
 
     public function index(Request $request)
     {
-
         $news = $this->newsService->getAll($request);
         $params = [
             "news" => $news,
@@ -51,8 +51,10 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         $users = $this->usersService->getAll($request);
+        $categorynews = CategoryNew::all();
         $params = [
-            'users' => $users
+            'users' => $users,
+            'categorynews' => $categorynews
         ];
         return view('backend.news.create', $params);
     }
@@ -98,8 +100,10 @@ class NewsController extends Controller
     {
         $users = $this->usersService->getAll($id);
         $new = $this->newsService->findById($id);
+        $categorynews = CategoryNew::all();
         $params = [
             'users' => $users,
+            'categorynews' => $categorynews,
             'new' => $new
         ];
         // dd($params);

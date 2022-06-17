@@ -45,7 +45,6 @@
                                         <th>#</th>
                                         <th>Tên Loại Tin</th>
                                         <th>Tên Thể Loại Tin</th>
-                                        <th>Chức năng</th>
                                     </tr>
                                 </thead>
                                 @foreach($categoryNews as $category)
