@@ -2,12 +2,13 @@
 
 namespace App\Services;
 
+use App\Services\Interfaces\CategoryNewServiceInterface;
 
 class CategoryNewService implements CategoryNewServiceInterface
 {
     protected $categorieRepository;
 
-    public function __construct(CategorieInterface $categorieRepository)
+    public function __construct(CategoryNewInterface $categorieRepository)
     {
         $this->categorieRepository = $categorieRepository;
     }
