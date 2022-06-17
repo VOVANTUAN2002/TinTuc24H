@@ -72,9 +72,18 @@
                                 <tr>
                                     <td>{{ $new->id }}</td>
                                     <td>{{ $new->title }}
-                                    @if( $new->hot)
-                                    <span class="badge badge-danger">Tin Tức HOT</span>
-                                    @endif
+
+                                        <br>
+                                        @if( $new->hot)
+                                        <span class="badge badge-danger">Tin Tức HOT</span>
+                                        @endif
+                                        @if( $new->puplish_date)
+                                        <span class="badge badge-warning">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
+                                        @endif
+                                        @if( $new->status == 'show')
+                                        <span class="badge badge-info">Trạng Thái: {{ $new->status }}</span>
+                                        @endif
+                                        </br>
                                     </td>
                                     <td>{{ $new->puplish_date }}</td>
                                     <td>
