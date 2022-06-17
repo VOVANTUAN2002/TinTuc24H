@@ -54,16 +54,6 @@
                                         <td>{{ $category->id}}</td>
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->CategoryNews->name }}</td>
-                                        <td>
-                                            <span class="sr-only">Edit</span></a> <a href="{{route('categoryNews.edit',$category->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
-                                                <span class="sr-only">Remove</span></a>
-                                            <form action="{{ route('categoryNews.destroy',$category->id )}}" style="display:inline" method="post">
-                                                <button onclick="return confirm('Xóa {{$category->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
-                                                @csrf
-                                                @method('delete')
-                                            </form>
-                                        </td>
-
                                     </tr>
                                 </tbody>
                                 @endforeach
