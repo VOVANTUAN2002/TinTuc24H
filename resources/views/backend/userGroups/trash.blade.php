@@ -12,7 +12,7 @@
             </ol>
         </nav>
         <div class="d-md-flex align-items-md-start">
-            <h1 class="page-title mr-sm-auto"> Quản Lý Nhóm </h1>
+            <h1 class="page-title mr-sm-auto"> Quản Lý Nhóm - Thùng Rác</h1>
             <div class="btn-toolbar">
                 <a href="{{ route('userGroups.create') }}" class="btn btn-dark">
                     <i class="fa-solid fa fa-plus"></i>
@@ -38,11 +38,11 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active " href="{{route('userGroups.index')}}">Tất Cả</a>
+                        <a class="nav-link " href="{{route('userGroups.index')}}">Tất Cả</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="{{route('userGroups.trash')}}">Thùng Rác</a>
+                        <a class="nav-link active" href="{{route('userGroups.trash')}}">Thùng Rác</a>
                     </li>
                 </ul>
             </div>
@@ -71,15 +71,10 @@
                                     <td>{{ ++$key}}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>
-                                        <span class="sr-only">Edit</span></a> <a
-                                            href="{{route('userGroups.edit',$item->id)}}"
-                                            class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
-                                            <span class="sr-only">Remove</span></a>
-                                        <form action="{{ route('userGroups.destroy',$item->id )}}"
-                                            style="display:inline" method="post">
-                                            <button onclick="return confirm('Xóa {{$item->name}} ?')"
-                                                class="btn btn-sm btn-icon btn-secondary"><i
-                                                    class="far fa-trash-alt"></i></button>
+                                        <span class="sr-only">Edit</span></a> <a href="{{route('userGroups.restore',$item->id)}}"
+                                        class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
+                                        <form action="{{ route('userGroups.force_destroy',$item->id )}}" style="display:inline" method="post">
+                                            <button onclick="return confirm('Xóa vĩnh viễn {{$item->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>

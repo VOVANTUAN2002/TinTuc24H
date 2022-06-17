@@ -131,4 +131,40 @@ class UserGroupController extends Controller
             return redirect()->route('userGroups.index')->with('error', 'Xóa' . ' ' . $item->name . ' ' .  'không thành công');
         }
     }
+
+    public function trashedItems()
+    {
+        // dd($request);
+        $items = $this->UserGroupService->trashedItems();
+        // dd($items);
+        $params = [
+            'items' => $items,
+            // 'userGroup'=>$userGroup
+        ];
+        return view('backend.userGroups.trash',$params);
+    }
+
+    public function restore($id)
+    {
+        try {
+            $this->UserGroupService->restore($id);
+            return redirect()->route('userGroups.trash')->with('success', 'Khôi phục thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('userGroups.trash')->with('success', 'Khôi phục thành công');
+        }
+    }
+
+    public function force_destroy($id)
+    {
+
+        try {
+            $userGroup = $this->UserGroupService->force_destroy($id);
+            return redirect()->route('userGroups.trash')->with('success', 'Xóa' . ' ' . $userGroup->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('userGroups.trash')->with('error', 'Xóa' . ' ' . $userGroup->name . ' ' .  'không thành công');
+        }
+    }
+
 }
