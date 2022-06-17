@@ -99,7 +99,7 @@ class UserRepository extends EloquentRepository implements UserInterface
     public function destroy($id)
     {
         $object = $this->model->find($id)->first();
-        // dd($object);
+        
         $object->delete();
         $object->active = 'destroy';
         event(new UserSubmitEvent($object));
