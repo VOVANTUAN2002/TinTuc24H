@@ -53,6 +53,32 @@
                             <div class="text-danger">{{$errors->first('image')}}</div>
                             @endif
                         </div>
+                        <div class="form-group row gallery">
+                            @if (isset($news))
+                            @foreach($news as $new_image)
+                            <div class="col-lg-2 {{ $new_image->id }}">
+                                <div class="card card-figure">
+                                    <figure class="figure">
+                                        <div class="figure-img">
+                                            <img class="img-fluid" src="{{ $new_image->image }}">
+                                            <a href="{{ $new_image->image }}" class="img-link img-fluid-a" data-size="600x450">
+                                                <span class="tile tile-circle bg-danger"><span class="oi oi-eye"></span></span>
+                                                <span class="img-caption d-none">Image caption goes here</span>
+                                            </a>
+                                            <div class="figure-action frmDeleteProduct">
+                                                <a href="javascript:;" data-id="{{ $new_image->id }}" class="btn btn-block btn-sm btn-primary btn-delete">Xóa</a>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                            @endforeach
+                            @else
+                            <tr>
+                                <td class="btn btn-info">Không có ảnh</td>
+                            </tr>
+                            @endif
+                        </div>
                         <div class="form-group">
                             <label for="tf1">Nội dung</label>
                             <textarea name="content" type="text" class="form-control" placeholder="Nhập tên Nội dung">{{ $new->content}}</textarea>
@@ -126,4 +152,25 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        //xóa ảnh phần sản phẩm chỉnh sửa
+        $(".btn-delete").click(function() {
+            var confirm_delete = confirm("Xác nhận xóa hình ?");
+            if (confirm_delete === true) {
+                var new_image_id = $(this).attr('data-id');
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/api/new_images/' + new_image_id,
+                    dataType: 'json',
+                    success: function(data) {
+                        $(".new_image_" + new_image_id).remove();
+                    }
+                });
+                window.location.reload();
+            }
+        });
+    });
+</script>
 @endsection
