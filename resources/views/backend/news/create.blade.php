@@ -68,7 +68,16 @@
                                     <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
                                 </select>
-
+                            </div>
+                        </div>                        
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label>Loại Tin Tức</label>
+                                <select type="text" class="form-control" placeholder="danh mục" name="category_new_id">
+                                    @foreach($categorynews as $categorynew)
+                                    <option value="{{$categorynew->id}}">{{$categorynew->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 
