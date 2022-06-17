@@ -16,6 +16,10 @@ class News extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function category_news(){
+        return $this->belongsTo(CategoryNew::class);
+    }
+
     public function likes(){
         return $this->hasMany(Like::class);
     }
