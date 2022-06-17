@@ -72,6 +72,7 @@
                                 <tr>
                                     <td>{{ $new->id }}</td>
                                     <td>{{ $new->title }}
+
                                         <br>
                                         @if( $new->hot)
                                         <span class="badge badge-danger">Tin Tức HOT</span>
