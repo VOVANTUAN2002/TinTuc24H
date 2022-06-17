@@ -20,6 +20,7 @@ use App\Services\UserGroupService;
 
 
 use App\Repositories\Eloquent\AuthRepository;
+use App\Repositories\Eloquent\CategoryNewRepository;
 use App\Repositories\Interfaces\AuthInterface;
 use App\Services\AuthService;
 use App\Services\Interfaces\AuthServiceInterface;
@@ -39,9 +40,11 @@ use App\Repositories\Eloquent\CommentRepository;
 
 use App\Repositories\Interfaces\EmailInterface;
 use App\Repositories\Eloquent\EmailRepository;
+use App\Repositories\Interfaces\CategoryNewInterface;
+use App\Services\CategoryNewService;
 use App\Services\Interfaces\EmailServiceInterface;
 use App\Services\EmailService;
-
+use App\Services\Interfaces\CategoryNewServiceInterface;
 use App\Views\Composers\ProfileComposer;
 
 class AppServiceProvider extends ServiceProvider
@@ -71,17 +74,20 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(NewServiceInterface::class, NewService::class);
 
         //Auth
-        $this->app->singleton(AuthInterface::class,AuthRepository::class);
+        $this->app->singleton(AuthInterface::class, AuthRepository::class);
         $this->app->singleton(AuthServiceInterface::class, AuthService::class);
 
         //Comment
-        $this->app->singleton(CommentInterface::class,CommentRepository::class);
+        $this->app->singleton(CommentInterface::class, CommentRepository::class);
         $this->app->singleton(CommentServiceInterface::class, CommentService::class);
 
         //Email
-        $this->app->singleton(EmailInterface::class,EmailRepository::class);
+        $this->app->singleton(EmailInterface::class, EmailRepository::class);
         $this->app->singleton(EmailServiceInterface::class, EmailService::class);
 
+        //CategoryNew
+        $this->app->singleton(CategoryNewInterface::class, CategoryNewRepository::class);
+        $this->app->singleton(CategoryNewServiceInterface::class, CategoryNewService::class);
     }
 
     /**

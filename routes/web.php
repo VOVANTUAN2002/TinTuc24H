@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserGroupController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategorieController;
+use App\Http\Controllers\Admin\CategoryNewController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Frontend\DetailNewsController;
 use App\Http\Controllers\Admin\IndexController;
@@ -54,6 +55,7 @@ Route::group([
 
     Route::resource('news', NewsController::class);
     Route::resource('users', UserController::class);
+    Route::resource('categoryNews', CategoryNewController::class);
     Route::resource('comments', CommentController::class);
     Route::resource('email', EmailController::class);
     Route::resource('categories', CategorieController::class);
