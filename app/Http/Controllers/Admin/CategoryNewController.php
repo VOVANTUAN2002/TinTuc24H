@@ -1,13 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\CategoryNew;
 use App\Http\Requests\StoreCategoryNewRequest;
 use App\Http\Requests\UpdateCategoryNewRequest;
+use App\Services\Interfaces\NewServiceInterface;
 
 class CategoryNewController extends Controller
 {
+    protected $categoryNewService;
+
+    public function __construct(NewServiceInterface $categoryNewService)
+    {
+        $this->categoryNewService = $categoryNewService;
+    }
     /**
      * Display a listing of the resource.
      *

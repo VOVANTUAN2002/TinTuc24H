@@ -15,11 +15,12 @@ class CategoryNewRepository extends EloquentRepository implements CategoryNewInt
     }
     public function getAll($request)
     {
-        $categories = $this->model->select('*');
+        $categoryNew = $this->model->select('*');
         if (isset($request->name) && $request->name) {
             $name = $request->name;
-            $categories->where('name', 'LIKE', '%' . $name . '%');
+            $categoryNew->where('name', 'LIKE', '%' . $name . '%');
         }
-        return $categories->orderBy('id', 'desc')->paginate(5);
+        return $categoryNew->orderBy('id', 'desc')->paginate(5);
     }
+
 }

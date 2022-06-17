@@ -44,4 +44,5 @@ class CategoryNewService implements CategoryNewServiceInterface
         $this->categoryNewRepository->destroy($categoryNew);
         return $categoryNew;
     }
+    
 }
