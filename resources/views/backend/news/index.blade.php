@@ -63,7 +63,6 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Tên bài viết</th>
-                                    <th>Tin HOT</th>
                                     <th>Ngày tạo</th>
                                     <th>Chức năng</th>
                                 </tr>
@@ -72,8 +71,11 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $new->id }}</td>
-                                    <td>{{ $new->title }}</td>
-                                    <td>{{ $new->hot }}</td>
+                                    <td>{{ $new->title }}
+                                    @if( $new->hot)
+                                    <span class="badge badge-danger">Tin Tức HOT</span>
+                                    @endif
+                                    </td>
                                     <td>{{ $new->puplish_date }}</td>
                                     <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.edit',$new->id)}}" class="btn btn-sm btn-icon btn-dark"><i class="fas fa-pencil-alt"></i>

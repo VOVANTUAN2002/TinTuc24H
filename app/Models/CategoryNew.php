@@ -10,11 +10,11 @@ class CategoryNew extends Model
     use HasFactory;
     protected $table = 'news';
 
-    public function categories(){
-        return $this->belongsTo(Category::class,'categorie_id','id');
+    public function CategoryNews(){
+        return $this->belongsTo(Category::class,'category_new_id','id');
     }
 
     public function news(){
-        return $this->hasMany(News::class,'category_New','id');
+        return $this->hasMany(News::class);
     }
 }
