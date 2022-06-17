@@ -26,6 +26,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->hot = $request->hot;
         $object->puplish_date = $request->puplish_date;
         $object->user_id  = $request->user_id;
+        $object->category_new_id  = $request->category_new_id;
         if ($request->hasFile('image')) {
             $get_image          = $request->image;
             $path               = 'public/images';
@@ -56,6 +57,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->hot = $request->hot;
         $object->puplish_date = $request->puplish_date;
         $object->user_id  = $request->user_id;
+        $object->category_new_id  = $request->category_new_id;
         if ($request->hasFile('image')) {
             $get_image          = $request->image;
             $path               = 'storage/images';

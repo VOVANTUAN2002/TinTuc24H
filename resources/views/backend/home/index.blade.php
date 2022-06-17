@@ -19,12 +19,11 @@
                 <div class="row row-group m-0">
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
                         <div class="card-body">
-                            <h5 class="text-white mb-0">Tổng số bài viết đã đăng <span class="float-right"><i class="fa fa-newspaper-o"
-                                        ></i></span></h5>
+                            <h5 class="text-white mb-0">Tổng số bài viết đã đăng <span class="float-right"><i class="fa fa-newspaper-o"></i></span></h5>
                             {{-- <div class="progress my-3" style="height:3px;">
                                 <div class="progress-bar" style="width:55%"></div>
                             </div> --}}
-                            <p class="mb-0 text-white small-font">{{$new_count}} <span class="float-right"><i ></i></span></p>
+                            <p class="mb-0 text-white small-font">{{$new_count}} <span class="float-right"><i></i></span></p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
@@ -43,11 +42,9 @@
                     </div>
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
                         <div class="card-body">
-                            <h5 class="text-white mb-0">Số người dùng <span class="float-right"><i
-                                        class="fa fa-user"></i></span></h5>
+                            <h5 class="text-white mb-0">Số người dùng <span class="float-right"><i class="fa fa-user"></i></span></h5>
 
-                            <p class="mb-0 text-white small-font">{{$user_count}} <span class="float-right"><i
-                                       ></i></span></p>
+                            <p class="mb-0 text-white small-font">{{$user_count}} <span class="float-right"><i></i></span></p>
                         </div>
                     </div>
                 </div>
@@ -62,8 +59,11 @@
                         <div class="list-group-item">
                             <div class="list-group-item-body">
                                 <h5 class="card-title">
-                                <a href="{{route('news.edit',$new->id)}}">{{ $new->title }}</a>
+                                    <a href="{{route('news.edit',$new->id)}}">{{ $new->title }}</a>
                                 </h5>
+                                @if( $new->hot)
+                                <span class="badge badge-danger">Tin Tức HOT</span>
+                                @endif
                                 <p class="card-subtitle text-muted mb-1"> {{ $new->description }} </p>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                         <div class="list-group-item">
                             <div class="list-group-item-body">
                                 <h5 class="card-title">
-                                <a href="{{route('email.edit',$newletter->id)}}">{{ $newletter->id }}|&nbsp;{{ $newletter->email }}</a>
+                                    <a href="{{route('email.edit',$newletter->id)}}">{{ $newletter->id }}|&nbsp;{{ $newletter->email }}</a>
                                 </h5>
                             </div>
                         </div>
@@ -87,6 +87,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-</div>
-@endsection
+    @endsection
