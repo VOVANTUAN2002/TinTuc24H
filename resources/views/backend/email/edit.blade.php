@@ -22,7 +22,7 @@
                         {{-- <legend>Thông tin cơ bản</legend> --}}
                         <div class="form-group">
                             <label for="tf1">Tên Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Nhập tên loại nhóm" value="{{$newSletter->email }}">
+                            <input type="email" name="email" class="form-control" placeholder="Nhập tên loại nhóm" value="{{$newSletter->email }}">
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('email') }}</p>
                             @endif
