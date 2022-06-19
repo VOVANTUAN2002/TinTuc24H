@@ -28,7 +28,7 @@
           <span class=""></span>
           <span>Tin Tức</span>
         </a>
-      </li>
+      </li>  
       <li>
         <a href="{{ route('userGroups.index')}}">
           <i class="fa fa-id-badge"></i> <span>Nhóm Nhân Viên</span>
@@ -55,14 +55,9 @@
         </a>
       </li>
 
-
-      <li class="sidebar-header">LABELS</li>
-      <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
-      <li><a href="javaScript:void();"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
-      <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
-
     </ul>
 
    </div>
+   
    <!--End sidebar-wrapper-->
 

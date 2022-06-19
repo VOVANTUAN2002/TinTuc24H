@@ -20,7 +20,7 @@
                     <div class="card-body">
                         {{-- <legend>Thông tin cơ bản</legend> --}}
                         <div class="form-group">
-                            <label for="tf1">Tên Email</label> <input name="email" type="text" class="form-control" id="" placeholder="Nhập email"> <small id="" class="form-text text-muted"></small>
+                            <label for="tf1">Tên Email</label> <input name="email" type="email" class="form-control" id="" placeholder="Nhập email"> <small id="" class="form-text text-muted"></small>
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('email') }}</p>
                             @endif
