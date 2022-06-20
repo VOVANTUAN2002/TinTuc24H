@@ -63,9 +63,6 @@
                                                 <span class="tile tile-circle bg-danger"><span class="oi oi-eye"></span></span>
                                                 <span class="img-caption d-none">Image caption goes here</span>
                                             </a>
-                                            <div class="figure-action frmDeleteProduct">
-                                                <a href="javascript:;" data-id="{{ $new->id }}" class="btn btn-block btn-sm btn-primary btn-delete">Xóa</a>
-                                            </div>
                                         </div>
                                     </figure>
                                 </div>
