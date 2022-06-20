@@ -60,7 +60,6 @@
                                 <input type="radio" class="custom-control-input" name="gender" id="rd2" value="female">
                                 <label class="custom-control-label" for="rd2">Nữ</label>
                             </div>
-
                         </div>
                         <div class="form-group">
                             <label for="tf1">Ngày sinh <noscript></noscript></label>

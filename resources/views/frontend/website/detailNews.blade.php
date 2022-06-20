@@ -17,19 +17,24 @@
         <div class="single-news">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-7">
+                        <p>
+                            <h1 class="text-center" style="width:690px">{{ $new->title }}</h1>
+                         </p>
                         <div class="sn-img">
-                            <img src="{{$new->image}}" style="width: 700px; height: 700px" alt="">
+                            <img src="{{$new->image}}" style="width: 700px; height: 500px" alt="">
                         </div>
-                        <div class="sn-content">
-                            <h1><a href="">{{ $new->title }}</a></h1>
-                            <a class="sn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                        <div class="sn-content" style="width:650px">
+                            <h5 class="text-center">{{ $new->description }}</h5>
                             <p>
                                {{ $new->content}} 
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <a class="sn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                    <div class="col-md-3">
                         <div class="sidebar">
                             <div class="sidebar-widget">
                                 <h2><i class="fas fa-align-justify"></i>Loại Tin Tức</h2>
