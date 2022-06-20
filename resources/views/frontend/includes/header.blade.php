@@ -9,11 +9,9 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav m-auto">
                     <a href="{{ route('website.home')}}" class="nav-item nav-link active">Tin Tức</a>
-                    <a href="{{ route('website.home')}}" class="nav-item nav-link">Xã Hội</a>
-                    <a href="{{ route('website.home')}}" class="nav-item nav-link">Chính Trị</a>
-                    <a href="{{ route('website.home')}}" class="nav-item nav-link">Bóng Đá</a>
-                    <a href="{{ route('website.home')}}" class="nav-item nav-link">Giải Trí</a>
-                </div>
+                    @foreach($categories as $category)
+                    <a href=" {{ route('website.detailNews',$category->id)}}" class="nav-item nav-link">{{ $category->name }}</a>
+                    @endforeach
             </div>
         </nav>
     </div>

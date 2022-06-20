@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\SystemLogController;
+use App\Http\Controllers\Frontend\HeaderController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,13 +65,17 @@ Route::group([
     Route::resource('userGroups', UserGroupController::class);
     Route::resource('systemLogs', SystemLogController::class);
 });
-Route::get('/website', function () {
-    return view('frontend.home.index');
-})->name('website.home');
+// Route::get('/website', function () {
+//     return view('frontend.home.index');
+// })->name('website.home');
 // Route::get('/detailNews', function () {
 //     return view('frontend.home.detailNews');
 // })->name('website.detailNews');
-Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
+// Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
+Route::get('/home', [HomeController::class, 'index'])->name('website.home');
+Route::get('/header', [HomeController::class, 'header'])->name('website.header');
+Route::get('/detailNews/{id}', [HomeController::class, 'show'])->name('website.detailNews');
+
 
 Route::get('administrator/login', [AuthController::class, 'login'])->name('login');
 Route::post('administrator/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');

@@ -8,16 +8,15 @@ use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
 
-class DetailNewsController extends Controller
+class HomeController extends Controller
 {
     protected $newsService;
-    protected $categorieService;
-    protected $usersService;
 
-    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService,CategorieServiceInterface $categorieService)
+    protected $categorieService;
+
+    public function __construct(NewServiceInterface $newsService, CategorieServiceInterface $categorieService)
     {
         $this->newsService = $newsService;
-        $this->usersService = $usersService;
         $this->categorieService = $categorieService;
 
     }
@@ -26,12 +25,26 @@ class DetailNewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index()
+    public function index(Request $request)
     {
-
-
+        $news = $this->newsService->getAll($request);
+        $categories = $this->categorieService->getAll($request);
+        $params = [
+            "news" => $news,
+            "categories" => $categories,
+        ];
+        return view('frontend.home.index', $params);
     }
+
+    public function header(Request $request)
+    {
+        $categories = $this->categorieService->getAll($request);
+        $params = [
+            "categories" => $categories,
+        ];
+        return view('frontend.includes.header', $params);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

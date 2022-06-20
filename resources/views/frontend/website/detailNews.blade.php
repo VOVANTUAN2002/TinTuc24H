@@ -1,7 +1,6 @@
 @extends('frontend.layouts.master')
 @section('content')
         <!-- Breadcrumb Start -->
-        @foreach($news as $new)
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
@@ -30,7 +29,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="sidebar">
                             <div class="sidebar-widget">
@@ -89,7 +87,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+
         <!-- Single News End-->
         
 
