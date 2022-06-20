@@ -106,7 +106,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Business</h2>
+                <h2><i class="fas fa-align-justify"></i>Việc kinh doanh</h2>
                 <div class="row cn-slider">
                     <div class="col-md-6">
                         <div class="cn-img">
@@ -135,7 +135,7 @@
                             <img src="img/cat-news-9.jpg" />
                             <div class="cn-content">
                                 <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-03-2020</a>
                                     <a class="cn-title" href="">Integer non nunc nec nulla aliquet</a>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Entertainment</h2>
+                <h2><i class="fas fa-align-justify"></i>Giải trí</h2>
                 <div class="row cn-slider">
                     <div class="col-md-6">
                         <div class="cn-img">

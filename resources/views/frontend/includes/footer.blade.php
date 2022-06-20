@@ -52,7 +52,7 @@
                                 Chọn từ nhiều định dạng quảng cáo và quảng cáo trên mạng chuyên nghiệp lớn nhất thế giới. Quảng cáo cuộc trò chuyện trên LinkedIn cho phép bạn tương tác với khán giả của mình theo cách cá nhân hơn. Tạo một quảng cáo trong vài phút.
                                 </p>
                                 <form>
-                                    <input class="form-control" type="email" placeholder="Your email here">
+                                    <input class="form-control" type="email" placeholder="Email của bạn ở đây">
                                     <button class="btn">Nộp</button>
                                 </form>
                             </div>
