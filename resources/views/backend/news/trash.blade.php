@@ -43,20 +43,25 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Tên Tin</th>
-                                    <th>Nội dung</th>
-                                    <th>Hot</th>
-                                    <th>Ngày tạo</th>
-                                    <th>Chức năng</th>
                                 </tr>
                             </thead>
                             @foreach($news as $new)
                             <tbody>
                                 <tr>
                                     <td>{{ $new->id }}</td>
-                                    <td>{{ $new->title }}</td>
-                                    <td>{{ $new->content }}</td>
-                                    <td>{{ $new->hot }}</td>
-                                    <td>{{ $new->puplish_date }}</td>
+                                    <td>{{ $new->title }}
+                                    <br>
+                                        @if( $new->hot)
+                                        <span class="badge badge-danger">Tin Tức HOT</span>
+                                        @endif
+                                        @if( $new->puplish_date)
+                                        <span class="badge badge-warning">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
+                                        @endif
+                                        @if( $new->status == 'show')
+                                        <span class="badge badge-info">Trạng Thái: {{ $new->status }}</span>
+                                        @endif
+                                        </br>
+                                    </td>
                                     <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.restore',$new->id)}}"
                                         class="btn btn-sm btn-icon btn-dark"><i class="fa fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
