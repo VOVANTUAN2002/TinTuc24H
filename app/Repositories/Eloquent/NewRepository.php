@@ -60,7 +60,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->category_new_id  = $request->category_new_id;
         if ($request->hasFile('image')) {
             $get_image          = $request->image;
-            $path               = 'storage/images';
+            $path               = 'public/images';
             $get_name_image     = $get_image->getClientOriginalName();
             $name_image         = current(explode('.', $get_name_image));
             $new_image          = $name_image . time() . '.' . $get_image->getClientOriginalExtension();
