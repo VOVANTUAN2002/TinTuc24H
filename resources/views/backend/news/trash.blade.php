@@ -59,7 +59,7 @@
                                     <td>{{ $new->puplish_date }}</td>
                                     <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.restore',$new->id)}}"
-                                        class="btn btn-sm btn-icon btn-dark"><i class="fa fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
+                                        class="btn btn-sm btn-icon btn-dark"><i class="fas fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
                                         <form action="{{ route('news.force_destroy',$new->id )}}" style="display:inline" method="post">
                                             <button onclick="return confirm('Xóa vĩnh viễn {{$new->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
