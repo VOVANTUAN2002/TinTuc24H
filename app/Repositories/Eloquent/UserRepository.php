@@ -89,6 +89,7 @@ class UserRepository extends EloquentRepository implements UserInterface
             $storedPath = $avatar->move('avatars', $avatar->getClientOriginalName());
             $object->avatar           = 'upload/' . $avatar->getClientOriginalName();
         }
+        
         $object->save();
         $object->active = 'update';
 
@@ -99,7 +100,7 @@ class UserRepository extends EloquentRepository implements UserInterface
     public function destroy($id)
     {
         $object = $this->model->find($id)->first();
-        
+
         $object->delete();
         $object->active = 'destroy';
         event(new UserSubmitEvent($object));
