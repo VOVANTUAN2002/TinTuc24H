@@ -309,8 +309,14 @@ class DatabaseSeeder extends Seeder
 
         for( $i=0; $i < 5;$i++ ){
             $comment = new Comment();
-            $comment->content = "Bài hay quá";
+            $comment->content = "Xuất sắc";
             $comment->startus = "Đã duyệt";
+            $comment->new_id = rand(1,4);
+            $comment ->save();
+
+            $comment = new Comment();
+            $comment->content = "Dở quá";
+            $comment->startus = "Chờ Duyệt";
             $comment->new_id = rand(1,4);
             $comment ->save();
         }
@@ -320,7 +326,7 @@ class DatabaseSeeder extends Seeder
         for( $i=0; $i <10;$i++){
             $this->faker = Faker::create();
             $Newsletter = new Newsletter();
-            $Newsletter->email = $this->faker->name.'@gmail.com';
+            $Newsletter->email = $this->faker->email;
             $Newsletter->save();
         }
     }

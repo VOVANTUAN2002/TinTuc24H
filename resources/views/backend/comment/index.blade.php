@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div style="float:right">
-                    {{-- {{ $categories->links() }} --}}
+                    {{ $comments->links() }}
                 </div>
 
             </div>
