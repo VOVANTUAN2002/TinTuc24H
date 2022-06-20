@@ -4,13 +4,17 @@ namespace Database\Seeders;
 
 use App\Models\Categorie;
 use App\Models\CategoryNew;
+use App\Models\Comment;
 use App\Models\News;
+use App\Models\Newsletter;
 use App\Models\User;
 use App\Models\UserGroup;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as Faker;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +32,9 @@ class DatabaseSeeder extends Seeder
         $this->importCategories();
         $this->importCategoryNew();
         $this->importNews();
-        
+        $this->importComment();
+        $this->importEmail();
+
     }
 
     public function importRoles()
@@ -211,7 +217,7 @@ class DatabaseSeeder extends Seeder
         $categoryNew->name = 'Âm Nhạc';
         $categoryNew->categorie_id = 4;
         $categoryNew->save();
-        
+
         $categoryNew = new CategoryNew();
         $categoryNew->id = 8;
         $categoryNew->name = 'Game';
@@ -297,5 +303,25 @@ class DatabaseSeeder extends Seeder
         $new->user_id = 1;
         $new->category_new_id = 8;
         $new->save();
+    }
+
+    public function importComment(){
+
+        for( $i=0; $i < 5;$i++ ){
+            $comment = new Comment();
+            $comment->content = "Bài hay quá";
+            $comment->startus = "Đã duyệt";
+            $comment->new_id = rand(1,4);
+            $comment ->save();
+        }
+    }
+
+    public function importEmail(){
+        for( $i=0; $i <10;$i++){
+            $this->faker = Faker::create();
+            $Newsletter = new Newsletter();
+            $Newsletter->email = $this->faker->name.'@gmail.com';
+            $Newsletter->save();
+        }
     }
 }
