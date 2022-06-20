@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Like;
 use App\Models\News;
 use App\Models\Newsletter;
 use App\Models\User;
@@ -16,7 +17,7 @@ class IndexController extends Controller
     {
         $new_count = News::count();
         $comment_count = Comment::count();
-        $like_count = Comment::count();
+        $like_count = Like::count();
         $user_count = User::count();
         $newletters = Newsletter::take(5)->orderBy('id','DESC')->get();
         $news = News::take(5)->orderBy('id','DESC')->get();
