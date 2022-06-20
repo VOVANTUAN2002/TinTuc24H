@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
 <!-- Top News Start-->
+
 <div class="top-news">
     <div class="container-fluid">
         <div class="row">
@@ -70,88 +71,33 @@
 
 
 <!-- Category News Start-->
+
 <div class="cat-news">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Sports</h2>
-                <div class="row cn-slider">
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-1.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Cras sed semper puru vitae lobortis velit</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-2.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Vestibulum ante ipsum primis</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-3.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Sed quis convallis lacus</a>
-                                </div>
+            @foreach($news as $new)
+            <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+                <div class="single-product">
+                    <div class="product-img">
+                        <a href="{{ route('website.detailNews',$new->id )}}">
+                            <img class="default-img" src="{{$new->image}}" alt="#" style='width:400px; height: 300px'>
+                        </a>
+                        <div class="cn-content">
+                            <div class="cn-content-inner">
+                                <a class="cn-date" href=""><i class="far fa-clock"></i>{{ $new->puplish_date}}</a>
+                                <a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
+                                    $new->title}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Technology</h2>
-                <div class="row cn-slider">
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-4.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Vivamus vel felis nec magna</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-5.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Phasellus vitae fermentum est</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-6.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Aenean ut varius dui</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
+</div>
+
 <!-- Category News End-->
 
 
@@ -238,6 +184,7 @@
         </div>
     </div>
 </div>
+
 <!-- Category News End-->
 
 

@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2022/01/10';
         $user->user_group_id  = '1';
         $user->gender = 'Nam';
-        $user->avatar = 'https://haycafe.vn/wp-content/uploads/2021/12/Anh-avatar-nam-cute-deo-khau-trang.jpg';
+        $user->avatar = 'upload/admin14.png';
         $user->save();
 
         $user = new User();
@@ -92,7 +92,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2021/10/29';
         $user->user_group_id  = '3';
         $user->gender = 'Nam';
-        $user->avatar = 'https://haycafe.vn/wp-content/uploads/2021/12/Hinh-anh-avatar-nam-cool-ngau-dep.jpg';
+        $user->avatar = 'upload/admin13.png';
         $user->save();
 
         $user = new User();
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2021/10/29';
         $user->user_group_id  = '1';
         $user->gender = 'Nam';
-        $user->avatar = 'https://pdp.edu.vn/wp-content/uploads/2021/05/hinh-anh-avatar-nam-dep-chat.jpg';
+        $user->avatar ='upload/admin10.png';
         $user->save();
 
         $user = new User();
