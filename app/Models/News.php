@@ -14,8 +14,9 @@ class News extends Model
     protected $table = 'news';
 
     public function users(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id','id');
     }
+
 
     public function category_news(){
         return $this->belongsTo(CategoryNew::class,'categorie_id','id');

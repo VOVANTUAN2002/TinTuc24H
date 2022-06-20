@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\Interfaces\CategoryNewInterface;
 use App\Services\Interfaces\CategorieServiceInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
@@ -14,11 +15,12 @@ class DetailNewsController extends Controller
     protected $categorieService;
     protected $usersService;
 
-    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService,CategorieServiceInterface $categorieService)
+    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService,CategorieServiceInterface $categorieService,CategoryNewInterface $categoryNewService)
     {
         $this->newsService = $newsService;
         $this->usersService = $usersService;
         $this->categorieService = $categorieService;
+        $this->categoryNewService = $categoryNewService;
 
     }
     /**
@@ -61,11 +63,13 @@ class DetailNewsController extends Controller
      */
     public function show(Request $request,$id)
     {
+        $categoryNews = $this->categoryNewService->getAll($request);
         $new = $this->newsService->findById($id);
         $categories = $this->categorieService->getAll($request);
         $params = [
             "new" => $new,
             "categories" => $categories,
+            "categoryNews" => $categoryNews,
         ];
         return view('frontend.website.detailNews', $params);
     }
