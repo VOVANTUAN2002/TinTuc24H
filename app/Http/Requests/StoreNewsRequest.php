@@ -26,7 +26,6 @@ class StoreNewsRequest extends FormRequest
         return [
             'title'  => 'required',
             'description'  => 'required',
-            'image'  => 'required',
             'content'  => 'required',
             'status'  => 'required',
             'puplish_date'  => 'required'
@@ -37,7 +36,6 @@ class StoreNewsRequest extends FormRequest
         return [
             'title.required'  => 'Trường này là bắt buộc',
             'description.required'  => 'Trường này là bắt buộc',
-            'image.required'  => 'Trường này là bắt buộc',
             'content.required'  => 'Trường này là bắt buộc',
             'status.required'  => 'Trường này là bắt buộc',
             'puplish_date.required'  => 'Trường này là bắt buộc'
