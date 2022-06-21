@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('view')->nullable();
             $table->string('hot')->nullable();
             $table->date('puplish_date');
-
             $table->timestamps();
         });
     }
