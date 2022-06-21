@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('image');
             $table->text('content');
             $table->string('status');
-            $table->string('view')->default(0);
-            $table->string('hot')->default(0);
+            $table->string('view')->nullable();
+            $table->string('hot')->nullable();
             $table->date('puplish_date');
 
             $table->timestamps();
