@@ -6,12 +6,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
         <div class="mb-3">
-          <label class="form-label">Tên Tin Tức</label>
+          <label class="form-label">Tên Loại Tin Tức</label>
           <input type="text" name="name" class="form-control">
         </div>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Trở về</button>
