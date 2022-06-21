@@ -125,10 +125,10 @@ class NewsController extends Controller
     {
         try {
             $news = $this->newsService->update($request, $id);
-            return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . ' thành công ');
+            return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $news->title . ' ' . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('news.index')->with('success', ' Sửa  tiêu đề ' . $news->title . ' ' . 'không thành công ');
+            return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $news->title . ' ' . 'không thành công ');
         }
     }
 
@@ -145,10 +145,10 @@ class NewsController extends Controller
     {
         try {
             $news = $this->newsService->destroy($id);
-            return redirect()->route('news.index')->with('success', ' Xóa tiêu đề ' . $news->name . ' thành công ');
+            return redirect()->route('news.index')->with('success', ' Xóa Tin tức ' . $news->name . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('news.index')->with('error', 'Xóa' . 'tiêu đề' . $news->name . ' ' .  'không thành công');
+            return redirect()->route('news.index')->with('error', 'Xóa' . 'Tin tức' . $news->name . ' ' .  'không thành công');
         }
     }
 
