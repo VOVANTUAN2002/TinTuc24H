@@ -310,13 +310,13 @@ class DatabaseSeeder extends Seeder
         for( $i=0; $i < 5;$i++ ){
             $comment = new Comment();
             $comment->content = "Xuất sắc";
-            $comment->startus = "Đã Duyệt";
+            $comment->startus = "approved";
             $comment->new_id = rand(1,4);
             $comment ->save();
 
             $comment = new Comment();
             $comment->content = "Dở quá";
-            $comment->startus = "Chờ Duyệt";
+            $comment->startus = "pending";
             $comment->new_id = rand(1,4);
             $comment ->save();
         }

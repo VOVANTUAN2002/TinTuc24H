@@ -30,20 +30,16 @@
                         </div>
                         <div class="form-group">
                             <select class="form-select form-control" name="startus">
-                                <option value="Đã Duyệt"@selected( $comments->startus == 'Đã Duyệt') >
-                                    Đã Duyệt
-                                </option>
-                                <option value="Chờ Duyệt"@selected( $comments->startus == 'Chờ Duyệt') >
-                                    Chờ Duyệt
-                                </option>
+                                <option value="approved" @selected( $comments->startus == 'approved') >Đã Duyệt</option>
+                                <option value="pending" @selected( $comments->startus == 'pending') >Chờ Duyệt</option>
                             </select>
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('startus') }}</p>
                             @endif
                         </div>
                         <div class="form-actions">
-                            <button class="btn btn-dark float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                            <button style="float: right;" class="btn btn-primary ml-auto" type="submit">Lưu<noscript></noscript> </button>
+                            <a class="btn btn-secondary float-right " href="{{route('comments.index')}}">Hủy</a>
+                            <button style="float: right;" class="btn btn-primary ml-auto mr-2" type="submit">Lưu<noscript></noscript> </button>
                         </div>
                     </div>
                 </div>

@@ -11,17 +11,6 @@
         @if ($errors->any())
         <p style="color:red">{{ $errors->first('email') }}</p>
         @endif
-        {{-- <div class="position-relative has-icon-right">
-            <input
-                type="text"
-                id="exampleInputUsername"
-                class="form-control input-shadow"
-                placeholder="Enter Username"
-            />
-            <div class="form-control-position">
-                <i class="icon-user"></i>
-            </div>
-        </div> --}}
     </div>
     <div class="form-group">
         <label for="inputPassword">Mật khẩu</label>
@@ -30,28 +19,6 @@
         <p style="color:red">{{ $errors->first('password') }}</p>
         @endif
     </div>
-    {{-- <div class="form-row">
-        <div class="form-group col-6">
-            <div class="icheck-material-white">
-                <input type="checkbox" id="user-checkbox"  />
-                <label for="user-checkbox">Remember me</label>
-            </div>
-        </div>
-    </div> --}}
     <button type="submit" class="btn btn-light btn-block">Sign In</button>
-    {{-- <div class="form-row mt-4">
-        <div class="form-group mb-0 col-6">
-            <button type="button" class="btn btn-light btn-block">
-                <i class="fa fa-facebook-square"></i> Facebook
-            </button>
-        </div>
-        <div class="form-group mb-0 col-6 text-right">
-            <button type="button" class="btn btn-light btn-block">
-                <i class="fa fa-twitter-square"></i> Twitter
-            </button>
-        </div>
-        checked=""
-    </div> --}}
-
 </form>
 @endsection

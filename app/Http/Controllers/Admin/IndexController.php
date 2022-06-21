@@ -16,7 +16,7 @@ class IndexController extends Controller
     public function index()
     {
         $new_count = News::where('status', '=', 'show')->count();
-        $comment_count = Comment::where('startus', '=', 'Chờ Duyệt')->count();
+        $comment_count = Comment::where('startus', '=', 'pending')->count();
         $like_count = Like::count();
         $user_count = User::count();
         $newletters = Newsletter::take(5)->orderBy('id','DESC')->get();
