@@ -44,7 +44,7 @@
                         <div class="sn-content" style="width:650px">
 
                             <p style ="text-align: justify;color: #28262c; font-size: 1.125rem; font-weight: normal;line-height: 1.6em;text-align: justify;">
-                               {{ $new->content}}
+                               {!!$new->content!!}
                             </p>
                         </div>
                     </div>

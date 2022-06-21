@@ -125,6 +125,13 @@
     <!-- Index js -->
     <script src="{{asset('assets/js/index.js')}}"></script>
 
+    <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace('ckeditor1');
+        CKEDITOR.replace('ckeditor2');
+    </script>
+
 
 </body>
 
