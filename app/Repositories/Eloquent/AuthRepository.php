@@ -11,7 +11,7 @@ class AuthRepository extends EloquentRepository implements AuthInterface
 {
 
     public function getModel()
-    {
+    {  
         return User::class;
     }
 
