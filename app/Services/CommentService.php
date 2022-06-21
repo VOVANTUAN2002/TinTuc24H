@@ -32,9 +32,7 @@ class CommentService implements CommentServiceInterface
 
     public function update($request, $id)
     {
-        $comment = $this->commentRepository->findById($id);
-        $this->commentRepository->update($request, $comment);
-        return $comment;
+        return $this->commentRepository->update($request, $id);
     }
 
     public function destroy($id)
