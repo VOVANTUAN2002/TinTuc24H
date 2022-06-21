@@ -24,7 +24,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->status   = $request->status;
         $object->view  = $request->view;
         $object->hot = $request->hot;
-        $object->puplish_date = date('d/m/Y', strtotime($object->puplish_date));
+        $object->puplish_date = $request->puplish_date;
         $object->user_id  = $request->user_id;
         $object->category_new_id  = $request->category_new_id;
         if ($request->hasFile('image')) {

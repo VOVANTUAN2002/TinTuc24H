@@ -24,7 +24,6 @@ class NewsController extends Controller
     {
         $this->newsService = $newsService;
         $this->usersService = $usersService;
-
     }
     /**
      * Display a listing of the resource.
@@ -39,7 +38,6 @@ class NewsController extends Controller
             "news" => $news,
         ];
         return view('backend.news.index', $params);
-
     }
 
     /**
@@ -67,15 +65,13 @@ class NewsController extends Controller
      */
     public function store(StoreNewsRequest $request)
     {
-
         try {
             $news = $this->newsService->create($request);
             return redirect()->route('news.index')->with('success', ' Thêm tin tức ' . $request->title . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('news.index')->with('error', ' Thêm tin tức ' . $request->title . 'không thành công ');
+            return redirect()->route(' news.index')->with('error', ' Thêm tin tức ' . $request->title . 'không thành công ');
         }
-
     }
 
     /**
@@ -86,7 +82,6 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-
     }
 
     /**
@@ -100,7 +95,7 @@ class NewsController extends Controller
     {
         $users = $this->usersService->getAll($id);
         $new = $this->newsService->findById($id);
-        $news = News::select('id','image')->get();
+        $news = News::select('id', 'image')->get();
         $categorynews = CategoryNew::all();
         $params = [
             'users' => $users,
@@ -141,7 +136,7 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy( $id)
+    public function destroy($id)
     {
         try {
             $news = $this->newsService->destroy($id);
@@ -161,7 +156,7 @@ class NewsController extends Controller
             'news' => $news,
             // 'userGroup'=>$userGroup
         ];
-        return view('backend.news.trash',$params);
+        return view('backend.news.trash', $params);
     }
 
     public function restore($id)
@@ -185,8 +180,5 @@ class NewsController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('news.trash')->with('error', 'Xóa' . ' ' . $news->name . ' ' .  'không thành công');
         }
-        
     }
 }
-
-
