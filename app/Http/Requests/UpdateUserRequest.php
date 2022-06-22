@@ -26,7 +26,6 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required',
-            'avatar' => 'required',
             'phone' => 'required',
             'email' => 'required',
             'gender' => 'required',
@@ -38,7 +37,6 @@ class UpdateUserRequest extends FormRequest
         return [
             'name.required' => 'Vui lòng nhập tên nhân viên',
             'address.required' => 'Vui lòng nhập địa chỉ',
-            'avatar.required' => 'Vui lòng nhập ảnh ',
             'phone.required' => 'Vui lòng nhập số điện thoại',
             'email.required' => 'Vui lòng nhập Email ',
             'gender.required' => 'Vui lòng nhập giới tính',

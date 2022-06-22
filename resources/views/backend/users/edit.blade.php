@@ -85,7 +85,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label>Hình ảnh nhân viên</label>
-                                    <input type="file" style="border:none" name="avatar" value="{{$item->avatar}}"
+                                    <input type="file" style="border:none" name="avatar" value=""
                                         readonly class="form-control">
                                 </div>
                                 <div class="card card-figure">
