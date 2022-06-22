@@ -31,7 +31,7 @@
                             </a>
                         </div>
                         <div class ="dtepub" style="color: #89888b;font-size: .875rem; font-weight: 300;line-height: 20px;white-space: nowrap;">
-                             <i class="far fa-clock">05-Feb-2020</i>
+                             <i class="far fa-clock">{{ $new->puplish_date}}</i>
                         </div>
                         <div>
                             <h5 class="dark" style="color: #626165;font-size: 1.25rem;font-weight: 700;line-height: 1.6em;">
@@ -59,15 +59,6 @@
                                     </ul>
                                     @endforeach
                                 </div>
-                            </div>
-
-                            <div class="sidebar-widget">
-                                <h2><i class="fas fa-align-justify"></i>Tags</h2>
-                                @foreach($categoryNews as $categoryNew)
-                                <div class="tags">
-                                    <a href="">{{$categoryNew->name}}</a>
-                                </div>
-                                @endforeach
                             </div>
 
                             <div class="sidebar-widget">
