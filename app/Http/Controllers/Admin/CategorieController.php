@@ -52,10 +52,10 @@ class CategorieController extends Controller
     {
         try {
             $categories = $this->categorieService->create($request->all());
-            return redirect()->route('categories.index')->with('success', ' Thêm sản phẩm ' . $categories->name . ' thành công ');
+            return redirect()->route('categories.index')->with('success', ' Thêm loại tin tức ' . $categories->name . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('categories.index')->with('success', ' Thêm sản phẩm ' . $categories->name . 'không thành công ');
+            return redirect()->route('categories.index')->with('success', ' Thêm loại tin tức ' . $categories->name . 'không thành công ');
         }
     }
 
@@ -96,10 +96,10 @@ class CategorieController extends Controller
     {
         try {
             $oldCustomer = $this->categorieService->update($request->all(), $id);
-            return redirect()->route('categories.index')->with('success', ' Sửa sản phẩm ' . $oldCustomer->name . ' thành công ');
+            return redirect()->route('categories.index')->with('success', ' Sửa loại tin tin tức' . $oldCustomer->name . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('categories.index')->with('success', ' Sửa sản phẩm ' . $oldCustomer->name . 'không thành công ');
+            return redirect()->route('categories.index')->with('success', ' Sửa loại tin tin tức' . $oldCustomer->name . 'không thành công ');
         }
     }
 
@@ -113,10 +113,10 @@ class CategorieController extends Controller
     {
         try {
             $categorie = $this->categorieService->destroy($id);
-            return redirect()->route('categories.index')->with('success', ' Xóa sản phẩm ' . $categorie->name . ' thành công ');
+            return redirect()->route('categories.index')->with('success', ' Xóa loại tin tức ' . $categorie->name . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('categories.index')->with('error', 'Xóa' . ' ' . $categorie->name . ' ' .  'không thành công');
+            return redirect()->route('categories.index')->with('error', 'Xóa loại tin tức' . ' ' . $categorie->name . ' ' .  'không thành công');
         }
     }
 }
