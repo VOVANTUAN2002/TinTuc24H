@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateComment;
+use App\Models\Comment;
 use App\Services\Interfaces\CommentServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -58,6 +59,15 @@ class CommentController extends Controller{
             Log::error($e->getMessage());
             return redirect()->route('comments.index')->with('error', 'Xóa bình luận không thành công');
         }
+    }
+
+    public function approved(Request $request){
+
+        $data = $request->all();
+        
+        $comment = Comment::find($data['comment_id']);
+        $comment->startus = $data['comment_status'];
+        $comment->save();
     }
 
 }
