@@ -70,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tf1">Nội dung</label>
-                            <textarea id="summernote" name="content" type="text" class="form-control" placeholder="Nhập tên Nội dung">{{ $new->content}}</textarea>
+                            <textarea id="ckeditor2" name="content" type="text" class="form-control" placeholder="Nhập tên Nội dung">{{ $new->content}}</textarea>
                             <small class="form-text text-muted"></small>
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('content') }}</p>
