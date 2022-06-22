@@ -124,7 +124,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2022/02/12';
         $user->user_group_id  = '4';
         $user->gender = 'Nam';
-        $user->avatar = 'https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png';
+        $user->avatar = 'upload/admin22.png';
         $user->save();
 
         $user = new User();
@@ -137,7 +137,7 @@ class DatabaseSeeder extends Seeder
         $user->start_day = '2022/02/12';
         $user->user_group_id  = '4';
         $user->gender = 'Nam';
-        $user->avatar = 'https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png';
+        $user->avatar = 'upload/admin21.png';
         $user->save();
     }
 

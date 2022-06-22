@@ -22,20 +22,6 @@
         </div>
 
         <div class="card-body">
-            <div class="row mb-2">
-                <div class="col">
-                    <form action="" method="GET" id="form-search" class="form-dark">
-                        <div class="input-group input-group-alt">
-                            <div class="input-group-prepend">
-                                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                   Tìm nâng cao
-                                  </button>
-                            </div>
-                        </div>
-                        @include('backend.users.modals.modalSearch')
-                    </form>
-                </div>
-            </div>
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
