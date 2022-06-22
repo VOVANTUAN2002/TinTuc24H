@@ -10,9 +10,11 @@ class Categorie extends Model
     use HasFactory;
 
     protected $table = 'categories';
-    protected $fillable = ['id','name'];
+    protected $fillable = ['id', 'name'];
 
-    public function Categories(){
-        return $this->hasMany(CategoryNew::class);
+    public function news()
+    {
+        return $this->hasMany(News::class);
     }
+
 }

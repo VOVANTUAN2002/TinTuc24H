@@ -89,9 +89,9 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label>Loại Tin Tức</label>
-                                <select type="text" class="form-control" placeholder="danh mục" name="category_new_id" value="{{ $new->category_new_id}}">
-                                    @foreach($categorynews as $categorynew)
-                                    <option value="{{$categorynew->id}}">{{$categorynew->name}}</option>
+                                <select type="text" class="form-control" placeholder="danh mục" name="category_id" value="{{ $new->category_id}}">
+                                    @foreach($categories as $categoriy)
+                                    <option value="{{$categoriy->id}}">{{$categoriy->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -110,8 +110,8 @@
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
                                 <select name="status" class="form-control" value="{{ $new->status }}">
-                                    <option value="Ẩn" @selected(old('status')=='Ẩn' )>Ẩn</option>
-                                    <option value="Hiện" @selected(old('status')=='Hiện' )>Hiện</option>
+                                    <option value="Ẩn" @selected($new->status == 'Ẩn') >Ẩn</option>
+                                    <option value="Hiện" @selected($new->status == 'Hiện') >Hiện</option>
                                 </select>
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('status') }}</p>

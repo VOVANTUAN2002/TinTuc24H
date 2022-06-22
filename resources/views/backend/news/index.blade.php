@@ -63,7 +63,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Tên bài viết</th>
-                                    <th>Chức năng</th>
+                                    <th>Thể Loại Tin Tức</th>
+                                    <th>Chức Năng</th>
+
                                 </tr>
                             </thead>
                             @foreach($news as $new)
@@ -83,7 +85,8 @@
                                         @endif
                                         </br>
                                     </td>
-                                    <td>
+                                    <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>
+                                        <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.edit',$new->id)}}" class="btn btn-sm btn-icon btn-dark"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
                                         <form action="{{ route('news.destroy',$new->id )}}" style="display:inline" method="post">

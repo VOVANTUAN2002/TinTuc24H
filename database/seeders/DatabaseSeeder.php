@@ -30,7 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->importUser();
         $this->importUserGroupRoles();
         $this->importCategories();
-        $this->importCategoryNew();
         $this->importNews();
         $this->importComment();
         $this->importEmail();
@@ -174,58 +173,6 @@ class DatabaseSeeder extends Seeder
         $category->name = 'Giải Trí';
         $category->save();
     }
-    public function importCategoryNew()
-    {
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 1;
-        $categoryNew->name = 'Bóng Đá Việt Nam';
-        $categoryNew->categorie_id = 1;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 2;
-        $categoryNew->name = 'Bóng Đá Quốc Tế';
-        $categoryNew->categorie_id = 1;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 3;
-        $categoryNew->name = 'Giao thông';
-        $categoryNew->categorie_id = 2;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 4;
-        $categoryNew->name = 'Tệ Nạn';
-        $categoryNew->categorie_id = 2;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 5;
-        $categoryNew->name = 'Chiến Tranh';
-        $categoryNew->categorie_id = 3;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 6;
-        $categoryNew->name = 'Nhà Nước';
-        $categoryNew->categorie_id = 3;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 7;
-        $categoryNew->name = 'Âm Nhạc';
-        $categoryNew->categorie_id = 4;
-        $categoryNew->save();
-
-        $categoryNew = new CategoryNew();
-        $categoryNew->id = 8;
-        $categoryNew->name = 'Game';
-        $categoryNew->categorie_id = 4;
-        $categoryNew->save();
-
-
-    }
 
     public function importNews()
     {
@@ -243,7 +190,7 @@ class DatabaseSeeder extends Seeder
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
-        $new->category_new_id = 3;
+        $new->category_id = 3;
         $new->save();
 
 
@@ -264,7 +211,7 @@ class DatabaseSeeder extends Seeder
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
-        $new->category_new_id = 3;
+        $new->category_id = 3;
         $new->save();
 
 
@@ -285,7 +232,7 @@ class DatabaseSeeder extends Seeder
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
-        $new->category_new_id = 2;
+        $new->category_id = 2;
         $new->save();
 
 
@@ -301,7 +248,7 @@ class DatabaseSeeder extends Seeder
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
-        $new->category_new_id = 8;
+        $new->category_id = 4;
         $new->save();
     }
 

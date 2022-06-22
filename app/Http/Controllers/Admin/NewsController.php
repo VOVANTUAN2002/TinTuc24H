@@ -11,19 +11,22 @@ use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Services\Interfaces\CategorieServiceInterface;
 use Illuminate\Support\Facades\Log;
 
 
 class NewsController extends Controller
 {
     protected $newsService;
-
+    protected $categorieService;
     protected $usersService;
 
-    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService)
+    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService,CategorieServiceInterface $categorieService)
     {
         $this->newsService = $newsService;
         $this->usersService = $usersService;
+        $this->categorieService = $categorieService;
+
     }
     /**
      * Display a listing of the resource.
@@ -34,8 +37,10 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         $news = $this->newsService->getAll($request);
+        $categories = $this->categorieService->getAll($request);
         $params = [
             "news" => $news,
+            "categories" => $categories,
         ];
         return view('backend.news.index', $params);
     }
@@ -49,10 +54,10 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         $users = $this->usersService->getAll($request);
-        $categorynews = CategoryNew::all();
+        $categories = $this->categorieService->getAll($request);
         $params = [
             'users' => $users,
-            'categorynews' => $categorynews
+            'categories' => $categories
         ];
         return view('backend.news.create', $params);
     }
@@ -96,10 +101,11 @@ class NewsController extends Controller
         $users = $this->usersService->getAll($id);
         $new = $this->newsService->findById($id);
         $news = News::select('id', 'image')->get();
-        $categorynews = CategoryNew::all();
+        $categories = $this->categorieService->getAll($id);
+
         $params = [
             'users' => $users,
-            'categorynews' => $categorynews,
+            'categories' => $categories,
             'news' => $news,
             'new' => $new
         ];
@@ -120,10 +126,10 @@ class NewsController extends Controller
     {
         try {
             $news = $this->newsService->update($request, $id);
-            return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $news->title . ' ' . ' thành công ');
+            return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $request->title . ' ' . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $news->title . ' ' . 'không thành công ');
+            return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $request->title . ' ' . 'không thành công ');
         }
     }
 

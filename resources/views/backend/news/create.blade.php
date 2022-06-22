@@ -73,9 +73,9 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label>Loại Tin Tức</label>
-                                <select type="text" class="form-control" placeholder="danh mục" name="category_new_id">
-                                    @foreach($categorynews as $categorynew)
-                                    <option value="{{$categorynew->id}}">{{$categorynew->name}}</option>
+                                <select type="text" class="form-control" placeholder="danh mục" name="category_id">
+                                    @foreach($categories as $categoriy)
+                                    <option value="{{$categoriy->id}}">{{$categoriy->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -135,7 +135,6 @@
     $('.date').datepicker({
         format: 'mm/dd/yy'
     });
-
 </script>
 
 @endsection
