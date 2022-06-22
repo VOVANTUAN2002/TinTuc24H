@@ -23,7 +23,7 @@
           <span class=""></span>
           <span>Tin Tức</span>
         </a>
-      </li>  
+      </li>
       <li>
         <a href="{{ route('userGroups.index')}}">
           <i class="fa fa-id-badge"></i> <span>Nhóm Nhân Viên</span>
@@ -53,6 +53,6 @@
     </ul>
 
    </div>
-   
+
    <!--End sidebar-wrapper-->
 

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
-use App\Models\CategoryNew;
 use App\Services\Interfaces\NewServiceInterface;
 
 use App\Services\Interfaces\UserServiceInterface;

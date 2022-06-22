@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Interfaces\CategoryNewInterface;
 use App\Services\Interfaces\CategorieServiceInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
@@ -15,11 +14,10 @@ class HomeController extends Controller
 
     protected $categorieService;
 
-    public function __construct(NewServiceInterface $newsService, CategorieServiceInterface $categorieService,CategoryNewInterface $categoryNewService)
+    public function __construct(NewServiceInterface $newsService, CategorieServiceInterface $categorieService)
     {
         $this->newsService = $newsService;
         $this->categorieService = $categorieService;
-        $this->categoryNewService = $categoryNewService;
 
     }
     /**

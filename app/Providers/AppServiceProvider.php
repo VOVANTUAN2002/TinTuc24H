@@ -20,7 +20,6 @@ use App\Services\UserGroupService;
 
 
 use App\Repositories\Eloquent\AuthRepository;
-use App\Repositories\Eloquent\CategoryNewRepository;
 use App\Repositories\Interfaces\AuthInterface;
 use App\Services\AuthService;
 use App\Services\Interfaces\AuthServiceInterface;
@@ -41,12 +40,9 @@ use App\Repositories\Eloquent\CommentRepository;
 use App\Repositories\Interfaces\EmailInterface;
 use App\Repositories\Eloquent\EmailRepository;
 use App\Repositories\Eloquent\SystemLogRepository;
-use App\Repositories\Interfaces\CategoryNewInterface;
 use App\Repositories\Interfaces\SystemLogInterface;
-use App\Services\CategoryNewService;
 use App\Services\Interfaces\EmailServiceInterface;
 use App\Services\EmailService;
-use App\Services\Interfaces\CategoryNewServiceInterface;
 use App\Services\Interfaces\SystemLogServiceInterface;
 use App\Services\SystemLogService;
 use App\Views\Composers\ProfileComposer;

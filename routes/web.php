@@ -63,13 +63,13 @@ Route::group([
     Route::resource('userGroups', UserGroupController::class);
     Route::resource('systemLogs', SystemLogController::class);
 });
-// Route::get('/website', function () {
-//     return view('frontend.home.index');
-// })->name('website.home');
-// Route::get('/detailNews', function () {
-//     return view('frontend.home.detailNews');
-// })->name('website.detailNews');
-// Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
+Route::get('/website', function () {
+    return view('frontend.home.index');
+})->name('website.home');
+Route::get('/detailNews', function () {
+    return view('frontend.home.detailNews');
+})->name('website.detailNews');
+Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
 Route::get('/home', [HomeController::class, 'index'])->name('website.home');
 Route::get('/header', [HomeController::class, 'header'])->name('website.header');
 Route::get('/detailNews/{id}', [HomeController::class, 'show'])->name('website.detailNews');
