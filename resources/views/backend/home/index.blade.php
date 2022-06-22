@@ -63,6 +63,7 @@
                                 </h5>
                                 @if( $new->hot)
                                 <span class="badge badge-danger">Tin Tức HOT</span>
+                                <span class="badge badge-info">Trạng Thái: {{ __($new->status) }}</span>
                                 @endif
                                 <p class="card-subtitle text-muted mb-1"> {{ $new->description }} </p>
                             </div>

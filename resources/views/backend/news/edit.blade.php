@@ -110,8 +110,8 @@
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
                                 <select name="status" class="form-control" value="{{ $new->status }}">
-                                    <option value="Ẩn" @selected($new->status == 'Ẩn') >Ẩn</option>
-                                    <option value="Hiện" @selected($new->status == 'Hiện') >Hiện</option>
+                                    <option value="hidden" @selected($new->status == 'hidden') >Ẩn</option>
+                                    <option value="show" @selected($new->status == 'show') >Hiện</option>
                                 </select>
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('status') }}</p>

@@ -80,8 +80,8 @@
                                         @if( $new->puplish_date)
                                         <span class="badge badge-warning">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
                                         @endif
-                                        @if( $new->status == 'Hiện')
-                                        <span class="badge badge-info">Trạng Thái: {{ $new->status }}</span>
+                                        @if( $new->status == 'show')
+                                        <span class="badge badge-info">Trạng Thái: {{ __($new->status) }}</span>
                                         @endif
                                         </br>
                                     </td>
