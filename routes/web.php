@@ -75,9 +75,19 @@ Route::get('/detailNews', function () {
     return view('frontend.home.detailNews');
 })->name('website.detailNews');
 
+
+// Route::get('/website', function () {
+//     return view('frontend.home.index');
+// })->name('website.home');
+// Route::get('/detailNews', function () {
+//     return view('frontend.home.detailNews');
+// })->name('website.detailNews');
+
 Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
 Route::get('/home', [HomeController::class, 'index'])->name('website.home');
+Route::get('/search', [HomeController::class, 'search'])->name('website.search');
 Route::get('/header', [HomeController::class, 'header'])->name('website.header');
+Route::get('/topHeader', [HomeController::class, 'topHeader'])->name('website.topHeader');
 Route::get('/detailNews/{id}', [HomeController::class, 'show'])->name('website.detailNews');
 Route::post('/load-comment', [CommentsController::class,'load_comment']);
 Route::post('/send-comment', [CommentsController::class,'send_comment']);

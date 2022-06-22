@@ -45,14 +45,29 @@ class HomeController extends Controller
         return view('frontend.includes.header', $params);
     }
 
+    public function topHeader(Request $request)
+    {
+        $news = $this->newsService->getAll($request);
+        $params = [
+            "news" => $news,
+        ];
+        return view('frontend.includes.TopHeader', $params);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function search( Request $request)
     {
-        //
+        $news = $this->newsService->getAll($request);
+        $categories = $this->categorieService->getAll($request);
+        $params = [
+            "news" => $news,
+            "categories" => $categories,
+        ];
+        return view('frontend.website.search', $params);
     }
 
     /**

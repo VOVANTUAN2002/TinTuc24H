@@ -9,10 +9,14 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-4">
-                <div class="search">
-                    <input type="text" placeholder="Search">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
+                <form action="{{ route('website.search')}}" method="get" style="width: 100%;">
+                    <div class="input-group has-clearable">
+                        <div class="input-group-prepend trigger-submit">
+                            <span class="input-group-text"><span class="fas fa-search"></span></span>
+                        </div>
+                        <input type="text" class="form-control" name="title" value="" placeholder="Tìm kiếm">
+                    </div>
+                </form>
             </div>
             <div class="col-lg-3 col-md-4">
                 <div class="social">
