@@ -40,10 +40,7 @@ class UserService implements UserServiceInterface
 
     public function destroy($id)
     {
-        $user = $this->userRepository->findById($id);
-        $this->userRepository->destroy($user);
-        return $user;
-
+        return $this->userRepository->destroy($id);
     }
 
     public function trashedItems(){
