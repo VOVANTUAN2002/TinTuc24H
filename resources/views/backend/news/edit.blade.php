@@ -141,25 +141,4 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 @endsection
-=======
-<script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
-<script>
-    jQuery(document).ready(function() {
-        //xóa ảnh phần sản phẩm chỉnh sửa
-        $(".btn-delete").click(function() {
-            var confirm_delete = confirm("Xác nhận xóa hình ?");
-            if (confirm_delete === true) {
-                var new_image_id = $(this).attr('data-id');
-                $.ajax({
-                    success: function(data) {
-                        $(".new" + new_image_id).remove();
-                    }
-                });
-            }
-        });
-    });
-</script>
-@endsection
->>>>>>> 62a4d7bc481825e0de7e8dfcb931f0dbb4f12c93
