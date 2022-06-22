@@ -30,7 +30,7 @@ class UserRepository extends EloquentRepository implements UserInterface
             $address = $request->address;
             $user->where('address', 'LIKE', '%' . $address . '%');
         }
-        if (isset($request->name) && $request->name) {
+        if (isset($request->user_group_id) && $request->user_group_id) {
             $user_group_id = $request->user_group_id;
             $user->where('user_group_id', 'LIKE', '%' . $user_group_id . '%');
         }

@@ -31,12 +31,12 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $items = $this->UserService->getAll($request);
-        $userGroup = $this->UserGroupService->getAll($request);
+        $userGroups = $this->UserGroupService->getAll($request);
         // dd($users);
         // return response()->json($items, 200);
         $params = [
             'items' => $items,
-            'userGroup' => $userGroup,
+            'userGroups' => $userGroups,
         ];
         return view('backend.users.index', $params);
     }

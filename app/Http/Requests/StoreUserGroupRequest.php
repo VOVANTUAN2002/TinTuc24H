@@ -24,13 +24,14 @@ class StoreUserGroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:user_groups',
         ];
     }
     public function messages()
     {
         return [
             'name.required' => 'Vui lòng nhập tên nhóm',
+            'name.unique' => 'Tên nhóm đã tồn tại',
         ];
         
     }

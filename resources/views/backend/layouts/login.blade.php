@@ -39,12 +39,12 @@
 		 	<div class="text-center">
 		 		<img src="{{ asset('img/logo1.png')}}" alt="logo icon">
 		 	</div>
-		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
+		  <div class="card-title text-uppercase text-center py-3">Đăng Nhập</div>
                 @yield('content')
 		   </div>
 		  </div>
 		  <div class="card-footer text-center py-3">
-		    <p class="text-warning mb-0">Do not have an account? <a href="register.html"> Sign Up here</a></p>
+		    <p class="text-warning mb-0"></p>
 		  </div>
 	     </div>
 

@@ -12,7 +12,7 @@
             <div class="mb-3">
                 <label class="form-label">Tên nhóm</label>             
                 <div class="col-lg-8">
-                  <div class="input text"><input type="text" name="name" class="form-control filter-column f-name"  id="name"></div>
+                  <div class="input text"><input type="text" name="name" value="{{ (isset($_REQUEST['name']) ? $_REQUEST['name'] : '')}}" class="form-control filter-column f-name"  id="name"></div>
               </div>
               </div>
         
