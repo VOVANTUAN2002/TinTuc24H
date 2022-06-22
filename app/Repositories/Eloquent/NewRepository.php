@@ -26,7 +26,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->hot = $request->hot;
         $object->puplish_date = $request->puplish_date;
         $object->user_id  = $request->user_id;
-        $object->category_new_id  = $request->category_new_id;
+        $object->category_id  = $request->category_id;
         if ($request->hasFile('image')) {
             $get_image          = $request->image;
             $path               = 'public/images';
@@ -42,7 +42,7 @@ class NewRepository extends EloquentRepository implements NewInterface
 
     public function categories($id)
     {
-        $users = DB::table('        ')->where("user_id", $id)->get();
+        $users = DB::table('categories')->where("user_id", $id)->get();
         return $users;
     }
 
@@ -57,7 +57,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->hot = $request->hot;
         $object->puplish_date = $request->puplish_date;
         $object->user_id  = $request->user_id;
-        $object->category_new_id  = $request->category_new_id;
+        $object->category_id  = $request->category_id;
         if ($request->hasFile('image')) {
             $get_image          = $request->image;
             $path               = 'public/images';
@@ -107,10 +107,16 @@ class NewRepository extends EloquentRepository implements NewInterface
 
     public function getAll($request)
     {
+        $categorie = $this->model->find(3)->categorie; 
+        // dd($categorie);    
         $news = $this->model->select('*');
         if (isset($request->title) && $request->title) {
             $title = $request->title;
             $news->where('title', 'LIKE', '%' . $title . '%');
+        }
+        if (isset($request->category_id) && $request->category_id) {
+            $category_id = $request->category_id;
+            $news->where('category_id', 'LIKE', '%' . $category_id . '%');
         }
         return $news->orderBy('id', 'desc')->paginate(5);
     }

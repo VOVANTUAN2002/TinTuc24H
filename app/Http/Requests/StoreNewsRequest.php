@@ -26,23 +26,19 @@ class StoreNewsRequest extends FormRequest
         return [
             'title'  => 'required',
             'description'  => 'required',
-            'image'  => 'required',
             'content'  => 'required',
             'status'  => 'required',
-            'view'  => 'required',
-            'puplish_date'  => 'required',
+            'puplish_date'  => 'required'
         ];
     }
     public function messages()
     {
         return [
-            'title'  => 'Trường này là bắt buộc',
-            'description'  => 'Trường này là bắt buộc',
-            'image'  => 'Trường này là bắt buộc',
-            'content'  => 'Trường này là bắt buộc',
-            'status'  => 'Trường này là bắt buộc',
-            'view'  => 'Trường này là bắt buộc',
-            'puplish_date'  => 'Trường này là bắt buộc',
+            'title.required'  => 'Trường này là bắt buộc',
+            'description.required'  => 'Trường này là bắt buộc',
+            'content.required'  => 'Trường này là bắt buộc',
+            'status.required'  => 'Trường này là bắt buộc',
+            'puplish_date.required'  => 'Trường này là bắt buộc'
         ];
     }
 }

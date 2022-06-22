@@ -76,7 +76,9 @@ class UserRepository extends EloquentRepository implements UserInterface
         $object = $this->model->find($id);
         $object->name = $request->name;
         $object->phone = $request->phone;
+        if ($request->password) {
         $object->password = Hash::make($request->password);
+        }
         $object->gender = $request->gender;
         $object->day_of_birth = $request->day_of_birth;
         $object->address = $request->address;

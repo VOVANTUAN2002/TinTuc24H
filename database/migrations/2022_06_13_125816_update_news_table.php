@@ -17,10 +17,10 @@ return new class extends Migration
 
             $table->softDeletes();
 
-            $table->unsignedBigInteger('category_new_id');
-            $table->foreign('category_new_id')
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')
             ->references('id')
-            ->on('category_news');
+            ->on('categories');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')

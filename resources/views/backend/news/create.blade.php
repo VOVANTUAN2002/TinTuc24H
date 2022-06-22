@@ -15,14 +15,14 @@
         </header>
 
         <div class="page-section">
-            <form method="post" action="{{route('news.store')}}" enctype="multipart/form-data" >
+            <form method="post" action="{{route('news.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="tf1">Ngày tạo tin</label>
-                                <input name="puplish_date" type="date" class="form-control" placeholder="" value="{{ old('puplish_date') }}">
+                                <input name="puplish_date" type="date" class="form-control date" value="{{ old('puplish_date') }}">
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('puplish_date') }}</p>
                                 @endif
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label>Hình Ảnh:</label>
-                            <input type="file" name="image" class="form-control">
+                            <input type="file" name="image" class="form-control" value="{{ old('image') }}" multiple>
                             @if ($errors)
                             <div class="text-danger">{{$errors->first('image')}}</div>
                             @endif
@@ -73,9 +73,9 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label>Loại Tin Tức</label>
-                                <select type="text" class="form-control" placeholder="danh mục" name="category_new_id">
-                                    @foreach($categorynews as $categorynew)
-                                    <option value="{{$categorynew->id}}">{{$categorynew->name}}</option>
+                                <select type="text" class="form-control" placeholder="danh mục" name="category_id">
+                                    @foreach($categories as $categoriy)
+                                    <option value="{{$categoriy->id}}">{{$categoriy->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -94,9 +94,9 @@
                             </div>
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
-                                <select name="status" class="form-control" value="{{ old('status') }}">
-                                    <option value="hidden" @selected(old('status')=='hidden' )>Ẩn</option>
-                                    <option value="show" @selected(old('status')=='show' )>Hiện</option>
+                                <select name="status" class="form-control">
+                                    <option value="Ẩn" @selected( old('status')=='Ẩn' )>Ẩn</option>
+                                    <option value="Hiện" @selected( old('status')=='Hiện' )>Hiện</option>
                                 </select>
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('status') }}</p>
@@ -127,4 +127,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(function() {
+        $('.date').datepicker();
+    });
+    $('.date').datepicker({
+        format: 'mm/dd/yy'
+    });
+</script>
+
 @endsection

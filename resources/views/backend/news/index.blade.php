@@ -63,7 +63,9 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Tên bài viết</th>
-                                    <th>Chức năng</th>
+                                    <th>Thể Loại Tin Tức</th>
+                                    <th>Chức Năng</th>
+
                                 </tr>
                             </thead>
                             @foreach($news as $new)
@@ -78,12 +80,13 @@
                                         @if( $new->puplish_date)
                                         <span class="badge badge-warning">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
                                         @endif
-                                        @if( $new->status == 'show')
+                                        @if( $new->status == 'Hiện')
                                         <span class="badge badge-info">Trạng Thái: {{ $new->status }}</span>
                                         @endif
                                         </br>
                                     </td>
-                                    <td>
+                                    <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>
+                                        <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.edit',$new->id)}}" class="btn btn-sm btn-icon btn-dark"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
                                         <form action="{{ route('news.destroy',$new->id )}}" style="display:inline" method="post">
