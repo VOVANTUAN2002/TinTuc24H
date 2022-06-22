@@ -11,17 +11,6 @@
         @if ($errors->any())
         <p style="color:red">{{ $errors->first('email') }}</p>
         @endif
-        {{-- <div class="position-relative has-icon-right">
-            <input
-                type="text"
-                id="exampleInputUsername"
-                class="form-control input-shadow"
-                placeholder="Enter Username"
-            />
-            <div class="form-control-position">
-                <i class="icon-user"></i>
-            </div>
-        </div> --}}
     </div>
     <div class="form-group">
         <label for="inputPassword">Mật khẩu</label>
@@ -37,7 +26,6 @@
                 <label for="user-checkbox">Remember me</label>
             </div>
         </div>
-    </div> --}}
     <button type="submit" class="btn btn-light btn-block">Đăng Nhập</button>
     {{-- <div class="form-row mt-4">
         <div class="form-group mb-0 col-6">
@@ -52,6 +40,6 @@
         </div>
         checked=""
     </div> --}}
-
+    <button type="submit" class="btn btn-light btn-block">Đăng Nhập</button>
 </form>
 @endsection

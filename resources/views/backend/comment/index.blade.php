@@ -42,9 +42,9 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $comment->id}}</td>
-                                    <td>{{ $comment->content }}</td>
+                                    <td><textarea disabled="disabled">{{ $comment->content }}</textarea></td>
                                     <td>{{ $comment->news->title }}</td>
-                                    <td>{{ $comment->startus }}</td>
+                                    <td>{{ __($comment->startus) }}</td>
                                     <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('comments.edit',$comment->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>

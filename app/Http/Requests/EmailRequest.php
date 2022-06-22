@@ -24,14 +24,15 @@ class EmailRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
+            'email' => 'required|unique:newsletters',
         ];
     }
 
     public function messages()
     {
         return [
-            'email.required' => 'Vui lòng nhập email',
+            'email.required' => 'Vui lòng nhập Email',
+            'email.unique' => 'Email đã tồn tại',
         ];
     }
 }

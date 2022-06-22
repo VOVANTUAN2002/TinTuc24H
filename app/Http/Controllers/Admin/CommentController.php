@@ -42,10 +42,10 @@ class CommentController extends Controller{
     {
         try {
             $this->commentService->update($request, $id);
-            return redirect()->route('comments.index')->with('success', 'Sửa bình luận' . ' ' . $request->content . ' ' .  'thành công');
+            return redirect()->route('comments.index')->with('success', 'Sửa bình luận thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('comments.index')->with('error', 'Sửa bình luận' . ' ' . $request->content . ' ' .  'không thành công');
+            return redirect()->route('comments.index')->with('error', 'Sửa bình luận không thành công');
         }
     }
 
