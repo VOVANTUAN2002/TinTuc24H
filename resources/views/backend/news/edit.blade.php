@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tf1">Mô tả Tiêu đề</label>
-                            <textarea name="description" type="text" class="form-control" placeholder="Nhập tên Tiêu đề">{{ $new->description}}</textarea>
+                            <textarea id="summernote" name="description" type="text" class="form-control" placeholder="Nhập tên Tiêu đề">{{ $new->description}}</textarea>
                             <small class="form-text text-muted"></small>
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('description') }}</p>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tf1">Nội dung</label>
-                            <textarea id="ckeditor2"  name="content" type="text" class="form-control" placeholder="Nhập tên Nội dung">{{ $new->content}}</textarea>
+                            <textarea id="summernote" name="content" type="text" class="form-control" placeholder="Nhập tên Nội dung">{{ $new->content}}</textarea>
                             <small class="form-text text-muted"></small>
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('content') }}</p>
@@ -89,9 +89,9 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label>Loại Tin Tức</label>
-                                <select type="text" class="form-control" placeholder="danh mục" name="category_new_id" value="{{ $new->category_new_id}}">
-                                    @foreach($categorynews as $categorynew)
-                                    <option value="{{$categorynew->id}}">{{$categorynew->name}}</option>
+                                <select type="text" class="form-control" placeholder="danh mục" name="category_id" value="{{ $new->category_id}}">
+                                    @foreach($categories as $categoriy)
+                                    <option value="{{$categoriy->id}}">{{$categoriy->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -110,8 +110,8 @@
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
                                 <select name="status" class="form-control" value="{{ $new->status }}">
-                                    <option value="hidden" @selected(old('status')=='hidden' )>Ẩn</option>
-                                    <option value="show" @selected(old('status')=='show' )>Hiện</option>
+                                    <option value="Ẩn" @selected($new->status == 'Ẩn') >Ẩn</option>
+                                    <option value="Hiện" @selected($new->status == 'Hiện') >Hiện</option>
                                 </select>
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('status') }}</p>
@@ -141,6 +141,9 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+@endsection
+=======
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
 <script>
     jQuery(document).ready(function() {
@@ -159,3 +162,4 @@
     });
 </script>
 @endsection
+>>>>>>> 62a4d7bc481825e0de7e8dfcb931f0dbb4f12c93

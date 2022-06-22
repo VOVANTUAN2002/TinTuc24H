@@ -57,7 +57,6 @@ Route::group([
 
     Route::resource('news', NewsController::class);
     Route::resource('users', UserController::class);
-    Route::resource('categoryNews', CategoryNewController::class);
     Route::resource('comments', CommentController::class);
     Route::resource('email', EmailController::class);
     Route::resource('categories', CategorieController::class);

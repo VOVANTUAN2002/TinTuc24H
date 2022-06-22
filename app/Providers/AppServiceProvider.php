@@ -89,9 +89,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(EmailInterface::class, EmailRepository::class);
         $this->app->singleton(EmailServiceInterface::class, EmailService::class);
 
-        //CategoryNew
-        $this->app->singleton(CategoryNewInterface::class, CategoryNewRepository::class);
-        $this->app->singleton(CategoryNewServiceInterface::class, CategoryNewService::class);
 
         $this->app->singleton(SystemLogInterface::class, SystemLogRepository::class);
         $this->app->singleton(SystemLogServiceInterface::class, SystemLogService::class);
