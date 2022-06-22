@@ -18,7 +18,7 @@
                 </a>
             </div> --}}
         </div>
-        <div id="notify_comment" style="color:aquamarine"></div>
+        <div id="notify_comment" style="color:#87CEFA;font-size:19px"></div>
         @if (Session::has('success'))
         <div class="text text-success"><b>{{session::get('success')}}</b></div>
         @endif
