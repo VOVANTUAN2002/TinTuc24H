@@ -10,7 +10,7 @@ class Comment extends Model
     use HasFactory;
     protected $table = 'comments';
     protected $fillable = [
-        'id','content','new_id','status'
+        'id','content','status','new_id'
     ];
 
     public function news(){

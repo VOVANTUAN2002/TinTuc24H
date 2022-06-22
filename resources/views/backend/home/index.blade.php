@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
                         <div class="card-body">
-                            <h5 class="text-white mb-0">Tổng số bình luận <span class="float-right"><i class="fa fa-comment"></i></span>
+                            <h5 class="text-white mb-0">Số bình luận chờ duyệt <span class="float-right"><i class="fa fa-comment"></i></span>
                             </h5>
                             <p class="mb-0 text-white small-font">{{$comment_count}} <span class="float-right">
                         </div>

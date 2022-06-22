@@ -13,7 +13,7 @@
               <label class="form-label">Tên Nhân Viên</label>             
               <div class="col-lg-8">
                 <div class="input text">
-                  <input type="text" name="name" class="form-control filter-column f-name"  id="name">
+                  <input type="text" name="name" value="{{ (isset($_REQUEST['name']) ? $_REQUEST['name'] : '') }}" class="form-control filter-column f-name"  id="name">
                 </div>
               </div>             
           </div>     
@@ -21,7 +21,7 @@
               <label class="form-label">Số Điện Thoại</label>             
               <div class="col-lg-8">
                 <div class="input text">
-                  <input type="text" name="phone" class="form-control filter-column f-name"  id="phone">
+                  <input type="text" name="phone" value="{{ (isset($_REQUEST['phone']) ? $_REQUEST['phone'] : '') }}" class="form-control filter-column f-name"  id="phone">
                 </div>
               </div>             
           </div>     
@@ -29,16 +29,21 @@
               <label class="form-label">Địa Chỉ</label>             
               <div class="col-lg-8">
                 <div class="input text">
-                  <input type="text" name="address" class="form-control filter-column f-name"  id="address">
+                  <input type="text" name="address" value="{{ (isset($_REQUEST['address']) ? $_REQUEST['address'] : '') }}" class="form-control filter-column f-name"  id="address">
                 </div>
               </div>             
           </div>     
           <div class="mb-3">
               <label class="form-label">Nhóm Nhân Viên</label>             
               <div class="col-lg-8">
-                <div class="input text">
-                  <input type="text" name="user_group_id" class="form-control filter-column f-name"  id="user_group_id">
-                </div>
+                <select class="form-select form-control" name="user_group_id">
+                  <option value="">Vui lòng chọn</option>
+                  @foreach($userGroups as $userGroup)
+                  <option value="{{ $userGroup->id }}" @selected( isset($_REQUEST['user_group_id']) ? $_REQUEST['user_group_id'] == $userGroup->id : false )>
+                      {{ $userGroup->name }}               
+                  </option>
+                  @endforeach
+              </select>
               </div>             
           </div>     
         </div>     

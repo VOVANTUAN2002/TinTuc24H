@@ -6,7 +6,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active">
-                        <a href="{{route('categories.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Tinh Tức
+                        <a href="{{route('categories.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Lý Tinh Tức
                             </a>
                     </li>
                 </ol>
@@ -28,8 +28,8 @@
                             @endif
                         </div>
                         <div class="form-actions">
-                            <button class="btn btn-dark float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                            <button style="float: right;" class="btn btn-primary ml-auto" type="submit">Lưu</button>
+                            <a class="btn btn-secondary float-right " href="{{route('categories.index')}}">Hủy</a>
+                            <button style="float: right;" class="btn btn-primary ml-auto mr-2" type="submit">Lưu</button>
                         </div>
                     </div>
                 </div>

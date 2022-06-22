@@ -132,8 +132,8 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <button class="btn btn-dark float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                            <button style="float: right;" class="btn btn-primary ml-auto" type="submit">Lưu<noscript></noscript> </button>
+                            <a class="btn btn-secondary float-right " href="{{route('news.index')}}">Hủy</a>
+                            <button style="float: right;" class="btn btn-primary ml-auto mr-2" type="submit">Lưu<noscript></noscript> </button>
                         </div>
                     </div>
                 </div>
@@ -141,4 +141,25 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        //xóa ảnh phần sản phẩm chỉnh sửa
+        $(".btn-delete").click(function() {
+            var confirm_delete = confirm("Xác nhận xóa hình ?");
+            if (confirm_delete === true) {
+                var new_image_id = $(this).attr('data-id');
+                $.ajax({
+                    success: function(data) {
+                        $(".new" + new_image_id).remove();
+                    }
+                });
+            }
+        });
+    });
+</script>
+@endsection
+>>>>>>> 62a4d7bc481825e0de7e8dfcb931f0dbb4f12c93

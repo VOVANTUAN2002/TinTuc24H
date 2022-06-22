@@ -35,8 +35,7 @@ Route::group([
 ], function () {
 
     Route::get('/dashboard', [IndexController::class, 'index'])->name('dashboard.index');
-
-
+    
     Route::prefix('userGroups')->group(function () {
         Route::get('/trash', [UserGroupController::class, 'trashedItems'])->name('userGroups.trash');
         Route::delete('/force_destroy/{id}', [UserGroupController::class, 'force_destroy'])->name('userGroups.force_destroy');

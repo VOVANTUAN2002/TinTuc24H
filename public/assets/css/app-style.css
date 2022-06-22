@@ -3660,5 +3660,11 @@ table.grid td {
 form#form-search .modal input {
     color: black !important;
 }
+form#form-search .modal select {
+    color: black !important;
+}
+form#form-search .modal option {
+    color: white !important;
+}
 
 

@@ -25,14 +25,12 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'day_of_birth' => 'required',
             'address' => 'required',
             'password' => 'required',
             'avatar' => 'required',
             'phone' => 'required',
             'email' => 'required',
             'gender' => 'required',
-            'start_day' => 'required',
             'user_group_id' => 'required',
         ];
     }
@@ -40,14 +38,12 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'name.required' => 'Vui lòng nhập tên nhân viên',
-            'day_of_birth.required' => 'Vui lòng nhập ngày sinh',
             'address.required' => 'Vui lòng nhập địa chỉ',
             'password.required' => 'Vui lòng nhập mật khẩu',
             'avatar.required' => 'Vui lòng nhập ảnh ',
             'phone.required' => 'Vui lòng nhập số điện thoại',
             'email.required' => 'Vui lòng nhập Email ',
             'gender.required' => 'Vui lòng nhập giới tính',
-            'start_day.required' => 'Vui lòng nhập ngày làm việc',
             'user_group_id.required' => 'Vui lòng nhập nhóm nhân viên',
         ];
         

@@ -7,7 +7,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active">
-                    <a href="#"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Trang Chủ</a>
+                    {{-- <a href="#"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Trang Chủ</a> --}}
                 </li>
             </ol>
         </nav>
@@ -34,7 +34,7 @@
                         <table class="table align-items-center table-flush table-borderless">
                             <thead>
                                 <tr>
-                                    
+
                                     <th>#</th>
                                     <th>Các Hoạt Động</th>
                                 </tr>

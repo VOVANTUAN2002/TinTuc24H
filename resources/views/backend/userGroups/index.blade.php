@@ -7,22 +7,17 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active">
-                    <a href="#"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Trang Chủ</a>
+                    {{-- <a href="{{ route('userGroups.index') }}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Trang Chủ</a> --}}
                 </li>
             </ol>
         </nav>
         <div class="d-md-flex align-items-md-start">
             <h1 class="page-title mr-sm-auto"> Quản Lý Nhóm </h1>
-            <div class="btn-toolbar">
-                <a href="{{ route('userGroups.create') }}" class="btn btn-dark">
-                    <i class="fa-solid fa fa-plus"></i>
-                    <span class="ml-1">Thêm Mới</span>
-                </a>
-            </div>
+
         </div>
         <div class="card-body">
-            <div class="row mb-2">
-                <div class="col">
+            <div class="row">
+                <div class="col-lg-6">
                     <form action="" method="GET" id="form-search" class="form-dark">
                         <div class="input-group input-group-alt">
                             <div class="input-group-prepend">
@@ -33,6 +28,16 @@
                         </div>
                         @include('backend.userGroups.modals.modalSearch')
                     </form>
+                </div>
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-2">
+                    <div class="btn-toolbar">
+                        <a href="{{ route('userGroups.create') }}" class="btn btn-dark">
+                            <i class="fa-solid fa fa-plus"></i>
+                            <span class="ml-1">Thêm Mới</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card-header">

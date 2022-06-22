@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmailRequest;
+use App\Http\Requests\MailUpdate;
 use App\Services\Interfaces\EmailServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -55,7 +56,7 @@ class EmailController extends Controller{
 
 
 
-    public function update(EmailRequest $request, $id)
+    public function update(MailUpdate $request, $id)
     {
         try {
             $this->emailServiceInterface->update($request, $id);

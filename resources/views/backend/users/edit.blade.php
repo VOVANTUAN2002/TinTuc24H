@@ -78,7 +78,7 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>Hình ảnh nhân viên</label>
-                            <input type="file" name="avatar" class="form-control">
+                            <input type="file" style="border:none" name="avatar" value="{{$item->avatar}}" readonly class="form-control">
                         </div>
                         <div class="card card-figure">
                             <figure class="figure">
@@ -145,8 +145,8 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button class="btn btn-secondary float-right" onclick="window.history.go(-1); return false;">Hủy</button>
-                    <button class="btn btn-dark ml-auto" type="submit">Lưu</button>
+                    <a class="btn btn-secondary float-right " href="{{route('users.index')}}">Hủy</a>
+                    <button class="btn btn-dark ml-auto mr-2" type="submit">Lưu</button>
                 </div>
             </div>
 
