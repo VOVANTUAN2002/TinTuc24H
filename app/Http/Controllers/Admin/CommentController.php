@@ -8,6 +8,7 @@ use App\Models\Comment;
 use App\Services\Interfaces\CommentServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class CommentController extends Controller{
 
@@ -64,7 +65,7 @@ class CommentController extends Controller{
     public function approved(Request $request){
 
         $data = $request->all();
-        
+
         $comment = Comment::find($data['comment_id']);
         $comment->startus = $data['comment_status'];
         $comment->save();

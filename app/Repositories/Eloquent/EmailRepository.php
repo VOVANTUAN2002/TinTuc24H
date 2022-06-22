@@ -6,6 +6,7 @@ use App\Models\Newsletter;
 
 use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\EmailInterface;
+use Carbon\Carbon;
 
 class EmailRepository extends EloquentRepository implements EmailInterface
 {
@@ -24,7 +25,8 @@ class EmailRepository extends EloquentRepository implements EmailInterface
 
         $email =$this->model;
         $email->email = $request->email;
-
+        $email->created_at =Carbon::now('Asia/Ho_Chi_Minh');
+        $email->updated_at =Carbon::now('Asia/Ho_Chi_Minh');
         // dd($email);
         $email->save();
         return $email;
