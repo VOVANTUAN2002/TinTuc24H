@@ -1,7 +1,6 @@
 @extends('frontend.layouts.master')
 @section('content')
 <!-- Top News Start-->
-
 <div class="top-news">
     <div class="container-fluid">
         <div class="row">
@@ -76,22 +75,23 @@
     <div class="container-fluid">
         <div class="row">
             @foreach($news as $new)
-            <div class="col-xl-4 col-lg-4 col-md-4 col-12">
+            <div class="col-xl-4 col-lg-3 col-md-3 col-12">
                 <div class="single-product">
                     <div class="product-img">
                         <a href="{{ route('website.detailNews',$new->id )}}">
-                            <img class="default-img" src="{{$new->image}}" alt="#" style='width:400px; height: 300px'>
+                            <img class="default-img" src="{{$new->image}}" alt="#" style='width:375px; height: 275px'>
                         </a>
                         <div class="cn-content">
                             <div class="cn-content-inner">
                                 <a class="cn-date" href=""><i class="far fa-clock"></i>{{ $new->puplish_date}}</a>
-                                <a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
+                                <a class="cn-title" href="{{ route('website.detailNews',$new->id )}}" style="width:275px">{{
                                     $new->title}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr>
             @endforeach
         </div>
     </div>
@@ -184,7 +184,6 @@
         </div>
     </div>
 </div>
-
 <!-- Category News End-->
 
 
