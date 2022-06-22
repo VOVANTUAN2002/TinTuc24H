@@ -74,13 +74,11 @@ class HomeController extends Controller
      */
     public function show(Request $request,$id)
     {
-        $categoryNews = $this->categoryNewService->getAll($request);
         $new = $this->newsService->findById($id);
         $categories = $this->categorieService->getAll($request);
         $params = [
             "new" => $new,
             "categories" => $categories,
-            "categoryNews" => $categoryNews,
         ];
         return view('frontend.website.detailNews', $params);
     }

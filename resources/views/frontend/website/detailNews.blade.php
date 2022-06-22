@@ -60,16 +60,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
-                            <div class="sidebar-widget">
-                                <h2><i class="fas fa-align-justify"></i>Tags</h2>
-                                @foreach($categoryNews as $categoryNew)
-                                <div class="tags">
-                                    <a href="">{{$categoryNew->name}}</a>
-                                </div>
-                                @endforeach
-                            </div>
-
                             <div class="sidebar-widget">
                                 <h2><i class="fas fa-align-justify"></i>Ads 1 column</h2>
                                 <div class="image">
@@ -93,10 +83,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="binhluan">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="post" action="">
+                            <h5>Bình Luận</h5>
+                            <p><textarea rows="5" style="resize:none;" class="form-control">
+                            </textarea></p>
+                            <p><input type="submit" class="btn btn-success" value="Gửi Bình luận"></p>
+                        </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Single News End-->
 
+        <script>
+            $(document).ready(function{
+                function load_comments(){
+
+                }
+            })
+        </script>
 
 @endsection
