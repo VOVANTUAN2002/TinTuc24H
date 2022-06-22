@@ -254,19 +254,17 @@ class DatabaseSeeder extends Seeder
 
     public function importComment(){
 
-        for( $i=0; $i < 5;$i++ ){
             $comment = new Comment();
-            $comment->content = "Xuất sắc";
+            $comment->content = "Tôi nghĩ rằng nụ cười rạng rỡ nhất trong cuộc đời tôi có thể là màn hình máy tính của tôi.";
             $comment->startus = "approved";
             $comment->new_id = rand(1,4);
             $comment ->save();
 
             $comment = new Comment();
-            $comment->content = "Dở quá";
+            $comment->content = "Theo thẩm mỹ của loài lợn, tôi về cơ bản là một mỹ nhân.";
             $comment->startus = "pending";
             $comment->new_id = rand(1,4);
             $comment ->save();
-        }
     }
 
     public function importEmail(){
