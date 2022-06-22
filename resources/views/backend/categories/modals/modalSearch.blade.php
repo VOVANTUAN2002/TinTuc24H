@@ -8,7 +8,7 @@
       <div class="modal-body">
         <div class="mb-3">
           <label class="form-label">Tên Loại Tin Tức</label>
-          <input type="text" name="name" class="form-control">
+          <input type="text" name="name" class="form-control" value="{{ (isset($_REQUEST['name']) ? $_REQUEST['name'] : '') }}">
         </div>
       </div>
       <div class="modal-footer">
