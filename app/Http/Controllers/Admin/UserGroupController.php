@@ -121,14 +121,14 @@ class UserGroupController extends Controller
      * @param  \App\Models\UserGroup  $UserGroup
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         try {
             $item = $this->UserGroupService->destroy($id);
-            return redirect()->route('userGroups.index')->with('success', 'Xóa nhóm' . ' ' . $item->name . ' ' .  'thành công');
+            return redirect()->route('userGroups.index')->with('success', 'Xóa nhóm' . ' ' . $request->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('userGroups.index')->with('error', 'Xóa nhóm' . ' ' . $item->name . ' ' .  'không thành công');
+            return redirect()->route('userGroups.index')->with('error', 'Xóa nhóm' . ' ' . $request->name . ' ' .  'không thành công');
         }
     }
 

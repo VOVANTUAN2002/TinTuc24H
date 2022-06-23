@@ -96,9 +96,14 @@ class HomeController extends Controller
     {
         $new = $this->newsService->findById($id);
         $categories = $this->categorieService->getAll($request);
+        // $news = $this->newsService->getAll($request);
+        $related_news = News::where('category_id',$new->category_id)->get();
+        // dd($new);
         $params = [
             "new" => $new,
             "categories" => $categories,
+            "related_news" => $related_news,
+            // "news" => $news,
         ];
         return view('frontend.website.detailNews', $params);
     }

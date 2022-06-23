@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-header">
+            {{-- <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
                         <a class="nav-link active " href="{{route('userGroups.index')}}">Tất Cả</a>
@@ -50,7 +50,7 @@
                         <a class="nav-link " href="{{route('userGroups.trash')}}">Thùng Rác</a>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
         @if (Session::has('success'))
         <div class="text text-success"><b>{{session::get('success')}}</b></div>
