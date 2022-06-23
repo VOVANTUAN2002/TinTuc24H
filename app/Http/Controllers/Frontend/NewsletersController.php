@@ -8,10 +8,7 @@ use Illuminate\Http\Request;
 
 class NewsletersController extends Controller{
 
-
     public function addNewsleters(Request $request){
-
-        
         $email = $request->email;
         $Newsleter = new Newsletter();
         $Newsleter->email = $email;

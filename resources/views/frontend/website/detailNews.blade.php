@@ -125,7 +125,7 @@
                         <h5>Bình Luận</h5>
                         <p><textarea rows="5" style="resize:none;" class="form-control comment">
                                 </textarea></p>
-                        <p><input type="submit" class="btn btn-success sent-comment" value="Gửi Bình luận"></p>
+                        <p><input type="button" class="btn btn-success sent-comment" value="Gửi Bình luận"></p>
                         <div id="notyfi_comment"></div>
                     </form>
                 </div>
@@ -198,7 +198,7 @@
                     console.log(status);
                     $('#notyfi_comment').html('<span class="text text-success">Bình Luận Đang chờ duyệt</span>')
                     load_comments();
-                    $('#notyfi_comment').fadeOut(10000);
+                    $('#notyfi_comment').fadeOut(20000);
                     $('.comment').val('');
                 }
             });
