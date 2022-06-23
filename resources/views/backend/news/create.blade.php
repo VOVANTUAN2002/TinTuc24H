@@ -6,14 +6,15 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active">
-                        <a href="{{route('news.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Lý
-                            nhóm</a>
+                        <a href="{{route('news.index')}}"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Quản Lý nhóm</a>
                     </li>
                 </ol>
             </nav>
             <h1 class="page-title"> Thêm Mới Tin Tức </h1>
         </header>
-
+        @if (Session::has('message'))
+        <div class="text text-danger"><b>{{session::get('message')}}</b></div>
+        @endif
         <div class="page-section">
             <form method="post" action="{{route('news.store')}}" enctype="multipart/form-data">
                 @csrf
@@ -127,14 +128,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(function() {
-        $('.date').datepicker();
-    });
-    $('.date').datepicker({
-        format: 'mm/dd/yy'
-    });
-</script>
-
 @endsection

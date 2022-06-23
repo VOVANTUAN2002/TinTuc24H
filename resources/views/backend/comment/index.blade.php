@@ -31,7 +31,7 @@
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush table-borderless">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>#</th>
                                     <th>Bình luận</th>
                                     <th>Bài viết</th>

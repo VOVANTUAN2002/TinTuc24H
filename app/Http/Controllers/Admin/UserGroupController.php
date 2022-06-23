@@ -59,10 +59,10 @@ class UserGroupController extends Controller
 
         try {
             $item = $this->UserGroupService->create($request->all());
-            return redirect()->route('userGroups.index')->with('success', 'Thêm' . ' ' . $item->name . ' ' .  'thành công');
+            return redirect()->route('userGroups.index')->with('success', 'Thêm nhóm' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('userGroups.index')->with('error', 'Thêm' . ' ' . $item->name . ' ' .  'không thành công');
+            return redirect()->route('userGroups.index')->with('error', 'Thêm nhóm' . ' ' . $item->name . ' ' .  'không thành công');
         }
 
         // return response()->json($item, 200);
@@ -108,10 +108,10 @@ class UserGroupController extends Controller
 
         try {
             $item = $this->UserGroupService->update($request->all(), $id);
-            return redirect()->route('userGroups.index')->with('success', 'Sửa' . ' ' . $item->name . ' ' .  'thành công');
+            return redirect()->route('userGroups.index')->with('success', 'Sửa nhóm' . ' ' . $item->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('userGroups.index')->with('error', 'Sửa' . ' ' . $item->name . ' ' .  'không thành công');
+            return redirect()->route('userGroups.index')->with('error', 'Sửa nhóm' . ' ' . $item->name . ' ' .  'không thành công');
         }
     }
 
@@ -121,14 +121,14 @@ class UserGroupController extends Controller
      * @param  \App\Models\UserGroup  $UserGroup
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         try {
             $item = $this->UserGroupService->destroy($id);
-            return redirect()->route('userGroups.index')->with('success', 'Xóa' . ' ' . $item->name . ' ' .  'thành công');
+            return redirect()->route('userGroups.index')->with('success', 'Xóa nhóm' . ' ' . $request->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route('userGroups.index')->with('error', 'Xóa' . ' ' . $item->name . ' ' .  'không thành công');
+            return redirect()->route('userGroups.index')->with('error', 'Xóa nhóm' . ' ' . $request->name . ' ' .  'không thành công');
         }
     }
 

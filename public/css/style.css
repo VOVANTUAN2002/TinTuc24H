@@ -12,7 +12,9 @@ a {
     color: #E47A2E;
     transition: 0.5s;
 }
-
+i {
+    padding: 6px;   
+}
 a:hover,
 a:active,
 a:focus {

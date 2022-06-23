@@ -8,6 +8,8 @@ use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\NewInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+
 
 class NewRepository extends EloquentRepository implements NewInterface
 {
@@ -111,8 +113,12 @@ class NewRepository extends EloquentRepository implements NewInterface
 
     public function getAll($request)
     {
+
         $categorie = $this->model->find(3)->categorie;
         // dd($categorie);
+        // $categorie = $this->model->find(3)->categorie; 
+        // dd($categorie);    
+
         $news = $this->model->select('*');
         if (isset($request->title) && $request->title) {
             $title = $request->title;
@@ -123,5 +129,19 @@ class NewRepository extends EloquentRepository implements NewInterface
             $news->where('category_id', 'LIKE', '%' . $category_id . '%');
         }
         return $news->orderBy('id', 'desc')->paginate(4);
+    }
+    
+    public function getHot($request)
+    {
+        $news = $this->model->select('*');
+        if (isset($request->title) && $request->title) {
+            $title = $request->title;
+            $news->where('title', 'LIKE', '%' . $title . '%');
+        }
+        if (isset($request->category_id) && $request->category_id) {
+            $category_id = $request->category_id;
+            $news->where('category_id', 'LIKE', '%' . $category_id . '%');
+        }
+        return $news->where('hot', 1)->paginate(5);
     }
 }

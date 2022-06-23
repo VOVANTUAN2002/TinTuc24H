@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use App\Services\Interfaces\NewServiceInterface;
+use Illuminate\Support\Facades\Session;
 
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
@@ -54,6 +55,7 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         $users = $this->usersService->getAll($request);
+
         $categories = $this->categorieService->getAll($request);
         $params = [
             'users' => $users,
@@ -71,6 +73,14 @@ class NewsController extends Controller
     public function store(StoreNewsRequest $request)
     {
         try {
+            if ((int) $request->hot === 1) {
+                $newhots = News::where('hot', 1)->get();
+                if (count($newhots) === 4 ) {
+    
+                    Session::flash('message', 'Chung tôi chỉ cho phép 4 sản phẩm  Hot');
+                    return redirect()->back();
+                }
+            }
             $news = $this->newsService->create($request);
             return redirect()->route('news.index')->with('success', ' Thêm tin tức ' . $request->title . ' thành công ');
         } catch (\Exception $e) {
@@ -126,6 +136,14 @@ class NewsController extends Controller
     public function update(UpdateNewsRequest $request, $id)
     {
         try {
+            if ((int) $request->hot === 1) {
+                $newhots = News::where('hot', 1)->get();
+                if (count($newhots) === 4 ) {
+    
+                    Session::flash('message', 'Chung tôi chỉ cho phép 4 sản phẩm  Hot');
+                    return redirect()->back();
+                }
+            }
             $news = $this->newsService->update($request, $id);
             return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $request->title . ' ' . ' thành công ');
         } catch (\Exception $e) {
