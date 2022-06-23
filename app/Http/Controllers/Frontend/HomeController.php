@@ -36,7 +36,6 @@ class HomeController extends Controller
             "categories" => $categories,
             "news" => $news,
         ];
-        // dd($news);
         return view('frontend.home.index',$params);
     }
 

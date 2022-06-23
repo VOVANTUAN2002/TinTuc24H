@@ -14,6 +14,9 @@
             </nav>
             <h1 class="page-title"> Chỉnh Sửa loại tinh tức</h1>
         </header>
+        @if (Session::has('message'))
+        <div class="text text-danger"><b>{{session::get('message')}}</b></div>
+        @endif
         <div class="page-section">
             <form method="post" action="{{route('news.update',$new->id)}}" enctype="multipart/form-data">
                 @csrf
@@ -109,9 +112,9 @@
                             </div>
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
-                                <select name="status" class="form-control" value="{{ $new->status }}">
-                                    <option value="hidden" @selected($new->status == 'hidden') >Ẩn</option>
-                                    <option value="show" @selected($new->status == 'show') >Hiện</option>
+                                <select name="status" class="form-control">
+                                    <option value="Ẩn" @selected($new->status == 'Ẩn') >Ẩn</option>
+                                    <option value="Hiện" @selected($new->status == 'Hiện') >Hiện</option>
                                 </select>
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('status') }}</p>
