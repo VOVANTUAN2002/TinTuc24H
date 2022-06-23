@@ -46,6 +46,7 @@ use App\Services\EmailService;
 use App\Services\Interfaces\SystemLogServiceInterface;
 use App\Services\SystemLogService;
 use App\Views\Composers\ProfileComposer;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -97,7 +98,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        Carbon::setLocale('vi');
         view()->composer(
             ['*'],
             ProfileComposer::class

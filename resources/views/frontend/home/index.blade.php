@@ -5,7 +5,6 @@
     <div class="container-fluid">
         <div class="row">
             @foreach($news as $new)
-
             <div class="col-md-6 tn-left">
                 <div class="tn-img">
                     <img style="width: 644px; height: 444px" src="{{$new->image}}" />
@@ -23,8 +22,6 @@
 </div>
 <!-- Top News End-->
 
-
-
 <!-- Category News Start-->
 
 <div class="cat-news">
@@ -35,26 +32,25 @@
                 <div class="single-product">
                     <div class="product-img">
                         <a href="{{ route('website.detailNews',$new->id )}}">
-                            <img class="default-img" src="{{$new->image}}" alt="#" style='width:400px; height: 300px'>
+                            <img class="default-img" src="{{$new->image}}" alt="#" style='width:375px; height: 275px'>
                         </a>
                         <div class="cn-content">
                             <div class="cn-content-inner">
                                 <a class="cn-date" href=""><i class="far fa-clock"></i>{{ $new->puplish_date}}</a>
-                                <a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
+                                <a class="cn-title" href="{{ route('website.detailNews',$new->id )}}" style="width:275px">{{
                                     $new->title}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr>
             @endforeach
         </div>
     </div>
 </div>
 </div>
-
 <!-- Category News End-->
-
 
 <!-- Category News Start-->
 <div class="cat-news">
@@ -139,9 +135,7 @@
         </div>
     </div>
 </div>
-
 <!-- Category News End-->
-
 
 <!-- Main News Start-->
 

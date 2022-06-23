@@ -120,7 +120,7 @@ class NewRepository extends EloquentRepository implements NewInterface
             $category_id = $request->category_id;
             $news->where('category_id', 'LIKE', '%' . $category_id . '%');
         }
-        return $news->orderBy('id', 'desc')->paginate(5);
+        return $news->orderBy('id', 'desc')->paginate(4);
     }
     
     public function getHot($request)
