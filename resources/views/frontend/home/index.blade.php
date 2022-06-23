@@ -11,7 +11,7 @@
                     <div class="tn-content">
                         <div class="tn-content-inner">
                             <a class="tn-date" href=""><i class="far fa-clock"></i>{{$new->puplish_date}}</a>
-                            <a class="tn-title" href="">{{$new->title}}</a>
+                            <a class="tn-title" href="{{ route('website.detailNews',$new->id )}}">{{$new->title}}</a>
                         </div>
                     </div>
                 </div>
