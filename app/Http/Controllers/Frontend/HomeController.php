@@ -30,11 +30,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $news = $this->newsService->getHot($request);
+        $News = News::all();
         $categories = $this->categorieService->getAll($request);
         
         $params = [
             "categories" => $categories,
             "news" => $news,
+            "News" => $News,
         ];
         return view('frontend.home.index',$params);
     }

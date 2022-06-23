@@ -122,8 +122,9 @@ class NewRepository extends EloquentRepository implements NewInterface
         }
         return $news->orderBy('id', 'desc')->paginate(5);
     }
+    
     public function getHot($request)
-    {  
+    {
         $news = $this->model->select('*');
         if (isset($request->title) && $request->title) {
             $title = $request->title;

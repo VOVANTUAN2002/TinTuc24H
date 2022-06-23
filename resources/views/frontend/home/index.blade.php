@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             @foreach($news as $new)
-            
+
             <div class="col-md-6 tn-left">
                 <div class="tn-img">
                     <img style="width: 644px; height: 444px" src="{{$new->image}}" />
@@ -30,7 +30,7 @@
 <div class="cat-news">
     <div class="container-fluid">
         <div class="row">
-            @foreach($news as $new)
+            @foreach($News as $new)
             <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                 <div class="single-product">
                     <div class="product-img">
