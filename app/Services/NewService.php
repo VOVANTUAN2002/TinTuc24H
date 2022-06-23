@@ -47,6 +47,11 @@ class NewService implements NewServiceInterface
         $this->newsRepository->destroy($news);
         return $news;
     }
+    public function getHot($request)
+    {
+        $news = $this->newsRepository->getHot($request);
+        return $news;
+    }
 
     public function trashedItems()
     {

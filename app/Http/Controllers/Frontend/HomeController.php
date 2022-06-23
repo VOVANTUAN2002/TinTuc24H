@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
+use App\Models\News;
 use App\Services\Interfaces\CategorieServiceInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
@@ -27,13 +29,15 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $news = $this->newsService->getAll($request);
+        $news = $this->newsService->getHot($request);
         $categories = $this->categorieService->getAll($request);
+        
         $params = [
-            "news" => $news,
             "categories" => $categories,
+            "news" => $news,
         ];
-        return view('frontend.home.index', $params);
+        // dd($news);
+        return view('frontend.home.index',$params);
     }
 
     public function header(Request $request)

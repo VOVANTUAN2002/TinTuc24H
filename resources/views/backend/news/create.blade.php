@@ -13,7 +13,9 @@
             </nav>
             <h1 class="page-title"> Thêm Mới Tin Tức </h1>
         </header>
-
+        @if (Session::has('message'))
+        <div class="text text-danger"><b>{{session::get('message')}}</b></div>
+        @endif
         <div class="page-section">
             <form method="post" action="{{route('news.store')}}" enctype="multipart/form-data">
                 @csrf
