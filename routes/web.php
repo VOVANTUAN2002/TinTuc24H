@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\HeaderController;
 use App\Http\Controllers\Frontend\DetailNewsController;
 use App\Http\Controllers\Frontend\CommentsController;
 use App\Http\Controllers\Frontend\NewsletersController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,3 +99,6 @@ Route::post('/addNewsleters', [NewsletersController::class,'addNewsleters']);
 Route::get('administrator/login', [AuthController::class, 'login'])->name('login');
 Route::post('administrator/postLogin', [AuthController::class, 'postLogin'])->name('postLogin');
 Route::get('administrator/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+

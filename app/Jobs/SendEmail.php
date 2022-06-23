@@ -20,12 +20,12 @@ class SendEmail implements ShouldQueue
      * @return void
      */
     protected $mail;
-    protected $title;
+    // protected $title;
 
-    public function __construct($mail,$title)
+    public function __construct($mail)
     {
         $this->mail = $mail;
-        $this->title = $title;
+        // $this->title = $title;
     }
 
     /**
@@ -35,6 +35,6 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::send($this->mail,$this->title);
+        Mail::send($this->mail);
     }
 }

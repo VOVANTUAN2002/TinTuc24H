@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\EventNewsleters;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
@@ -74,7 +75,7 @@ class NewsController extends Controller
             return redirect()->route('news.index')->with('success', ' Thêm tin tức ' . $request->title . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return redirect()->route(' news.index')->with('error', ' Thêm tin tức ' . $request->title . 'không thành công ');
+            return redirect()->route('news.index')->with('error', ' Thêm tin tức ' . $request->title . 'không thành công ');
         }
     }
 
@@ -100,6 +101,7 @@ class NewsController extends Controller
         $users = $this->usersService->getAll($id);
         $new = $this->newsService->findById($id);
         $news = News::select('id', 'image')->get();
+
         $categories = $this->categorieService->getAll($id);
 
         $params = [

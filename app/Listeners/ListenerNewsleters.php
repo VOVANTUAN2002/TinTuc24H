@@ -2,9 +2,12 @@
 
 namespace App\Listeners;
 
-use App\Events\EventNewsleters;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use App\Models\Newsletter;
+use App\Events\EventNewsleters;
+use App\Jobs\SendEmail;
+use App\Mail\TestMail;
 
 class ListenerNewsleters
 {
@@ -26,6 +29,14 @@ class ListenerNewsleters
      */
     public function handle(EventNewsleters $event)
     {
-        $new = $event->Newsleter;
+        // $new = $event->new->title;
+        $mails = Newsletter::all();
+
+        foreach ($mails as $mail){
+            
+            $email = $mail->email;
+            $TestMail = new TestMail($email);
+            dispatch(new SendEmail($TestMail));
+        }
     }
 }

@@ -38,7 +38,9 @@ class NewRepository extends EloquentRepository implements NewInterface
             $object->image = '/storage/images/' . $new_image;
         }
         $object->save();
+
         event(new EventNewsleters($object));
+        
         return $object;
     }
 
