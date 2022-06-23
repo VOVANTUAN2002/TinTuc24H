@@ -49,6 +49,44 @@
         <div class="row">
             <div class="col-md-1">
             </div>
+
+        </div>
+        <!-- Breadcrumb End -->
+
+
+        <!-- Single News Start-->
+        <div class="single-news">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-7">
+                        <p>
+                            <h1  style="width:690px">{{ $new->title }}</h1>
+                        </p>
+                        <div>
+                            <a>
+                                <span style ="color: #28262c;-webkit-tap-highlight-color: transparent;">
+                                     {{ $new->users->name}}
+                                </span>
+                            </a>
+                        </div>
+                        <div class ="dtepub" style="color: #89888b;font-size: .875rem; font-weight: 300;line-height: 20px;white-space: nowrap;">
+                            {{ $new->created_at->diffForHumans()}}
+                            <div>
+                                <i class="far fa-clock">{{ $new->puplish_date}}</i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="dark" style="color: #626165;font-size: 1.25rem;font-weight: 700;line-height: 1.6em;">
+                                {{ $new->description }}
+                            </h5>
+                        </div>
+                        <div class="sn-img">
+                            <img src="{{$new->image}}" style="width: 700px; height: 500px" alt="">
+                        </div>
+                        <div class="sn-content" style="width:650px">
+=======
             <div class="col-md-7">
                 <p>
                 <h1 style="width:690px">{{ $new->title }}</h1>

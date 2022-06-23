@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\EventNewsleters;
 use App\Events\UserSubmitEvent;
+use App\Listeners\ListenerNewsleters;
 use App\Listeners\UserSubmitListen;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -24,6 +26,10 @@ class EventServiceProvider extends ServiceProvider
 
         UserSubmitEvent::class => [
             UserSubmitListen::class
+        ],
+
+        EventNewsleters::class => [
+            ListenerNewsleters::class
         ],
     ];
 

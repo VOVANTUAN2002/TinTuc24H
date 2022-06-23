@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Events\EventNewsleters;
 use App\Models\News;
 use App\Repositories\Eloquent\EloquentRepository;
 use App\Repositories\Interfaces\NewInterface;
@@ -39,6 +40,9 @@ class NewRepository extends EloquentRepository implements NewInterface
             $object->image = '/storage/images/' . $new_image;
         }
         $object->save();
+
+        event(new EventNewsleters($object));
+        
         return $object;
     }
 
@@ -109,8 +113,12 @@ class NewRepository extends EloquentRepository implements NewInterface
 
     public function getAll($request)
     {
+
+        $categorie = $this->model->find(3)->categorie;
+        // dd($categorie);
         // $categorie = $this->model->find(3)->categorie; 
         // dd($categorie);    
+
         $news = $this->model->select('*');
         if (isset($request->title) && $request->title) {
             $title = $request->title;

@@ -268,11 +268,14 @@ class DatabaseSeeder extends Seeder
     }
 
     public function importEmail(){
-        for( $i=0; $i <10;$i++){
-            $this->faker = Faker::create();
+
             $Newsletter = new Newsletter();
-            $Newsletter->email = $this->faker->email;
+            $Newsletter->email = "vantoan092002@gmail.com";
             $Newsletter->save();
-        }
+
+            $Newsletter = new Newsletter();
+            $Newsletter->email = "chieman2k3@gmail.com";
+            $Newsletter->save();
+
     }
 }
