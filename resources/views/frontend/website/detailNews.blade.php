@@ -1,3 +1,29 @@
+<style>
+    .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 100.333333%;
+    max-width: 100.333333%;
+}
+.binhluan {
+    margin-left: 140px;
+}
+
+.row.style_comment {
+    margin-left: 140px;
+    width: 744px;
+}
+.col-md-4 {
+
+    flex: 0 0 100.333333%;
+    max-width: 100.333333%;
+}
+.comment {
+    width: 744px;
+}
+.header {
+    height: 55px;
+}
+</style>
 @extends('frontend.layouts.master')
 @section('content')
         <!-- Breadcrumb Start -->

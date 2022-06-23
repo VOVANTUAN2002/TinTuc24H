@@ -13,7 +13,7 @@ class CommentsController extends Controller
     public function load_comment(Request $request)
     {
         $new_id = $request->news_comment;
-        $comments = Comment::where('new_id', $new_id)->where('startus','approved')->get();
+        $comments = Comment::where('new_id', $new_id)->where('startus', 'approved')->get();
 
         $output = '';
         foreach ($comments as $key => $comment) {
@@ -22,8 +22,10 @@ class CommentsController extends Controller
             <div class="row style_comment">
 
                 <div class="col-md-4">
-                    <p style="color:green">Văn Toàn '.$comment->created_at->diffForHumans().'</p>
-                    <p>'.$comment->content.'</p>
+                    <div class="comment">
+                        <p style="color:green">Văn Toàn ' . $comment->created_at->diffForHumans() . '</p>
+                        <p>' . $comment->content . '</p>
+                    </div>
                 </div>
             </div>
             ';
@@ -31,10 +33,11 @@ class CommentsController extends Controller
         echo $output;
     }
 
-    public function send_comment(Request $request){
+    public function send_comment(Request $request)
+    {
 
         $new_id = $request->news_comment;
-        $content=  $request->comment;
+        $content =  $request->comment;
         $comment = new Comment();
         $comment->startus = "pending";
         $comment->content = $content;

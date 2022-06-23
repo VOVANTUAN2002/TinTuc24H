@@ -17,7 +17,7 @@ class CommentRepository extends EloquentRepository implements CommentInterface
 
     public function getAll($request)
     {
-         $comment = $this->model->orderBy('startus', 'ASC')->paginate(5);
+         $comment = $this->model->orderBy('startus', 'DESC')->paginate(8);
          return $comment;
     }
 
