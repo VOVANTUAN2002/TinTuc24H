@@ -48,7 +48,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="sidebar">
                             <div class="sidebar-widget">
                                 <h2><i class="fas fa-align-justify"></i>Loại Tin Tức</h2>
@@ -60,25 +60,24 @@
                                     @endforeach
                                 </div>
                             </div>
-
                             <div class="sidebar-widget">
-                                <h2><i class="fas fa-align-justify"></i>Ads 1 column</h2>
+                                <h4><i class="fas fa-align-justify"></i>Tin Tức Liên Quan</h4>
                                 <div class="image">
-                                    <a href=""><img src="{{asset('img/adds-1.jpg')}}" alt="Image"></a>
-                                </div>
-                            </div>
-
-                            <div class="sidebar-widget">
-                                <h2><i class="fas fa-align-justify"></i>Ads 2 column</h2>
-                                <div class="image">
+                                    {{-- @if($new->category_id == ) --}}
+                                    @foreach($news as $new)
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <a href=""><img src="{{asset('img/adds-1.jpg')}}" alt="Image"></a>
+                                            <a href=""><img src="{{$new->image}}" alt="Image"></a>
                                         </div>
                                         <div class="col-sm-6">
-                                            <a href=""><img src="{{asset('img/adds-1.jpg')}}" alt="Image"></a>
+                                            <p> {{ $new->puplish_date}}</p>
+                                            <h6><a href="{{ route('website.detailNews',$new->id)}}">{{$new->title}}</a></h6>
                                         </div>
                                     </div>
+                                    <hr>
+                                    @endforeach
+                                    {{-- @else 
+                                    @endif --}}
                                 </div>
                             </div>
                         </div>

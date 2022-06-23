@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
+use App\Models\News;
 use App\Services\Interfaces\CategorieServiceInterface;
 use App\Services\Interfaces\NewServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
+use PhpOffice\PhpSpreadsheet\Calculation\Category;
 
 class HomeController extends Controller
 {
@@ -76,10 +79,6 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -89,12 +88,20 @@ class HomeController extends Controller
      */
     public function show(Request $request,$id)
     {
+        // $gets = $this->newsService->showNews($request);
         $new = $this->newsService->findById($id);
+        $news = $this->newsService->getAll($request);
         $categories = $this->categorieService->getAll($request);
+        
+       
         $params = [
             "new" => $new,
+            "news" => $news,
+            // "gets" => $gets,
             "categories" => $categories,
+          
         ];
+        // dd($gets);
         return view('frontend.website.detailNews', $params);
     }
 
