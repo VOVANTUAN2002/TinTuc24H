@@ -43,21 +43,56 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3 class="title">Bản Tin</h3>
+                            <h3 class="title">ĐĂNG KÝ NHẬN THÔNG TIN</h3>
                             <div class="newsletter">
                                 <p>
-                                Chọn từ nhiều định dạng quảng cáo và quảng cáo trên mạng chuyên nghiệp lớn nhất thế giới. Quảng cáo cuộc trò chuyện trên LinkedIn cho phép bạn tương tác với khán giả của mình theo cách cá nhân hơn. Tạo một quảng cáo trong vài phút.
+                                    Đăng ký để nhận thông tin , bài viết mới từ New 24h
                                 </p>
                                 <form>
-                                    <input class="form-control" type="email" placeholder="Email của bạn ở đây">
-                                    <button class="btn">Nộp</button>
-                                </form>
-                            </div>
+                                    <input class="form-control add" type="email" placeholder="Nhập Email của quý khách">
+                                    <div id="success"></div>
+                                    <div>
+                                    </div>
+                                </div>
+                                <input class="btn btn-dark register" style="background:#2168ea" id="text" type="button" value="Đăng ký">
+                                <button class="btn btn-dark" style="background:#28A745;display:none;width: 94px" disabled id="check"><i class="fa fa-check"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+
+
+                $('.register').click(function(){
+
+                    var email = $('.add').val();
+                    var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+                    if(regex.test(email)){
+                        $.ajax({
+                            url:"{{url('/addNewsleters')}}",
+                            method:"POST",
+                            headers: {
+                              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                             },
+                            data:{
+                                email:email,
+                            },
+                            success:function(status,data){
+                                console.log(status);
+                                $('#success').html('<span class="text text-success">Quý khách đã đăng ký email thành công.</span>');
+                                $('#check').show();
+                                $('#text').hide();
+                            },
+
+                        });
+                    }else{
+                        $('#success').html('<span class="text text-danger">Sai định dạng email </span>')
+                    }
+                });
+
+        </script>

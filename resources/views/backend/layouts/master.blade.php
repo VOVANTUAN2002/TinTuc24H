@@ -114,7 +114,6 @@
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/popper.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-
     <!-- simplebar js -->
     <script src="{{asset('assets/plugins/simplebar/js/simplebar.js')}}"></script>
     <!-- sidebar-menu js -->
@@ -126,11 +125,11 @@
     <!-- Chart js -->
 
     <script src="{{asset('assets/plugins/Chart.js/Chart.min.js')}}"></script>
-
     <!-- Index js -->
     <script src="{{asset('assets/js/index.js')}}"></script>
-
     <script src="{{asset('assets/ckeditor/ckeditor.js')}}"></script>
+    
+
 
     <script type="text/javascript">
         CKEDITOR.replace('ckeditor1');

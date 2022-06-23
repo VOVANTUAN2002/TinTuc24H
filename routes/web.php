@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\HeaderController;
 use App\Http\Controllers\Frontend\DetailNewsController;
 use App\Http\Controllers\Frontend\CommentsController;
+use App\Http\Controllers\Frontend\NewsletersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,6 +92,7 @@ Route::get('/topHeader', [HomeController::class, 'topHeader'])->name('website.to
 Route::get('/detailNews/{id}', [HomeController::class, 'show'])->name('website.detailNews');
 Route::post('/load-comment', [CommentsController::class,'load_comment']);
 Route::post('/send-comment', [CommentsController::class,'send_comment']);
+Route::post('/addNewsleters', [NewsletersController::class,'addNewsleters']);
 
 
 Route::get('administrator/login', [AuthController::class, 'login'])->name('login');

@@ -58,7 +58,9 @@
                         </div>
                         <div class ="dtepub" style="color: #89888b;font-size: .875rem; font-weight: 300;line-height: 20px;white-space: nowrap;">
                             {{ $new->created_at->diffForHumans()}}
-                            <i class="far fa-clock">{{ $new->puplish_date}}</i>
+                            <div>
+                                <i class="far fa-clock">{{ $new->puplish_date}}</i>
+                            </div>
                         </div>
                         <div>
                             <h5 class="dark" style="color: #626165;font-size: 1.25rem;font-weight: 700;line-height: 1.6em;">
