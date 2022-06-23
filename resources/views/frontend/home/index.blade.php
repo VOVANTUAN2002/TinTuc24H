@@ -7,7 +7,7 @@
             @foreach($news as $new)
             <div class="col-md-6 tn-left">
                 <div class="tn-img">
-                    <img style="width: 644px; height: 444px" src="{{$new->image}}" />
+                    <img style="width: 644px; height: 444px" src="{{$new->image}}"/>
                     <div class="tn-content">
                         <div class="tn-content-inner">
                             <a class="tn-date" href=""><i class="far fa-clock"></i>{{$new->puplish_date}}</a>
@@ -21,7 +21,7 @@
     </div>
 </div>
 <!-- Top News End-->
-
+    
 <!-- Category News Start-->
 
 <div class="cat-news">
