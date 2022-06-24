@@ -21,7 +21,7 @@
     </div>
 </div>
 <!-- Top News End-->
-    
+
 <!-- Category News Start-->
 
 <div class="cat-news">
