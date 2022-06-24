@@ -4,20 +4,25 @@
         flex: 0 0 100.333333%;
         max-width: 100.333333%;
     }
+
     .binhluan {
         margin-left: 140px;
     }
+
     .row.style_comment {
         margin-left: 140px;
         width: 744px;
     }
+
     .col-md-4 {
         flex: 0 0 100.333333%;
         max-width: 100.333333%;
     }
+
     .comment {
         width: 744px;
     }
+
     .header {
         height: 55px;
     }
@@ -79,10 +84,11 @@
                     <div class="sidebar-widget">
                         <h2><i class="fas fa-align-justify"></i>Loại Tin Tức</h2>
                         <div class="category">
-                            @foreach($categories as $category)
+                            @foreach($menus as $menu)
                             <ul class="fa-ul">
                                 <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a
-                                        href="">{{ $category->name}}</a></li>
+                                        href="{{route('website.categories',$menu->id)}}">{{ $menu->name}}</a>
+                                </li>
                             </ul>
                             @endforeach
                         </div>
@@ -94,12 +100,14 @@
                             @foreach($related_news as $related_new)
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <a href="{{ route('website.detailNews',$related_new->id)}}"><img src="{{$related_new->image}}"
-                                            alt="Image"></a>
+                                    <a href="{{ route('website.detailNews',$related_new->id)}}"><img
+                                            src="{{$related_new->image}}" alt="Image"></a>
                                 </div>
                                 <div class="col-sm-6">
                                     <p> {{ $related_new->puplish_date}}</p>
-                                    <h6><a href="{{ route('website.detailNews',$related_new->id)}}">{{$related_new->title}}</a></h6>
+                                    <h6><a
+                                            href="{{ route('website.detailNews',$related_new->id)}}">{{$related_new->title}}</a>
+                                    </h6>
                                 </div>
                             </div>
                             <hr>

@@ -24,7 +24,7 @@ class EmailRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|unique:newsletters',
+            'email' => 'required',
         ];
     }
 
@@ -32,7 +32,7 @@ class EmailRequest extends FormRequest
     {
         return [
             'email.required' => 'Vui lòng nhập Email',
-            'email.unique' => 'Email đã tồn tại',
+            // 'email.unique' => 'Email đã tồn tại',
         ];
     }
 }
