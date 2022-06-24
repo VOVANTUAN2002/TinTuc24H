@@ -32,7 +32,6 @@ class CommentsController extends Controller
         }
         echo $output;
     }
-
     public function send_comment(Request $request)
     {
 

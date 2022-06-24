@@ -419,6 +419,7 @@ class DatabaseSeeder extends Seeder
         $new->save();
     }
 
+
     public function importComment()
     {
 
@@ -439,9 +440,16 @@ class DatabaseSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $this->faker = Faker::create();
+
+    public function importEmail(){
+
             $Newsletter = new Newsletter();
-            $Newsletter->email = $this->faker->email;
+            $Newsletter->email = "vantoan092002@gmail.com";
             $Newsletter->save();
-        }
+
+            $Newsletter = new Newsletter();
+            $Newsletter->email = "chieman2k3@gmail.com";
+            $Newsletter->save();
+
     }
 }
