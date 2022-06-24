@@ -87,6 +87,7 @@
                                 $('.add').val('Quý khách đã đăng ký email thành công').css({"color": "#49d084d1", "font-size": "85%"});
                                 $('#check').show();
                                 $('#text').hide();
+                                $('#success').hide();
                             },
 
                         });
