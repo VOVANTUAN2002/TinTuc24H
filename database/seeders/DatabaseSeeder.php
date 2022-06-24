@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->importCategories();
         $this->importNews();
         $this->importComment();
-        $this->importEmail();
+        // $this->importEmail();
     }
 
     public function importRoles()
@@ -435,15 +435,7 @@ class DatabaseSeeder extends Seeder
         $comment->new_id = rand(1, 4);
         $comment->save();
     }
-    public function importEmail(){
 
-            $Newsletter = new Newsletter();
-            $Newsletter->email = "vantoan092002@gmail.com";
-            $Newsletter->save();
 
-            $Newsletter = new Newsletter();
-            $Newsletter->email = "chieman2k3@gmail.com";
-            $Newsletter->save();
-
-    }
+    
 }
