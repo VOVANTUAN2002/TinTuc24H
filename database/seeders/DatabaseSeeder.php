@@ -435,12 +435,6 @@ class DatabaseSeeder extends Seeder
         $comment->new_id = rand(1, 4);
         $comment->save();
     }
-
-    public function importEmail()
-    {
-        for ($i = 0; $i < 10; $i++) {
-            $this->faker = Faker::create();
-
     public function importEmail(){
 
             $Newsletter = new Newsletter();

@@ -88,6 +88,7 @@ Route::get('/detailNews', function () {
 Route::get('/detailNews', [DetailNewsController::class, 'index'])->name('website.detailNews');
 Route::get('/home', [HomeController::class, 'index'])->name('website.home');
 Route::get('/search', [HomeController::class, 'search'])->name('website.search');
+Route::get('/categories', [HomeController::class, 'categories'])->name('website.categories');
 Route::get('/header', [HomeController::class, 'header'])->name('website.header');
 Route::get('/topHeader', [HomeController::class, 'topHeader'])->name('website.topHeader');
 Route::get('/detailNews/{id}', [HomeController::class, 'show'])->name('website.detailNews');

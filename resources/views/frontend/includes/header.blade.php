@@ -8,9 +8,9 @@
 
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav m-auto">
-                    <a href="{{ route('website.home')}}" class="nav-item nav-link active">Tin Tức</a>
-                    @foreach($categories as $category)
-                    <a href=" {{ route('website.detailNews',$category->id)}}" class="nav-item nav-link">{{ $category->name }}</a>
+                    <a href="{{ route('website.home')}}" class="nav-item nav-link active">Trang Chủ</a>
+                    @foreach($menus as $menu)
+                    <a href=" {{ route('website.categories',$menu->id)}}" class="nav-item nav-link">{{ $menu->name }}</a>
                     @endforeach
             </div>
         </nav>

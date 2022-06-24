@@ -81,9 +81,11 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function categories($id)
     {
-        //
+        $new = $this->newsService->findById($id);
+        $categories = News::where('category_id',$new->category_id)->get();
+        return view('frontend.website.categories',$categories);
     }
 
     /**
