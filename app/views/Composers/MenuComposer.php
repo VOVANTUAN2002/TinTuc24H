@@ -2,16 +2,17 @@
 
 namespace App\Views\Composers;
 
+use App\Models\Categorie;
+use App\Models\News;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Auth;
-class ProfileComposer
+class MenuComposer
 {
     /**
      * The user repository implementation.
      *
      * @var \App\Repositories\UserRepository
      */
-    protected $current_user;
+    protected $menus;
 
     /**
      * Create a new profile composer.
@@ -21,8 +22,8 @@ class ProfileComposer
      */
     public function __construct()
     {
-        $this->current_user = Auth::user();
         
+        $this->menus = Categorie::all();
 
     }
 
@@ -34,6 +35,6 @@ class ProfileComposer
      */
     public function compose(View $view)
     {
-        $view->with('current_user', $this->current_user);
+        $view->with('menus', $this->menus);
     }
 }

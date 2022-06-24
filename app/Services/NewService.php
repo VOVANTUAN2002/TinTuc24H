@@ -66,4 +66,9 @@ class NewService implements NewServiceInterface
     {
         return $this->newsRepository->force_destroy($id);
     }
+
+    public function getAllByCategory($id)
+    {
+        return $this->newsRepository->getAllByCategory($id);
+    }
 }

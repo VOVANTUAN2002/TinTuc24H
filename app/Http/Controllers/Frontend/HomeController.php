@@ -81,9 +81,14 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function categories($id)
     {
-        //
+        $news = $this->newsService->getAllByCategory($id);
+
+        $params = [
+            'news' => $news,
+        ];
+        return view('frontend.website.categories',$params);
     }
 
     /**
