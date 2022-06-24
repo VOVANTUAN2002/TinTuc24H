@@ -144,4 +144,12 @@ class NewRepository extends EloquentRepository implements NewInterface
         }
         return $news->where('hot', 1)->paginate(5);
     }
+
+    public function getAllByCategory($category_id)
+    {
+        // dd($category_id);
+        $news = $this->model->select('*');
+        return $news->where('category_id',$category_id)->get();
+        // dd($news);
+    }
 }
