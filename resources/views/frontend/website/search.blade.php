@@ -5,7 +5,8 @@
 <!-- Category News Start-->
 <div class="cat-news">
     <div class="container">
-        <h1>Kết quả tìm kiếm</h1>
+        <br>
+        <h1 class="fas fa-search">Kết quả tìm kiếm...</h1>
         @foreach($news as $new)
         <div class="row">
             <div class="col-lg-3">
@@ -20,7 +21,7 @@
                     <div>
                         <h5><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
                                 $new->title}}
-                            </a></h5>
+                        </a></h5>
                     </div>
                     <div>
                         <p class="cn-date"><i class="far fa-clock"></i>{{ $new->puplish_date}}</p>
