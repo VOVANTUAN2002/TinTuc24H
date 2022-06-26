@@ -176,6 +176,42 @@ class DatabaseSeeder extends Seeder
     public function importNews()
     {
         $new = new News();
+        $new->title = 'Soi cầu dự đoán Xổ Số Miền Trung ngày 25/6/2022 - Dự đoán XSMT 25/6 Soi cầu dự đoán Xổ Số Miền Trung ngày 24/6/2022 - Dự đoán XSMT 24/6';
+        $new->description = 'Dự đoán xổ số miền Trung hôm nay';
+        $new->image = 'https://static.xoso.com.vn/medias/standard/2020/8/28/Thong-ke-XSMB-Thu-6-ngay-28082020-Phan-tich-Xo-so-Mien-Bac-hinh-anh.png';
+        $new->content = 'Cơ cấu giải thưởng miền Bắc mới nhất
+        Cơ cấu giải thưởng mới nhất được áp dụng từ ngày 1/7/2020 (bao gồm 81.150 giải thưởng với 27 lần quay):
+        
+        6 Giải Đặc biệt: Giá trị giải thưởng: 500.000.000đ/giải - Tổng giá trị: 3.000.000.000đ - Riêng mùng 1 âm lịch hàng tháng sẽ có 8 giải đặc biệt - Tổng giá trị (VNĐ): 4.000.000.000
+        
+        15 Giải nhất trị giá: 10.000.000đ/giải - Tổng giá trị: 150.000.000đ
+        
+        30 Giải nhì trị giá: 5.000.000đ/giải - Tổng giá trị: 150.000.000đ
+        
+        90 Giải ba trị giá: 1.000.000đ/giải - Tổng giá trị: 180.000.000đ
+        
+        600 Giải tư trị giá: 400.000đ/giải - Tổng giá trị: 240.000.000đ
+        
+        900 Giải năm trị giá: 200.000đ/giải - Tổng giá trị: 180.000.000đ
+        
+        4.500 Giải sáu trị giá: 100.000đ/giải - Tổng giá trị: 450.000.000đ
+        
+        60.000 Giải bảy trị giá: 40.000đ/giải - Tổng giá trị: 2.400.000.000đ
+        
+        9 giải phụ Đặc biệt trị giá 25.000.000đ/giải (Trùng dãy số với giải đặc biệt và khác ký hiệu). Riêng ngày mùng 1 âm lịch hàng tháng có 12 giải phụ.
+        
+        15.000 Giải khuyến khích trị giá 40.000đ dành cho những vé có 2 số cuối trùng với 2 số cuối của giải đặc biệt.
+        
+        Vé trúng nhiều giải sẽ được lĩnh đủ giá trị các giải. Khi trúng thưởng, người chơi liên hệ nhận thưởng tại:';
+        $new->status = '1';
+        $new->view = '6,3 Triệu lượt xem';
+        $new->hot = 0;
+        $new->puplish_date = '2022/6/26';
+        $new->user_id = 1;
+        $new->category_id = 2;
+        $new->save();
+
+        $new = new News();
         $new->title = 'Anh T.C ở Đắc Lắc nhận thưởng hơn 41 tỷ đồng của Vietlott';
         $new->description = 'Chi nhánh Vietlott tại Khánh Hòa đã tổ chức trao giải Jackpot 1 xổ số Power 6/55 cho anh T. C, khách hàng may mắn đến từ Đắc Lắc với giải thưởng hơn 41 tỷ đồng.';
         $new->image = 'https://s.kqxs.me/images/0/1480.jpg';
@@ -183,7 +219,7 @@ class DatabaseSeeder extends Seeder
         Tại đây, anh T. C chia sẻ thêm: Anh thường xuyên mua vé số của Vietlott và thường mua theo bộ số mình yêu thích, và lần này anh đã mua 2 vé bằng cách chọn những con số mình thích cho 2 kỳ liên tục ngày 10/11 và 13/11. Một trong hai chiếc vé đã may mắn trúng giải Jackpot với giá trị giải thưởng hơn 41 tỷ đồng.
         Chia sẻ niềm vui và may mắn này anh T. C đã tặng 150 triệu đồng cho các quỹ từ thiện, an sinh xã hội.
         Thời hạn lĩnh thưởng của vé trúng thưởng: là 60 (sáu mươi) ngày, kể từ ngày xác định kết quả trúng thưởng. Với những khách hàng đã mua tấm vé số của Vietlott xin hãy kiểm tra kỹ tấm vé mà mình đang sở hữu, nếu trúng giải quý khách hàng có thể liên hệ trực tiếp tới đại lý gần nhất của Vietlott để làm thủ tục nhận giải. Thời hạn nhận giải của tấm vé này là 60 ngày bắt đầy tính từ ngày quay thưởng. Xin kính chúc quý khách hàng gặp thật nhiều may mắn!.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '6,3 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -200,7 +236,7 @@ class DatabaseSeeder extends Seeder
         Nguồn ngân sách nhà nước giai đoạn 2026-2030 hơn 14.500 tỷ đồng, bao gồm 8.790 tỷ đồng từ nguồn vốn ngân sách trung ương; nguồn vốn ngân sách địa phương là hơn 5.710 tỷ đồng. Vốn do nhà đầu tư thu xếp hơn 29.440 tỷ đồng.
         Dự án được chuẩn bị đầu tư từ năm 2022, cơ bản hoàn thành năm 2026, khai thác năm 2027. UBND TP Hà Nội là cơ quan đầu mối tổ chức thực hiện dự án. Trong hai năm kể từ khi nghị quyết được thông qua, Quốc hội cho phép người đứng đầu cơ quan có thẩm quyền xem xét, quyết định chỉ định thầu với các gói thầu tư vấn, phục vụ di dời hạ tầng kỹ thuật;
         bồi thường, hỗ trợ, tái định cư. Trong thời gian này, nhà thầu thi công không phải thực hiện thủ tục cấp phép khai thác mỏ khoáng sản làm vật liệu xây dựng thông thường.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
@@ -221,12 +257,12 @@ class DatabaseSeeder extends Seeder
         Ngày 4/6, tại địa phận xã Phú Xuân, huyện Nhà Bè, Cục C04 phối hợp với Công an TP.HCM, Bộ Tư lệnh Cảnh sát biển bắt quả tang Nguyễn Thành Vinh đang vận chuyển 100kg ma túy đựng trong 6 bao tải. Cùng thời điểm, tổ công tác bắt giữ Hải, thu giữ 1kg ma túy tổng hợp.
         Khám xét tại kho chứa ma túy do Hải thuê tại số 7 Tôn Thất Thuyết, thu giữ thêm 3 kg và 2.000 viên ma túy tổng hợp.
         Tiếp tục đấu tranh mở rộng vụ án, ngày 5/6, ban chuyên án bắt quả tang Lê Minh Hảo và Vũ Quốc Duy đang giao nhận 100 gói ma túy “đông trùng”. ';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,5 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
-        $new->category_id = 2;
+        $new->category_id = 1;
         $new->save();
 
 
@@ -242,7 +278,7 @@ class DatabaseSeeder extends Seeder
         Ngay sau động thái này của AFC, chủ tịch LĐBĐ Nhật Bản, ông Kozo Tashima đã đánh tiếng cho biết nước này sẵn sàng nhận đăng cai và có thể tổ chức ngay đầu năm sau.
         Không chỉ có Nhật Bản, hiện tại một số quốc gia có tiềm lực kinh tế cũng sẵn sàng đăng cai giải đấu. Theo trang Asean Football, hiện tại đang có 4 quốc gia nộp đơn xin đăng cai gồm Nhật Bản, Australia, Hàn Quốc và Qatar.
         Nếu Qatar được chọn làm chủ nhà, giải đấu dự kiến sẽ được tổ chức vào tháng 1 năm 2024 do nước này không kịp tổ chức thêm một giải đấu quốc tế ngay sau VCK World Cup 2022 vào cuối năm nay.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,7 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
@@ -259,7 +295,7 @@ class DatabaseSeeder extends Seeder
         $new->content = 'Theo SensorTower, BXH trò chơi di động có doanh thu cao nhất trên toàn thế giới vào tháng 5 năm 2022 là Honor of Kings (Vương Giả Vinh Diệu) của Tencent với chi tiêu cho người chơi xấp xỉ 268 triệu đô la, tương ứng với mức tăng trưởng 1,7% từ tháng 5 năm 2021. Khoảng 95% doanh thu của Vương Giả Vinh Diệu là từ Trung Quốc, tiếp theo là 1,7% từ Đài Bắc Trung Hoa và 1,7% từ Thái Lan. Tức là ngay cả trong trường hợp gộp cả doanh thu Liên Quân vào thì cũng chỉ đóng góp một thị phần rất nhỏ. Trong tương lai, khi mà Vương Giả Vinh Diệu được phát hành toàn cầu thì chắc chắn, doanh số sẽ thực sự “đáng gờm”.
         PUBG Mobile của Tencent là trò chơi di động có doanh thu cao thứ hai trên toàn thế giới vào tháng 5 năm 2022 với tổng doanh thu là 206,3 triệu đô la. Khoảng 67% doanh thu của PUBG Mobile đến từ Trung Quốc, nơi nó đã được bản địa hóa thành Game For Peace, tiếp theo là 6,4% từ Thổ Nhĩ Kỳ. Trò chơi có doanh thu cao nhất tiếp theo là Candy Crush Saga của King, tiếp theo là Genshin Impact từ miHoYo và Coin Master từ Moon Active.
         Điều bất ngờ là, Free Fire gần như biến mất trong BXH doanh thu game mobile toàn cầu tháng này. Điều rất hiếm khi xảy ra, ít nhất là trong khoảng 1 năm trở lại đây. Trong cả hai bảng doanh thu tổng lẫn iOS, Free Fire đều không hề xuất hiện.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
@@ -286,7 +322,7 @@ class DatabaseSeeder extends Seeder
         Cũng trong tối ngày 22/6, trên địa bàn quận Hai Bà Trưng, Hà Nội xảy ra vụ người đàn ông khoảng 65 tuổi rơi chung cư xuống đất tử vong.
         Theo báo Lao động, sự việc xảy ra vào khoảng 19h cùng ngày, tại chung cư 229 phố Vọng, phường Đồng Tâm. Vào thời điểm trên, chính quyền và Công an phường Đồng Tâm nhận tin báo về việc tại toà chung cư có địa chỉ tại phố Vọng, phường Đồng Tâm xảy ra vụ việc một người đàn ông rơi từ tầng cao xuống tử vong.
         Qua xác minh ban đầu, cơ quan chức năng xác định người đàn ông này tự tử. Nạn nhân 65 tuổi, là cư dân của toà chung cư. Khu chung cư này có 2 mặt, 1 mặt giáp với phố Vọng, 1 mặt giáp với đường Trần Đại Nghĩa. "Người này rơi từ trên cao xuống và mắc vào hàng rào" - vị lãnh đạo phường Đồng Tâm thông tin.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 5;
         $new->puplish_date = '2022/6/23';
@@ -333,7 +369,7 @@ class DatabaseSeeder extends Seeder
         Để ngăn ngừa những vụ ngộ độc đáng tiếc do ăn bánh trôi ngô, BS. Nguyên khuyến cáo người dân khi sử dụng hạt ngô khô làm thực phẩm, đặc biệt là những người dân sử dụng ngô làm thực phẩm thiết yếu như ở các tỉnh miền núi, vùng sâu vùng xa cần phải tuân theo các hướng dẫn khuyến cáo của chính quyền địa phương và các cơ quan chức năng về phòng tránh ngộ độc do ăn bánh trôi ngô.
         
         Bà con tuyệt đối không sử dụng ngô mốc, không sử dụng bột ngô cũ để làm bánh hay thức ăn. Hạt ngô kể cả sạch sau khi đã xay/nghiền thành bột thì chế biến ngay toàn bộ thành thức ăn và ăn hết sớm.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
@@ -358,7 +394,7 @@ class DatabaseSeeder extends Seeder
         Sau khi xảy ra vụ việc, anh Dương đã gửi đơn tới cơ quan chức năng đề nghị làm rõ nguyên nhân và khởi tố vụ án để điều tra.
         
         Nguyên nhân tử vong của cháu N. đang được cơ quan chức năng làm rõ.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
@@ -382,7 +418,7 @@ class DatabaseSeeder extends Seeder
         Được biết, vợ anh T. đã mất do bệnh tật, anh có một con gái tên là Dương Nguyễn Diệu Châu, học sinh lớp 7, Trường Tiểu học và Trung học cơ sở Tân Hợp.
         
         Trong đêm 22/6, thi thể của anh T. đã được đưa về quê để người thân lo hậu sự.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
@@ -426,7 +462,7 @@ class DatabaseSeeder extends Seeder
         Khi được thắc mắc vấn đề người yêu cũ, Cao Thái Hà từng thẳng thắn nói: "Sau khi chia tay tôi, anh ấy mới quen sao nữ hạng A kia. Tôi không nói tên sao nữ hạng A này ra được. Nhưng tôi biết cô ấy và cô ấy cũng biết tôi là người yêu cũ của anh. Chúng tôi gặp nhau ở sự kiện hoài, nhưng khi gặp cứ làm lơ thôi, không ai nói câu nào. Tôi sẽ không kể thêm về cô ấy, vì tôi chẳng muốn người ta bảo mình dựa hơi để mưu cầu sự nổi tiếng".
 
         Qua đó, có thể thấy thông tin cho rằng Minh Hằng "cướp chồng" chỉ là sự thêu dệt của cư dân mạng đối với nữ ca sĩ';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';

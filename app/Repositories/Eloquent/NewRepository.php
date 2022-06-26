@@ -152,4 +152,8 @@ class NewRepository extends EloquentRepository implements NewInterface
         return $news->where('category_id',$category_id)->get();
         // dd($news);
     }
+    public function newPresentli()
+    {
+        return $this->model->where('status',1)->get();
+    }
 }

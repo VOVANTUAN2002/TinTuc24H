@@ -47,6 +47,11 @@
             <div class="col-lg-6">
                 <div class="cn-content-inner">
                     <div>
+                        @if( $new->hot)
+                        <span class="badge badge-danger">Tin Tức HOT</span>
+                        @endif
+                    </div>
+                    <div>
                         <h5> <b><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
                                     $new->title}}
                                 </a></b></h5>
