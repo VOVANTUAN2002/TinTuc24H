@@ -11,9 +11,15 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="product-img">
+                    @if(!isset($new->image))
+                    <a href="{{ route('website.detailNews',$new->id )}}">
+                        <img class="default-img" src="https://www.caza.vn/_nuxt/img/3c27315.jpg" alt="#" style='width:100%; height: 200px'>
+                    </a>
+                    @else
                     <a href="{{ route('website.detailNews',$new->id )}}">
                         <img class="default-img" src="{{$new->image}}" alt="#" style='width:100%; height: 200px'>
                     </a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-9">

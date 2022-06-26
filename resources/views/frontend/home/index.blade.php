@@ -11,9 +11,16 @@
                     @foreach($newHots as $newHot)
                     <div class="col-md-6">
                         <div class="cn-img">
+                            @if(!isset($newHot->image))
                             <a href="{{ route('website.detailNews',$newHot->id )}}">
-                            <img class="default-img" src="{{ $newHot->image }}" style="width:670px; height:440px" alt="#" />
+                            <img class="default-img" src="https://www.caza.vn/_nuxt/img/3c27315.jpg" style="width:670px; height:440px" alt="#" />
                             </a>
+                            @else
+                            <a href="{{ route('website.detailNews',$newHot->id )}}">
+                                <img class="default-img" src="{{ $newHot->image }}" style="width:670px; height:440px" alt="#" />
+                            </a>
+                            @endif
+
                             <div class="cn-content">
                                 <div class="cn-content-inner">
                                     <a class="cn-date" href="{{ route('website.detailNews',$newHot->id )}}"><i class="far fa-clock"></i>{{
@@ -37,13 +44,19 @@
 <div>
     <div class="container">
         <h4> <b><i class="fas fa-align-justify"></i> Tin Tức Đáng Chú Ý</b></h4>
-        @foreach($News as $new)
+        @foreach($news as $new)
         <div class="row">
             <div class="col-lg-3">
                 <div class="product-img">
+                    @if(!isset($new->image))
+                    <a href="{{ route('website.detailNews',$new->id )}}">
+                        <img class="default-img" src="https://www.caza.vn/_nuxt/img/3c27315.jpg" alt="#" style='width:100%; height: 200px'>
+                    </a>
+                    @else
                     <a href="{{ route('website.detailNews',$new->id )}}">
                         <img class="default-img" src="{{$new->image}}" alt="#" style='width:100%; height: 200px'>
                     </a>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-6">
@@ -72,7 +85,6 @@
         </div>
 
         @endforeach
-
     </div>
 </div>
 </div>

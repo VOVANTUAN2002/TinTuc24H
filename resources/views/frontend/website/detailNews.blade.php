@@ -60,7 +60,11 @@
                     </h5>
                 </div>
                 <div class="sn-img">
+                    @if(!isset($new->image))
+                    <img src="https://www.caza.vn/_nuxt/img/3c27315.jpg" style="width: 700px; height: 500px" alt="">
+                    @else
                     <img src="{{$new->image}}" style="width: 700px; height: 500px" alt="">
+                    @endif
                 </div>
                 <div class="sn-content" style="width:650px">
 
@@ -91,8 +95,15 @@
                             @foreach($related_news as $related_new)
                             <div class="row">
                                 <div class="col-sm-6">
+                                    @if(!isset($related_new->image))
                                     <a href="{{ route('website.detailNews',$related_new->id)}}"><img
-                                            src="{{$related_new->image}}" alt="Image"></a>
+                                        src="https://www.caza.vn/_nuxt/img/3c27315.jpg" alt="Image">
+                                    </a>
+                                    @else
+                                    <a href="{{ route('website.detailNews',$related_new->id)}}"><img
+                                        src="{{$related_new->image}}" alt="Image">
+                                    </a>
+                                    @endif
                                 </div>
                                 <div class="col-sm-6">
                                     <p> {{ $related_new->created_at->Format('d/m/Y')}}</p>
