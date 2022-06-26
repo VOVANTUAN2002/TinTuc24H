@@ -143,9 +143,12 @@ class NewsController extends Controller
                     return redirect()->back();
                 }
             }
-            if ($request->status === 'Hiện') {
-                $newhots = News::where('status', 'Hiện')->get();
-            }
+            // if ($request->status === 'Hiện') {
+            //     $new = News::where('status', 'Hiện')->get();
+            //     if (count($new) === 'Ẩn') {
+            //         dd($new);
+            //     }
+            // }
             $news = $this->newsService->update($request, $id);
             return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $request->title . ' ' . ' thành công ');
         } catch (\Exception $e) {

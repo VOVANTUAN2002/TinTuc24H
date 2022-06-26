@@ -96,8 +96,8 @@
                             <div class="col-lg-4">
                                 <label>Tình trạng</label>
                                 <select name="status" class="form-control">
-                                    <option value="hidden" @selected( old('status')=='hidden' )>Ẩn</option>
-                                    <option value="show" @selected( old('status')=='show' )>Hiện</option>
+                                <option value="Hiện" @selected( old('status')=='Hiện' )>Hiện</option>
+                                    <option value="Ẩn" @selected( old('status')=='Ẩn' )>Ẩn</option>
                                 </select>
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('status') }}</p>
