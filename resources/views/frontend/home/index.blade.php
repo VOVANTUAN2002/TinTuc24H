@@ -1,43 +1,23 @@
 @extends('frontend.layouts.master')
 @section('content')
 
-<div class="top-news">
-    <div class="container-fluid">
-        <div class="row">
-            @foreach($news as $new)
-            <div class="col-md-6 tn-left">
-                <div class="tn-img">
-                    <img style="width: 644px; height: 444px" src="{{$new->image}}"/>
-                    <div class="tn-content">
-                        <div class="tn-content-inner">
-                            <a class="tn-date" href=""><i class="far fa-clock"></i>{{$new->puplish_date}}</a>
-                            <a class="tn-title" href="{{ route('website.detailNews',$new->id )}}">{{$new->title}}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-
 <div class="cat-news">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h4 style="color: red"> <b>Tin Tức HOT <sub><img
-                                src="https://d3.violet.vn/uploads/previews/document/0/39/67/Movie1.gif"
-                                style="width:50px; vertical-align:sub"></sub></b></h4>
+                <h4 style="color: red"> <b>Tin Tức HOT </b></h4>
                 <div class="row cn-slider">
                     @foreach($newHots as $newHot)
                     <div class="col-md-6">
                         <div class="cn-img">
-                            <img src="{{ $newHot->image }}" style="width:670px; height:440px" alt />
+                            <a href="{{ route('website.detailNews',$newHot->id )}}">
+                            <img class="default-img" src="{{ $newHot->image }}" style="width:670px; height:440px" alt="#" />
+                            </a>
                             <div class="cn-content">
                                 <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>{{
+                                    <a class="cn-date" href="{{ route('website.detailNews',$newHot->id )}}"><i class="far fa-clock"></i>{{
                                         $newHot->puplish_date}}</a>
-                                    <a class="cn-title" href="">{{ $newHot->title }}</a>
+                                    <a class="cn-title" href="{{ route('website.detailNews',$newHot->id )}}">{{ $newHot->title }}</a>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +50,7 @@
                     <div>
                         <h5> <b><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
                                     $new->title}}
-                         </a></b></h5>
+                                </a></b></h5>
                     </div>
                     <div>
                         <p class="cn-date"><i class="far fa-clock"></i>{{ $new->puplish_date}}</p>
@@ -84,7 +64,7 @@
                 <img src="https://stockdep.net/files/images/21244338.jpg" style="height:250px">
             </div>
         </div>
-   
+
         @endforeach
 
     </div>
