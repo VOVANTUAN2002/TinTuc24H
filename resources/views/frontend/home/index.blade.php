@@ -17,7 +17,7 @@
                                 <div class="cn-content-inner">
                                     <a class="cn-date" href=""><i class="far fa-clock"></i>{{
                                         $newHot->puplish_date}}</a>
-                                    <a class="cn-title" href="">{{ $newHot->title }}</a>
+                                    <a class="cn-title" href="{{ route('website.detailNews',$newHot->id )}}">{{ $newHot->title }}</a>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                 <img src="https://stockdep.net/files/images/21244338.jpg" style="height:250px">
             </div>
         </div>
-   
+
         @endforeach
 
     </div>
