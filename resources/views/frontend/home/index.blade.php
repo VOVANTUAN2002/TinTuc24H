@@ -5,17 +5,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h4 style="color: red"> <b>Tin Tức HOT <sub><img
-                                src="https://d3.violet.vn/uploads/previews/document/0/39/67/Movie1.gif"
-                                style="width:50px; vertical-align:sub"></sub></b></h4>
+                <h4 style="color: red"> <b>Tin Tức HOT </b></h4>
                 <div class="row cn-slider">
                     @foreach($newHots as $newHot)
                     <div class="col-md-6">
                         <div class="cn-img">
-                            <img src="{{ $newHot->image }}" style="width:670px; height:440px" alt />
+                            <a href="{{ route('website.detailNews',$newHot->id )}}">
+                            <img class="default-img" src="{{ $newHot->image }}" style="width:670px; height:440px" alt="#" />
+                            </a>
                             <div class="cn-content">
                                 <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>{{
+                                    <a class="cn-date" href="{{ route('website.detailNews',$newHot->id )}}"><i class="far fa-clock"></i>{{
                                         $newHot->puplish_date}}</a>
                                     <a class="cn-title" href="{{ route('website.detailNews',$newHot->id )}}">{{ $newHot->title }}</a>
                                 </div>
@@ -50,7 +50,7 @@
                     <div>
                         <h5> <b><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
                                     $new->title}}
-                         </a></b></h5>
+                                </a></b></h5>
                     </div>
                     <div>
                         <p class="cn-date"><i class="far fa-clock"></i>{{ $new->puplish_date}}</p>

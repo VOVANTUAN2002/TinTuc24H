@@ -6,7 +6,7 @@
 <div class="cat-news">
     <div class="container">
         <br>
-        <h1 class="fas fa-search">Kết quả tìm kiếm...</h1>
+        <h3 >Kết quả tìm kiếm...</h3>
         @foreach($news as $new)
         <div class="row">
             <div class="col-lg-3">
