@@ -452,7 +452,7 @@ class DatabaseSeeder extends Seeder
         Báo chí Anh bất ngờ tiết lộ thông tin Bayern đã đưa Ronaldo vào tầm ngắm để thay thế Lewandowski. Tiền đạo người Ba Lan đang muốn chuyển sang Barcelona, nhưng Hùm xám lại ngăn chưa cho thương vụ này xảy ra. Nếu tìm ra người thay thế xứng tầm kiểu như Ronaldo, rất có thể Bayern mới đồng ý để Lewandowski rời đi.
 
         21. Tổng số bàn thắng của 5 tiền đạo M.U mùa trước là Rashford, Greenwood, Cavani, Sancho và Elanga là 21 bàn, tức là còn chưa bằng một mình số bàn của Ronaldo (24 bàn).';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -502,7 +502,7 @@ class DatabaseSeeder extends Seeder
         Tiếp đó, ESPN đưa tin, BLĐ đội chủ sân Old Trafford có phần không thoải mái trước một số bình luận công khai của Rangnick trong các cuộc họp báo, đặc biệt là khi vị HLV này tuyên bố CLB cần tới 10 tân binh trong mùa Hè 2022. Các nguồn tin cho biết thêm rằng Man United đã yêu cầu Rangnick ký một thỏa thuận không tiết lộ thông tin mật của CLB nhưng rồi ông vẫn "bon mồm".
 
         Bây giờ, nhiệm vụ tái thiết Man United sẽ do Ten Hag toàn quyền phụ trách. Cuối tháng này, MU sẽ hội quân chuẩn bị cho mùa giải mới. Trận ra mắt của Ten Hag trên cương vị mới tới vào ngày 12/7 khi MU đá giao hữu với Liverpool ở Thái Lan.';
-        $new->status = 'show';
+        $new->status = '0';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -520,7 +520,7 @@ class DatabaseSeeder extends Seeder
         Chủ tịch Khiev Sameth của AFF khẳng định: “Mối quan hệ hợp tác này sẽ báo trước một kỷ nguyên mới cho bóng đá Đông Nam Á. Tôi rất lạc quan rằng chúng ta có thể đẩy giải đấu lên một tầm cao mới, cùng nhau nâng tầm bóng đá trong khu vực. Thực ra, Mitsubishi Electric đã tài trợ cho AFF Cup trong nhiều kỳ gần đây. Nhưng họ mới chỉ dừng lại ở nhà tài trợ vàng chứ chưa gắn tên với giải đấu”.
 
         Theo kế hoạch, giải đấu sẽ bắt đầu vào tháng 12, ngay sau khi World Cup kết thúc.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -540,7 +540,7 @@ class DatabaseSeeder extends Seeder
         "Với Quang Hải, AFF Cup 2020 là giải đấu đáng thất vọng. Anh vẫn là niềm hy vọng lớn của tuyển Việt Nam và duy trì phong độ đáng sợ. Ngay cả trong trận thua 0-2 trước Thái Lan ở bán kết lượt đi, Quang Hải vẫn cho thấy bản thân là cầu thủ nguy hiểm, khiến đối thủ phải gặp áp lực mỗi khi bóng rời đi từ cái chân trái của anh", tờ Goal phiên bản Thái Lan nhận xét về Quang Hải.
 
         Cũng nói thêm, tại AFF Cup 2020, Quang Hải thi đấu 6 trận cho tuyển Việt Nam. Anh để lại 2 bàn thắng, 2 kiến tạo và 13 đường chuyền tạo cơ hội. ';
-        $new->status = 'show';
+        $new->status = '0';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -562,7 +562,7 @@ class DatabaseSeeder extends Seeder
         Thành công của ĐTQG Thái Lan được xây dựng dựa trên hai nhóm cầu thủ. Thứ nhất là đa phần gương mặt chơi bóng ở Thai League - một giải chất lượng tương đối cao ở châu lục và thuộc diện số 1 Đông Nam Á. Thứ hai là 2 ngôi sao thành danh ở Nhật Bản gồm Chanathip Songkrasin và Theerathon Bunmathan. Những gì mà hai cầu thủ này thể hiện ở AFF Cup 2020 quả thực khiến người hâm mộ chờ đợi vào những cái tên như Hoàng Đức, Quang Hải có thể xuất ngoại để phát triển năng lực trong tương lai gần.
 
         HLV Polking của Thái Lan gợi ý: “Tôi mong Quang Hải, cầu thủ đại diện của Việt Nam có thể làm được như thế. Họ cần phải tới Nhật Bản, Hàn Quốc và các giải khác. Thậm chí là cả châu Âu. Các cầu thủ giỏi không nên bó buộc mình ở trong nước nữa”. Tiếp lời người thầy của mình, Chanathip – biểu tượng xuất ngoại thành công hy vọng: “Những cầu thủ giỏi nhất ở các đội tuyển trong khu vực như Quang Hải hay Hoàng Đức của Việt Nam nên cân nhắc rời khỏi vùng an toàn để tìm đến các nền bóng đá cao hơn nhằm tiếp tục nâng cao khả năng của mình”.';
-        $new->status = 'show';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';

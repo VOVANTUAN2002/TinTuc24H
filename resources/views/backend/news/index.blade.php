@@ -81,10 +81,10 @@
                                         <span class="badge badge-warning text-dark">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
                                         @endif
                                         @if( $new->status == '1')
-                                        <span class="badge badge-info text-dark">Trạng Thái: Hiện</span>
+                                        <span class="badge badge-info text-dark" value="1">Trạng Thái: Hiện</span>
                                         @endif
                                         @if( $new->status == '0')
-                                        <span class="badge badge-info text-dark">Trạng Thái: Ẩn</span>
+                                        <span class="badge badge-info text-dark" value="0">Trạng Thái: Ẩn</span>
                                         @endif
 
                                         </br>
