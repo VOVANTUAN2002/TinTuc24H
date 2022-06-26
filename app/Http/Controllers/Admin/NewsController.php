@@ -22,12 +22,11 @@ class NewsController extends Controller
     protected $categorieService;
     protected $usersService;
 
-    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService,CategorieServiceInterface $categorieService)
+    public function __construct(NewServiceInterface $newsService, UserServiceInterface $usersService, CategorieServiceInterface $categorieService)
     {
         $this->newsService = $newsService;
         $this->usersService = $usersService;
         $this->categorieService = $categorieService;
-
     }
     /**
      * Display a listing of the resource.
@@ -75,8 +74,8 @@ class NewsController extends Controller
         try {
             if ((int) $request->hot === 1) {
                 $newhots = News::where('hot', 1)->get();
-                if (count($newhots) === 4 ) {
-    
+                if (count($newhots) === 4) {
+
                     Session::flash('message', 'Chung tôi chỉ cho phép 4 sản phẩm  Hot');
                     return redirect()->back();
                 }
@@ -138,11 +137,14 @@ class NewsController extends Controller
         try {
             if ((int) $request->hot === 1) {
                 $newhots = News::where('hot', 1)->get();
-                if (count($newhots) === 4 ) {
-    
+                if (count($newhots) === 4) {
+
                     Session::flash('message', 'Chung tôi chỉ cho phép 4 sản phẩm  Hot');
                     return redirect()->back();
                 }
+            }
+            if ($request->status === 'Hiện') {
+                $newhots = News::where('status', 'Hiện')->get();
             }
             $news = $this->newsService->update($request, $id);
             return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $request->title . ' ' . ' thành công ');
@@ -205,6 +207,5 @@ class NewsController extends Controller
             Log::error($e->getMessage());
             return redirect()->route('news.trash')->with('error', 'Xóa' . ' ' . $news->name . ' ' .  'không thành công');
         }
-
     }
 }

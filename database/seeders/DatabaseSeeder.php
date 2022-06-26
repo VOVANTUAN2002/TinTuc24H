@@ -183,7 +183,7 @@ class DatabaseSeeder extends Seeder
         Tại đây, anh T. C chia sẻ thêm: Anh thường xuyên mua vé số của Vietlott và thường mua theo bộ số mình yêu thích, và lần này anh đã mua 2 vé bằng cách chọn những con số mình thích cho 2 kỳ liên tục ngày 10/11 và 13/11. Một trong hai chiếc vé đã may mắn trúng giải Jackpot với giá trị giải thưởng hơn 41 tỷ đồng.
         Chia sẻ niềm vui và may mắn này anh T. C đã tặng 150 triệu đồng cho các quỹ từ thiện, an sinh xã hội.
         Thời hạn lĩnh thưởng của vé trúng thưởng: là 60 (sáu mươi) ngày, kể từ ngày xác định kết quả trúng thưởng. Với những khách hàng đã mua tấm vé số của Vietlott xin hãy kiểm tra kỹ tấm vé mà mình đang sở hữu, nếu trúng giải quý khách hàng có thể liên hệ trực tiếp tới đại lý gần nhất của Vietlott để làm thủ tục nhận giải. Thời hạn nhận giải của tấm vé này là 60 ngày bắt đầy tính từ ngày quay thưởng. Xin kính chúc quý khách hàng gặp thật nhiều may mắn!.';
-        $new->status = 'hidden';
+        $new->status = 'show';
         $new->view = '6,3 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -200,7 +200,7 @@ class DatabaseSeeder extends Seeder
         Nguồn ngân sách nhà nước giai đoạn 2026-2030 hơn 14.500 tỷ đồng, bao gồm 8.790 tỷ đồng từ nguồn vốn ngân sách trung ương; nguồn vốn ngân sách địa phương là hơn 5.710 tỷ đồng. Vốn do nhà đầu tư thu xếp hơn 29.440 tỷ đồng.
         Dự án được chuẩn bị đầu tư từ năm 2022, cơ bản hoàn thành năm 2026, khai thác năm 2027. UBND TP Hà Nội là cơ quan đầu mối tổ chức thực hiện dự án. Trong hai năm kể từ khi nghị quyết được thông qua, Quốc hội cho phép người đứng đầu cơ quan có thẩm quyền xem xét, quyết định chỉ định thầu với các gói thầu tư vấn, phục vụ di dời hạ tầng kỹ thuật;
         bồi thường, hỗ trợ, tái định cư. Trong thời gian này, nhà thầu thi công không phải thực hiện thủ tục cấp phép khai thác mỏ khoáng sản làm vật liệu xây dựng thông thường.';
-        $new->status = 'hidden';
+        $new->status = 'show';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 1;
         $new->puplish_date = '2022/6/16';
