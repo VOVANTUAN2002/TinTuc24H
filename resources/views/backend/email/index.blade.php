@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>{{ $newsletter->id}}</td>
                                     <td>{{ $newsletter->email }}</td>
-                                    <td>{{ $newsletter->created_at }}-{{ $newsletter->created_at->diffForHumans() }}</td>
+                                    <td>{{ $newsletter->created_at }}</td>
                                     <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('email.edit',$newsletter->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
