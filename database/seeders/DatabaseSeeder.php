@@ -176,6 +176,22 @@ class DatabaseSeeder extends Seeder
     public function importNews()
     {
         $new = new News();
+        $new->title = 'Anh T.C ở Đắc Lắc nhận thưởng hơn 41 tỷ đồng của Vietlott';
+        $new->description = 'Chi nhánh Vietlott tại Khánh Hòa đã tổ chức trao giải Jackpot 1 xổ số Power 6/55 cho anh T. C, khách hàng may mắn đến từ Đắc Lắc với giải thưởng hơn 41 tỷ đồng.';
+        $new->image = 'https://s.kqxs.me/images/0/1480.jpg';
+        $new->content = 'Tại buổi nhận thưởng, anh C có chia sẻ tấm vé số may mắn của mình được mua tại điểm bán hàng của Vielott Khối 1, thị trấn Eak Nốp, huyện Eakar, Đăk Lăk..
+        Tại đây, anh T. C chia sẻ thêm: Anh thường xuyên mua vé số của Vietlott và thường mua theo bộ số mình yêu thích, và lần này anh đã mua 2 vé bằng cách chọn những con số mình thích cho 2 kỳ liên tục ngày 10/11 và 13/11. Một trong hai chiếc vé đã may mắn trúng giải Jackpot với giá trị giải thưởng hơn 41 tỷ đồng.
+        Chia sẻ niềm vui và may mắn này anh T. C đã tặng 150 triệu đồng cho các quỹ từ thiện, an sinh xã hội.
+        Thời hạn lĩnh thưởng của vé trúng thưởng: là 60 (sáu mươi) ngày, kể từ ngày xác định kết quả trúng thưởng. Với những khách hàng đã mua tấm vé số của Vietlott xin hãy kiểm tra kỹ tấm vé mà mình đang sở hữu, nếu trúng giải quý khách hàng có thể liên hệ trực tiếp tới đại lý gần nhất của Vietlott để làm thủ tục nhận giải. Thời hạn nhận giải của tấm vé này là 60 ngày bắt đầy tính từ ngày quay thưởng. Xin kính chúc quý khách hàng gặp thật nhiều may mắn!.';
+        $new->status = 'hidden';
+        $new->view = '6,3 Triệu lượt xem';
+        $new->hot = 0;
+        $new->puplish_date = '2022/6/26';
+        $new->user_id = 1;
+        $new->category_id = 2;
+        $new->save();
+
+        $new = new News();
         $new->title = 'Hơn 245.000 tỷ đồng xây dựng năm cao tốc';
         $new->description = 'Quốc hội thông qua chủ trương đầu tư xây dựng dự án Vành đai 4 Hà Nội, Vành đai 3 TP HCM và ba cao tốc phía Nam, tổng vốn đầu tư 245.000 tỷ đồng';
         $new->image = 'https://i1-vnexpress.vnecdn.net/2022/06/16/hu-o-ng-tuye-n-va-nh-dai-4-jpg-2992-8981-1655349629.png?w=680&h=0&q=100&dpr=1&fit=crop&s=pNO0K37jugXu50MKKySovA';
@@ -272,7 +288,7 @@ class DatabaseSeeder extends Seeder
         Qua xác minh ban đầu, cơ quan chức năng xác định người đàn ông này tự tử. Nạn nhân 65 tuổi, là cư dân của toà chung cư. Khu chung cư này có 2 mặt, 1 mặt giáp với phố Vọng, 1 mặt giáp với đường Trần Đại Nghĩa. "Người này rơi từ trên cao xuống và mắc vào hàng rào" - vị lãnh đạo phường Đồng Tâm thông tin.';
         $new->status = 'show';
         $new->view = '1,2 Triệu lượt xem';
-        $new->hot = 0;
+        $new->hot = 5;
         $new->puplish_date = '2022/6/23';
         $new->user_id = 3;
         $new->category_id = 2;
