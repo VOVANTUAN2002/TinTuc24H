@@ -205,9 +205,9 @@
                 success: function (status, data) {
                     console.log(status);
                     $('#notyfi_comment').html('<span class="text text-success">Bình Luận Đang chờ duyệt</span>')
-                    load_comments();
-                    $('#notyfi_comment').fadeOut(20000);
+                    $('#notyfi_comment').fadeOut(5000);
                     $('.comment').val('');
+                    load_comments();
                 }
             });
 

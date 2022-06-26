@@ -14,6 +14,7 @@
 
 
 <!-- Single News Start-->
+
 <div class="single-news">
     <div class="container-fluid">
         <div class="row">
@@ -39,6 +40,5 @@
         </div>
     </div>
 </div>
-
 
 @endsection
