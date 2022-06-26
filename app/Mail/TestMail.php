@@ -21,10 +21,6 @@ class TestMail extends Mailable
 
     public function build()
     {
-
-
-        return $this
-            ->to($this->mail)
-            ->view('mails.test');
+        return $this->to($this->mail)->view('mails.test');
     }
 }
