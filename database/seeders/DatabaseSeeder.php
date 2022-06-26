@@ -478,9 +478,6 @@ class DatabaseSeeder extends Seeder
 
         Qua đó, có thể thấy thông tin cho rằng Minh Hằng "cướp chồng" chỉ là sự thêu dệt của cư dân mạng đối với nữ ca sĩ';
         $new->status = '1';
-        De Gea cũng hoàn toàn có thể đảm đương vai trò này. Thủ thành người Tây Ban Nha đang là một trong những cầu thủ gắn bó lâu nhất với M.U, và cũng luôn là chỗ dựa vững chắc cho các đồng đội. Chỉ có điều, việc thi đấu ở một vị trí đặc thù sẽ khiến anh khó tạo ảnh hưởng với các đồng đội.
-
-        Cuối cùng là Bruno, lựa chọn trên lý thuyết là dễ lý giải nhất. Tiền vệ người Bồ Đào Nha chính là đội phó của M.U. Anh cũng đáp ứng đầy đủ các tiêu chí của Keane, từ chuyên môn cho đến tư chất thủ lĩnh. Nhưng câu hỏi đặt ra là liệu Bruno có thể “lãnh đạo” được đàn anh Ronaldo?';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
