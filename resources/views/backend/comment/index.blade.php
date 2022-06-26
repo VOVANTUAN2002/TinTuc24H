@@ -56,8 +56,6 @@
                                     </td>
                                     {{-- <td>{{ __($comment->startus) }}</td> --}}
                                     <td>
-                                        <span class="sr-only">Edit</span></a> <a href="{{route('comments.edit',$comment->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
-                                            <span class="sr-only">Remove</span></a>
                                         <form action="{{ route('comments.destroy',$comment->id )}}" style="display:inline" method="post">
                                             <button onclick="return confirm('Bạn có chắc muôn xóa bình luận này kh ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
