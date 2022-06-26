@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->importCategories();
         $this->importNews();
         $this->importComment();
-        // $this->importEmail();
+        $this->importEmail();
     }
 
     public function importRoles()
@@ -181,33 +181,33 @@ class DatabaseSeeder extends Seeder
         $new->image = 'https://static.xoso.com.vn/medias/standard/2020/8/28/Thong-ke-XSMB-Thu-6-ngay-28082020-Phan-tich-Xo-so-Mien-Bac-hinh-anh.png';
         $new->content = 'Cơ cấu giải thưởng miền Bắc mới nhất
         Cơ cấu giải thưởng mới nhất được áp dụng từ ngày 1/7/2020 (bao gồm 81.150 giải thưởng với 27 lần quay):
-        
+
         6 Giải Đặc biệt: Giá trị giải thưởng: 500.000.000đ/giải - Tổng giá trị: 3.000.000.000đ - Riêng mùng 1 âm lịch hàng tháng sẽ có 8 giải đặc biệt - Tổng giá trị (VNĐ): 4.000.000.000
-        
+
         15 Giải nhất trị giá: 10.000.000đ/giải - Tổng giá trị: 150.000.000đ
-        
+
         30 Giải nhì trị giá: 5.000.000đ/giải - Tổng giá trị: 150.000.000đ
-        
+
         90 Giải ba trị giá: 1.000.000đ/giải - Tổng giá trị: 180.000.000đ
-        
+
         600 Giải tư trị giá: 400.000đ/giải - Tổng giá trị: 240.000.000đ
-        
+
         900 Giải năm trị giá: 200.000đ/giải - Tổng giá trị: 180.000.000đ
-        
+
         4.500 Giải sáu trị giá: 100.000đ/giải - Tổng giá trị: 450.000.000đ
-        
+
         60.000 Giải bảy trị giá: 40.000đ/giải - Tổng giá trị: 2.400.000.000đ
-        
+
         9 giải phụ Đặc biệt trị giá 25.000.000đ/giải (Trùng dãy số với giải đặc biệt và khác ký hiệu). Riêng ngày mùng 1 âm lịch hàng tháng có 12 giải phụ.
-        
+
         15.000 Giải khuyến khích trị giá 40.000đ dành cho những vé có 2 số cuối trùng với 2 số cuối của giải đặc biệt.
-        
+
         Vé trúng nhiều giải sẽ được lĩnh đủ giá trị các giải. Khi trúng thưởng, người chơi liên hệ nhận thưởng tại:';
         $new->status = '1';
         $new->view = '6,3 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
-        $new->user_id = 1;
+        $new->user_id = 2;
         $new->category_id = 2;
         $new->save();
 
@@ -223,7 +223,7 @@ class DatabaseSeeder extends Seeder
         $new->view = '6,3 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
-        $new->user_id = 1;
+        $new->user_id = 2;
         $new->category_id = 2;
         $new->save();
 
@@ -586,5 +586,21 @@ class DatabaseSeeder extends Seeder
         $comment->startus = "pending";
         $comment->new_id = rand(1, 4);
         $comment->save();
+    }
+
+    public function importEmail()
+    {
+
+        $Newsletter = new Newsletter();
+        $Newsletter->email = "chieman2k3@gmail.com";
+        $Newsletter->save();
+
+        $Newsletter = new Newsletter();
+        $Newsletter->email = "vantoan092002@gmail.com";
+        $Newsletter->save();
+
+        $Newsletter = new Newsletter();
+        $Newsletter->email = "votuant2@gmail.com";
+        $Newsletter->save();
     }
 }
