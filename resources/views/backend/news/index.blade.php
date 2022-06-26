@@ -85,6 +85,8 @@
                                         @endif
                                         @if( $new->status == '0')
                                         <span class="badge badge-info text-dark">Trạng Thái: Ẩn</span>
+                                        @endif
+
                                         </br>
                                     </td>
                                     <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>
