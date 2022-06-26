@@ -11,10 +11,12 @@
                     @foreach($newHots as $newHot)
                     <div class="col-md-6">
                         <div class="cn-img">
-                            <img src="{{ $newHot->image }}" style="width:670px; height:440px" alt />
+                            <a href="{{ route('website.detailNews',$newHot->id )}}">
+                            <img class="default-img" src="{{ $newHot->image }}" style="width:670px; height:440px" alt="#" />
+                            </a>
                             <div class="cn-content">
                                 <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>{{
+                                    <a class="cn-date" href="{{ route('website.detailNews',$newHot->id )}}"><i class="far fa-clock"></i>{{
                                         $newHot->puplish_date}}</a>
                                     <a class="cn-title" href="{{ route('website.detailNews',$newHot->id )}}">{{ $newHot->title }}</a>
                                 </div>

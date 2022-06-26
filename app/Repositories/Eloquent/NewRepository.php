@@ -18,6 +18,8 @@ class NewRepository extends EloquentRepository implements NewInterface
         return News::class;
     }
 
+
+
     public function create($request)
     {
         $object = $this->model;
@@ -42,7 +44,7 @@ class NewRepository extends EloquentRepository implements NewInterface
         $object->save();
 
         event(new EventNewsleters($object));
-        
+
         return $object;
     }
 
@@ -116,8 +118,8 @@ class NewRepository extends EloquentRepository implements NewInterface
 
         $categorie = $this->model->find(3)->categorie;
         // dd($categorie);
-        // $categorie = $this->model->find(3)->categorie; 
-        // dd($categorie);    
+        // $categorie = $this->model->find(3)->categorie;
+        // dd($categorie);
 
         $news = $this->model->select('*');
         if (isset($request->title) && $request->title) {
@@ -128,9 +130,9 @@ class NewRepository extends EloquentRepository implements NewInterface
             $category_id = $request->category_id;
             $news->where('category_id', 'LIKE', '%' . $category_id . '%');
         }
-        return $news->orderBy('id', 'desc')->paginate(4);
+        return $news->orderBy('id', 'desc')->paginate(6);
     }
-    
+
     public function getHot($request)
     {
         $news = $this->model->select('*');

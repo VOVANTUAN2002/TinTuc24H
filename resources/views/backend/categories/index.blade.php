@@ -14,19 +14,16 @@
         <div class="d-md-flex align-items-md-start">
             <h1 class="page-title mr-sm-auto"> Quản Lý Loại Tin Tức</h1>
             <div class="btn-toolbar">
-                <a href="{{ route('categories.create') }}" class="btn btn-primary">
-                    <i class="fa-solid fa fa-plus"></i>
-                    <span class="ml-1">Thêm Mới</span>
-                </a>
+ 
             </div>
         </div>
         <div class="card-body">
-            <div class="row mb-2">
-                <div class="col">
+            <div class="row">
+                <div class="col-lg-10">
                     <form action="" method="GET" id="form-search" class="form-dark">
                         <div class="input-group input-group-alt">
                             <div class="input-group-prepend">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Tìm nâng cao
                                 </button>
                             </div>
@@ -34,7 +31,15 @@
                         @include('backend.categories.modals.modalSearch')
                     </form>
                 </div>
+                <div class="col-lg-2">
+                    <a href="{{ route('categories.create') }}" class="btn btn-dark">
+                        <i class="fa-solid fa fa-plus"></i>
+                        <span class="ml-1">Thêm Mới</span>
+                    </a>
+                <div>
             </div>
+            </div>
+
             @if (Session::has('success'))
             <div class="text text-success"><b>{{session::get('success')}}</b></div>
             @endif
