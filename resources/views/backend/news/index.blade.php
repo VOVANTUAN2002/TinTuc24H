@@ -77,16 +77,13 @@
                                         @if( $new->hot)
                                         <span class="badge badge-danger text-dark">Tin Tức HOT</span>
                                         @endif
-                                        @if( $new->puplish_date)
-                                        <span class="badge badge-warning text-dark">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
-                                        @endif
+                                        <span class="badge badge-warning text-dark">Ngày Xuất Bản: {{ $new->created_at->Format('d/m/Y') }}</span>
                                         @if( $new->status == '1')
                                         <span class="badge badge-info text-dark" value="1">Trạng Thái: Hiện</span>
                                         @endif
                                         @if( $new->status == '0')
                                         <span class="badge badge-info text-dark" value="0">Trạng Thái: Ẩn</span>
                                         @endif
-
                                         </br>
                                     </td>
                                     <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>

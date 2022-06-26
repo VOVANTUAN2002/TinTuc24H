@@ -602,5 +602,9 @@ class DatabaseSeeder extends Seeder
         $Newsletter = new Newsletter();
         $Newsletter->email = "votuant2@gmail.com";
         $Newsletter->save();
+
+        $Newsletter = new Newsletter();
+        $Newsletter->email = "tam.nguyen@codegym.vn ";
+        $Newsletter->save();
     }
 }

@@ -24,7 +24,7 @@
                             <div class="cn-content">
                                 <div class="cn-content-inner">
                                     <a class="cn-date" href="{{ route('website.detailNews',$newHot->id )}}"><i class="far fa-clock"></i>{{
-                                        $newHot->puplish_date}}</a>
+                                        $newHot->created_at->Format('d/m/Y') }}</a>
                                     <a class="cn-title" href="{{ route('website.detailNews',$newHot->id )}}">{{ $newHot->title }}</a>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                 </a></b></h5>
                     </div>
                     <div>
-                        <p class="cn-date"><i class="far fa-clock"></i>{{ $new->puplish_date}}</p>
+                        <p class="cn-date"><i class="far fa-clock"></i>{{ $new->created_at->Format('d/m/Y')}}</p>
                     </div>
                     <div>
                         <b class="cn-date">{{ $new->description}}</b>
