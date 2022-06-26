@@ -74,13 +74,17 @@
                                     <td>{{ $new->id }}</td>
                                     <td>{{ $new->title }}
                                         <br>
-                                        @if( $new->puplish_date)
-                                        <span class="badge badge-warning">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
-                                        @endif
                                         @if( $new->hot)
-                                        <span class="badge badge-danger">Tin Tức HOT</span>
+                                        <span class="badge badge-danger text-dark">Tin Tức HOT</span>
                                         @endif
-                                        <span class="badge badge-info">Trạng Thái: {{ __($new->status) }}</span>
+                                        @if( $new->puplish_date)
+                                        <span class="badge badge-warning text-dark">Ngày Xuất Bản: {{ $new->puplish_date }}</span>
+                                        @endif
+                                        @if( $new->status == '1')
+                                        <span class="badge badge-info text-dark">Trạng Thái: Hiện</span>
+                                        @endif
+                                        @if( $new->status == '0')
+                                        <span class="badge badge-info text-dark">Trạng Thái: Ẩn</span>
                                         </br>
                                     </td>
                                     <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>

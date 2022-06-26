@@ -5,8 +5,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h4 style="color: red"> <b>Tin Tức HOT </b></h4>
+                <h4 style="color: red"> <b>Tin Tức HOT <sub><img src="https://d3.violet.vn/uploads/previews/document/0/39/67/Movie1.gif" style="width:50px; vertical-align:sub"></sub></b></h4>
                 <div class="row cn-slider">
+
                     @foreach($newHots as $newHot)
                     <div class="col-md-6">
                         <div class="cn-img">
@@ -47,6 +48,11 @@
             </div>
             <div class="col-lg-6">
                 <div class="cn-content-inner">
+                    <div>
+                        @if( $new->hot)
+                        <span class="badge badge-danger">Tin Tức HOT</span>
+                        @endif
+                    </div>
                     <div>
                         <h5> <b><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
                                     $new->title}}

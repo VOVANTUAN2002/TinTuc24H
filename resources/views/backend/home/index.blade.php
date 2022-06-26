@@ -20,9 +20,9 @@
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
                         <div class="card-body">
                             <h5 class="text-white mb-0">Tổng số bài viết đã đăng <span class="float-right"><i class="fa fa-newspaper-o"></i></span></h5>
-                            {{-- <div class="progress my-3" style="height:3px;">
+                            <div class="progress my-3" style="height:3px;">
                                 <div class="progress-bar" style="width:55%"></div>
-                            </div> --}}
+                            </div>
                             <p class="mb-0 text-white small-font">{{$new_count}} <span class="float-right"><i></i></span></p>
                         </div>
                     </div>
@@ -62,7 +62,8 @@
                                     <a href="{{route('news.edit',$new->id)}}">{{ $new->title }}</a>
                                 </h5>
                                 @if( $new->hot)
-                                <span class="badge badge-danger">Tin Tức HOT</span>
+                                <span class="badge badge-danger text-dark">Tin Tức HOT</span>
+                                <span class="badge badge-info text-dark">Trạng Thái: Hiện</span>
                                 @endif
                                 <p class="card-subtitle text-muted mb-1"> {{ $new->description }} </p>
                             </div>

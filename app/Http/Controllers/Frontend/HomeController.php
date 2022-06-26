@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $newHots = $this->newsService->getHot($request);
-        $News = News::all();
+        $News = $this->newsService->newPresentli();
         $categories = $this->categorieService->getAll($request);
         
         $params = [

@@ -71,4 +71,8 @@ class NewService implements NewServiceInterface
     {
         return $this->newsRepository->getAllByCategory($id);
     }
+    public function newPresentli()
+    {
+        return $this->newsRepository->newPresentli();
+    }
 }
