@@ -46,7 +46,7 @@
                                     <td>{{ $comment->id}}</td>
                                     <td><textarea disabled="disabled">{{ $comment->content }}</textarea></td>
                                     <td>{{ $comment->news->title }}</td>
-                                    <td>{{ $comment->created_at->diffForHumans() }}</td>
+                                    <td>{{ $comment->created_at->Format('d/m/Y') }}</td>
                                     <td>
                                     @if(($comment->startus ) == 'pending')
                                         <input type="button" data-comment_status="approved" data-comment_id="{{ $comment->id}}" id=" {{$comment->new_id}}"class="btn btn-primary btn-xs comment_approved" value=" Duyệt">

@@ -19,7 +19,7 @@
                         </a>
                         <div class="cn-content">
                             <div class="cn-content-inner">
-                                <a class="cn-date" href=""><i class="far fa-clock"></i>{{ $new->puplish_date}}</a><br>
+                                <a class="cn-date" href=""><i class="far fa-clock"></i>{{ $new->created_at->Format('d/m/Y') }}</a><br>
                                 <b><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}" style="width:275px">{{
                                     $new->title}}</a></b>
                             </div>
