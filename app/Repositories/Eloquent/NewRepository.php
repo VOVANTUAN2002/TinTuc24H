@@ -144,14 +144,15 @@ class NewRepository extends EloquentRepository implements NewInterface
             $category_id = $request->category_id;
             $news->where('category_id', 'LIKE', '%' . $category_id . '%');
         }
-        return $news->where('hot', 1)->paginate(5);
+        return $news->where('hot', 1)->orderBy('id', 'desc')->paginate(5);
     }
 
     public function getAllByCategory($category_id)
     {
         // dd($category_id);
         $news = $this->model->select('*');
-        return $news->where('category_id',$category_id)->get();
+        $news->where('category_id',$category_id)->get();
+        return $news->orderBy('id', 'desc')->paginate(6);
         // dd($news);
     }
     public function newPresentli()

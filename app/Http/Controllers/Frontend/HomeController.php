@@ -36,7 +36,7 @@ class HomeController extends Controller
         $params = [
             "categories" => $categories,
             "newHots" => $newHots,
-            "News" => $News,
+            "news" => $News,
         ];
         return view('frontend.home.index',$params);
     }

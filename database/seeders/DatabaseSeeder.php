@@ -262,7 +262,7 @@ class DatabaseSeeder extends Seeder
         $new->hot = 0;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
-        $new->category_id = 1;
+        $new->category_id = 2;
         $new->save();
 
 
@@ -278,7 +278,7 @@ class DatabaseSeeder extends Seeder
         Ngay sau động thái này của AFC, chủ tịch LĐBĐ Nhật Bản, ông Kozo Tashima đã đánh tiếng cho biết nước này sẵn sàng nhận đăng cai và có thể tổ chức ngay đầu năm sau.
         Không chỉ có Nhật Bản, hiện tại một số quốc gia có tiềm lực kinh tế cũng sẵn sàng đăng cai giải đấu. Theo trang Asean Football, hiện tại đang có 4 quốc gia nộp đơn xin đăng cai gồm Nhật Bản, Australia, Hàn Quốc và Qatar.
         Nếu Qatar được chọn làm chủ nhà, giải đấu dự kiến sẽ được tổ chức vào tháng 1 năm 2024 do nước này không kịp tổ chức thêm một giải đấu quốc tế ngay sau VCK World Cup 2022 vào cuối năm nay.';
-        $new->status = '1';
+        $new->status = '0';
         $new->view = '1,7 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/16';
@@ -394,7 +394,7 @@ class DatabaseSeeder extends Seeder
         Sau khi xảy ra vụ việc, anh Dương đã gửi đơn tới cơ quan chức năng đề nghị làm rõ nguyên nhân và khởi tố vụ án để điều tra.
 
         Nguyên nhân tử vong của cháu N. đang được cơ quan chức năng làm rõ.';
-        $new->status = '1';
+        $new->status = '0';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
@@ -502,7 +502,7 @@ class DatabaseSeeder extends Seeder
         Tiếp đó, ESPN đưa tin, BLĐ đội chủ sân Old Trafford có phần không thoải mái trước một số bình luận công khai của Rangnick trong các cuộc họp báo, đặc biệt là khi vị HLV này tuyên bố CLB cần tới 10 tân binh trong mùa Hè 2022. Các nguồn tin cho biết thêm rằng Man United đã yêu cầu Rangnick ký một thỏa thuận không tiết lộ thông tin mật của CLB nhưng rồi ông vẫn "bon mồm".
 
         Bây giờ, nhiệm vụ tái thiết Man United sẽ do Ten Hag toàn quyền phụ trách. Cuối tháng này, MU sẽ hội quân chuẩn bị cho mùa giải mới. Trận ra mắt của Ten Hag trên cương vị mới tới vào ngày 12/7 khi MU đá giao hữu với Liverpool ở Thái Lan.';
-        $new->status = '0';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
@@ -540,7 +540,7 @@ class DatabaseSeeder extends Seeder
         "Với Quang Hải, AFF Cup 2020 là giải đấu đáng thất vọng. Anh vẫn là niềm hy vọng lớn của tuyển Việt Nam và duy trì phong độ đáng sợ. Ngay cả trong trận thua 0-2 trước Thái Lan ở bán kết lượt đi, Quang Hải vẫn cho thấy bản thân là cầu thủ nguy hiểm, khiến đối thủ phải gặp áp lực mỗi khi bóng rời đi từ cái chân trái của anh", tờ Goal phiên bản Thái Lan nhận xét về Quang Hải.
 
         Cũng nói thêm, tại AFF Cup 2020, Quang Hải thi đấu 6 trận cho tuyển Việt Nam. Anh để lại 2 bàn thắng, 2 kiến tạo và 13 đường chuyền tạo cơ hội. ';
-        $new->status = '0';
+        $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
