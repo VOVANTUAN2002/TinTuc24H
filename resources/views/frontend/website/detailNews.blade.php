@@ -65,7 +65,7 @@
                     @if(!isset($new->image))
                     <img src="https://www.caza.vn/_nuxt/img/3c27315.jpg" style="width: 700px; height: 500px" alt="">
                     @else
-                    <img src="{{$new->image}}" style="width: 700px; height: 500px" alt="">
+                    <img src="{{$new->image}}" style="" alt="">
                     @endif
                 </div>
                 <div class="sn-content" style="width:650px">
