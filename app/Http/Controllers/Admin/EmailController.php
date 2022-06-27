@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmailRequest;
 use App\Http\Requests\MailUpdate;
+use App\Models\Newsletter;
 use App\Services\Interfaces\EmailServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -76,5 +77,12 @@ class EmailController extends Controller{
             Log::error($e->getMessage());
             return redirect()->route('email.index')->with('error', 'Xóa email không thành công');
         }
+    }
+
+    public function test(Request $request){
+
+       $id=$request->ids;
+       Newsletter::whereIn('id', $id)->delete();
+       return redirect()->route('email.index')->with('success', 'Xóa email thành công');
     }
 }
