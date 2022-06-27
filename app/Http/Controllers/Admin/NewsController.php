@@ -74,9 +74,9 @@ class NewsController extends Controller
         try {
             if ((int) $request->hot === 1) {
                 $newhots = News::where('hot', 1)->get();
-                if (count($newhots) === 4) {
+                if (count($newhots) === 10) {
 
-                    Session::flash('message', 'Chung tôi chỉ cho phép 4 sản phẩm  Hot');
+                    Session::flash('message', 'Chung tôi chỉ cho phép 10 sản phẩm  Hot');
                     return redirect()->back();
                 }
             }
@@ -138,9 +138,9 @@ class NewsController extends Controller
                             
             if ((int) $request->hot === 1) {
                 $newhots = News::where('hot', 1)->get();
-                if (count($newhots) === 4) {
+                if (count($newhots) === 10) {
 
-                    Session::flash('message', 'Chung tôi chỉ cho phép 4 sản phẩm  Hot');
+                    Session::flash('message', 'Chung tôi chỉ cho phép 10 sản phẩm  Hot');
                     return redirect()->back();
                 }
             }

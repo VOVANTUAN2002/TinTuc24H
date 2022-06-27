@@ -35,13 +35,13 @@
             </div>
             <hr>
             @endforeach
-            <div class="row">
-                <div class="col-lg-12">
-                    <div style="float:right">
-                        {{ $news->links() }}
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div style="float:right">
+            {{ $news->links() }}
         </div>
     </div>
 </div>
