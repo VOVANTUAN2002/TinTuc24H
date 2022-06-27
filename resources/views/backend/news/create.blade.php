@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tf1">Mô tả Tiêu đề</label>
-                            <textarea name="description" type="text" class="form-control" placeholder="Nhập tên Tiêu đề" value="">{{ old('description') }}</textarea>
+                            <textarea name="description" type="text" class="form-control" placeholder="Nhập Mô Tả Tiêu đề" value="">{{ old('description') }}</textarea>
                             <small class="form-text text-muted"></small>
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('description') }}</p>
@@ -86,18 +86,9 @@
                         </div>
 
                         <div class="row">
+
                             <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label for="tf1">Lượt xem</label>
-                                    <input name="view" type="text" class="form-control" placeholder="Nhập tên Tiêu đề" value="{{ old('view') }}">
-                                    <small class="form-text text-muted"></small>
-                                    @if ($errors->any())
-                                    <p style="color:red">{{ $errors->first('view') }}</p>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label>Tình trạng</label>
+                                <label>Trạng Thái</label>
                                 <select name="status" class="form-control">
                                 <option value="1" @selected( old('status')=='1' )>Hiện</option>
                                     <option value="0" @selected( old('status')=='0' )>Ẩn</option>

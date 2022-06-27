@@ -103,7 +103,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="tf1">Lượt xem</label>
-                                    <input name="view" type="text" class="form-control" placeholder="Nhập tên Tiêu đề" value="{{$new->view}}">
+                                    <input name="view" type="text" disabled class="form-control" placeholder="Nhập tên Tiêu đề" value="{{$new->view}}">
                                     <small class="form-text text-muted"></small>
                                     @if ($errors->any())
                                     <p style="color:red">{{ $errors->first('view') }}</p>
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4">
-                                <label>Tình trạng</label>
+                                <label>Trạng Thái</label>
                                 <select name="status" class="form-control">
                                     <option value="0" @selected($new->status == '0') >Ẩn</option>
                                     <option value="1" @selected($new->status == '1') >Hiện</option>

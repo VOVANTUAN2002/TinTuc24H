@@ -53,6 +53,8 @@
                 <div class="dtepub"
                     style="color: #89888b;font-size: .875rem; font-weight: 300;line-height: 20px;white-space: nowrap;">
                     <i class="far fa-clock">{{ $new->created_at->Format('d/m/Y') }}</i>
+                    <i class="fas fa-eye">{{ $new->view }} Lượt Xem</i>
+                    
                 </div>
                 <div>
                     <h5 class="dark" style="color: #626165;font-size: 1.25rem;font-weight: 700;line-height: 1.6em;">

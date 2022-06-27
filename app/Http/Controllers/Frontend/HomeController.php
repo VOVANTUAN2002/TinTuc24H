@@ -100,9 +100,13 @@ class HomeController extends Controller
     public function show(Request $request,$id)
     {
         $new = $this->newsService->findById($id);
+
         $categories = $this->categorieService->getAll($request);
         // $news = $this->newsService->getAll($request);
         $related_news = News::where('category_id',$new->category_id)->get();
+        $view = News::where('id',$id)->first();
+        $view->view =$view->view+1;
+        $view->save();
         // dd($new);
         $params = [
             "new" => $new,
