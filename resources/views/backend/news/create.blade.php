@@ -68,7 +68,6 @@
                                     @foreach($users as $user)
                                 <option value="{{ $user->id }}" @selected(old('user_id')==$user->id)>{{$user->name}}</option>
 
-                                    <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
