@@ -204,7 +204,7 @@ class DatabaseSeeder extends Seeder
 
         Vé trúng nhiều giải sẽ được lĩnh đủ giá trị các giải. Khi trúng thưởng, người chơi liên hệ nhận thưởng tại:';
         $new->status = '1';
-        $new->view = '6,3 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 2;
@@ -220,7 +220,7 @@ class DatabaseSeeder extends Seeder
         Chia sẻ niềm vui và may mắn này anh T. C đã tặng 150 triệu đồng cho các quỹ từ thiện, an sinh xã hội.
         Thời hạn lĩnh thưởng của vé trúng thưởng: là 60 (sáu mươi) ngày, kể từ ngày xác định kết quả trúng thưởng. Với những khách hàng đã mua tấm vé số của Vietlott xin hãy kiểm tra kỹ tấm vé mà mình đang sở hữu, nếu trúng giải quý khách hàng có thể liên hệ trực tiếp tới đại lý gần nhất của Vietlott để làm thủ tục nhận giải. Thời hạn nhận giải của tấm vé này là 60 ngày bắt đầy tính từ ngày quay thưởng. Xin kính chúc quý khách hàng gặp thật nhiều may mắn!.';
         $new->status = '1';
-        $new->view = '6,3 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 2;
@@ -237,7 +237,7 @@ class DatabaseSeeder extends Seeder
         Dự án được chuẩn bị đầu tư từ năm 2022, cơ bản hoàn thành năm 2026, khai thác năm 2027. UBND TP Hà Nội là cơ quan đầu mối tổ chức thực hiện dự án. Trong hai năm kể từ khi nghị quyết được thông qua, Quốc hội cho phép người đứng đầu cơ quan có thẩm quyền xem xét, quyết định chỉ định thầu với các gói thầu tư vấn, phục vụ di dời hạ tầng kỹ thuật;
         bồi thường, hỗ trợ, tái định cư. Trong thời gian này, nhà thầu thi công không phải thực hiện thủ tục cấp phép khai thác mỏ khoáng sản làm vật liệu xây dựng thông thường.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
@@ -258,7 +258,7 @@ class DatabaseSeeder extends Seeder
         Khám xét tại kho chứa ma túy do Hải thuê tại số 7 Tôn Thất Thuyết, thu giữ thêm 3 kg và 2.000 viên ma túy tổng hợp.
         Tiếp tục đấu tranh mở rộng vụ án, ngày 5/6, ban chuyên án bắt quả tang Lê Minh Hảo và Vũ Quốc Duy đang giao nhận 100 gói ma túy “đông trùng”. ';
         $new->status = '1';
-        $new->view = '1,5 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
@@ -279,7 +279,7 @@ class DatabaseSeeder extends Seeder
         Không chỉ có Nhật Bản, hiện tại một số quốc gia có tiềm lực kinh tế cũng sẵn sàng đăng cai giải đấu. Theo trang Asean Football, hiện tại đang có 4 quốc gia nộp đơn xin đăng cai gồm Nhật Bản, Australia, Hàn Quốc và Qatar.
         Nếu Qatar được chọn làm chủ nhà, giải đấu dự kiến sẽ được tổ chức vào tháng 1 năm 2024 do nước này không kịp tổ chức thêm một giải đấu quốc tế ngay sau VCK World Cup 2022 vào cuối năm nay.';
         $new->status = '0';
-        $new->view = '1,7 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
@@ -296,7 +296,7 @@ class DatabaseSeeder extends Seeder
         PUBG Mobile của Tencent là trò chơi di động có doanh thu cao thứ hai trên toàn thế giới vào tháng 5 năm 2022 với tổng doanh thu là 206,3 triệu đô la. Khoảng 67% doanh thu của PUBG Mobile đến từ Trung Quốc, nơi nó đã được bản địa hóa thành Game For Peace, tiếp theo là 6,4% từ Thổ Nhĩ Kỳ. Trò chơi có doanh thu cao nhất tiếp theo là Candy Crush Saga của King, tiếp theo là Genshin Impact từ miHoYo và Coin Master từ Moon Active.
         Điều bất ngờ là, Free Fire gần như biến mất trong BXH doanh thu game mobile toàn cầu tháng này. Điều rất hiếm khi xảy ra, ít nhất là trong khoảng 1 năm trở lại đây. Trong cả hai bảng doanh thu tổng lẫn iOS, Free Fire đều không hề xuất hiện.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/16';
         $new->user_id = 1;
@@ -323,7 +323,7 @@ class DatabaseSeeder extends Seeder
         Theo báo Lao động, sự việc xảy ra vào khoảng 19h cùng ngày, tại chung cư 229 phố Vọng, phường Đồng Tâm. Vào thời điểm trên, chính quyền và Công an phường Đồng Tâm nhận tin báo về việc tại toà chung cư có địa chỉ tại phố Vọng, phường Đồng Tâm xảy ra vụ việc một người đàn ông rơi từ tầng cao xuống tử vong.
         Qua xác minh ban đầu, cơ quan chức năng xác định người đàn ông này tự tử. Nạn nhân 65 tuổi, là cư dân của toà chung cư. Khu chung cư này có 2 mặt, 1 mặt giáp với phố Vọng, 1 mặt giáp với đường Trần Đại Nghĩa. "Người này rơi từ trên cao xuống và mắc vào hàng rào" - vị lãnh đạo phường Đồng Tâm thông tin.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
         $new->user_id = 3;
@@ -370,7 +370,7 @@ class DatabaseSeeder extends Seeder
 
         Bà con tuyệt đối không sử dụng ngô mốc, không sử dụng bột ngô cũ để làm bánh hay thức ăn. Hạt ngô kể cả sạch sau khi đã xay/nghiền thành bột thì chế biến ngay toàn bộ thành thức ăn và ăn hết sớm.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
         $new->user_id = 3;
@@ -395,7 +395,7 @@ class DatabaseSeeder extends Seeder
 
         Nguyên nhân tử vong của cháu N. đang được cơ quan chức năng làm rõ.';
         $new->status = '0';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
         $new->user_id = 3;
@@ -419,7 +419,7 @@ class DatabaseSeeder extends Seeder
 
         Trong đêm 22/6, thi thể của anh T. đã được đưa về quê để người thân lo hậu sự.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/23';
         $new->user_id = 3;
@@ -453,7 +453,7 @@ class DatabaseSeeder extends Seeder
 
         21. Tổng số bàn thắng của 5 tiền đạo M.U mùa trước là Rashford, Greenwood, Cavani, Sancho và Elanga là 21 bàn, tức là còn chưa bằng một mình số bàn của Ronaldo (24 bàn).';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
@@ -478,7 +478,7 @@ class DatabaseSeeder extends Seeder
 
         Qua đó, có thể thấy thông tin cho rằng Minh Hằng "cướp chồng" chỉ là sự thêu dệt của cư dân mạng đối với nữ ca sĩ';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
@@ -503,8 +503,8 @@ class DatabaseSeeder extends Seeder
 
         Bây giờ, nhiệm vụ tái thiết Man United sẽ do Ten Hag toàn quyền phụ trách. Cuối tháng này, MU sẽ hội quân chuẩn bị cho mùa giải mới. Trận ra mắt của Ten Hag trên cương vị mới tới vào ngày 12/7 khi MU đá giao hữu với Liverpool ở Thái Lan.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
-        $new->hot = 0;
+        $new->view = 0;
+        $new->hot = 1;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 1;
@@ -521,7 +521,7 @@ class DatabaseSeeder extends Seeder
 
         Theo kế hoạch, giải đấu sẽ bắt đầu vào tháng 12, ngay sau khi World Cup kết thúc.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
+        $new->view = 0;
         $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
@@ -541,8 +541,8 @@ class DatabaseSeeder extends Seeder
 
         Cũng nói thêm, tại AFF Cup 2020, Quang Hải thi đấu 6 trận cho tuyển Việt Nam. Anh để lại 2 bàn thắng, 2 kiến tạo và 13 đường chuyền tạo cơ hội. ';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
-        $new->hot = 0;
+        $new->view = 0;
+        $new->hot = 1;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 1;
@@ -560,11 +560,10 @@ class DatabaseSeeder extends Seeder
 
         Song song với đó, các hạng đấu của Thái Lan cũng được tổ chức theo mô hình kim tự tháp rất quy củ. Trong đó, đỉnh của kim tự tháp là Thai League 1 với 16 CLB tham gia. Thấp hơn ở Thai League 2, 18 CLB góp mặt. Xếp phía dưới là giải bán chuyên Thai League 3 tập hợp tới 72 CLB được chia làm 6 vùng miền gồm phía Bắc (11 đội), Đông Bắc (11 đội), phía Đông (12 đội), phía Tây (12 đội), nội đô Bangkok (14 đội) và phía Nam (12 đội). Đó là điều mà bóng đá Việt Nam với hệ thống các giải chuyên nghiệp và bán chuyên nên học hỏi để có sự cạnh tranh cao hơn, chất lượng tốt hơn nữa.
         Thành công của ĐTQG Thái Lan được xây dựng dựa trên hai nhóm cầu thủ. Thứ nhất là đa phần gương mặt chơi bóng ở Thai League - một giải chất lượng tương đối cao ở châu lục và thuộc diện số 1 Đông Nam Á. Thứ hai là 2 ngôi sao thành danh ở Nhật Bản gồm Chanathip Songkrasin và Theerathon Bunmathan. Những gì mà hai cầu thủ này thể hiện ở AFF Cup 2020 quả thực khiến người hâm mộ chờ đợi vào những cái tên như Hoàng Đức, Quang Hải có thể xuất ngoại để phát triển năng lực trong tương lai gần.
-
         HLV Polking của Thái Lan gợi ý: “Tôi mong Quang Hải, cầu thủ đại diện của Việt Nam có thể làm được như thế. Họ cần phải tới Nhật Bản, Hàn Quốc và các giải khác. Thậm chí là cả châu Âu. Các cầu thủ giỏi không nên bó buộc mình ở trong nước nữa”. Tiếp lời người thầy của mình, Chanathip – biểu tượng xuất ngoại thành công hy vọng: “Những cầu thủ giỏi nhất ở các đội tuyển trong khu vực như Quang Hải hay Hoàng Đức của Việt Nam nên cân nhắc rời khỏi vùng an toàn để tìm đến các nền bóng đá cao hơn nhằm tiếp tục nâng cao khả năng của mình”.';
         $new->status = '1';
-        $new->view = '1,2 Triệu lượt xem';
-        $new->hot = 0;
+        $new->view = 0;
+        $new->hot = 1;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 1;
