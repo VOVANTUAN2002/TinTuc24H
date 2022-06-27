@@ -132,7 +132,7 @@
                                     <select class="form-select form-control" name="user_group_id">
 
                                         @foreach($items as $userGroup)
-                                        <option value="{{ $userGroup->id }}">{{ $userGroup->name }} </option>
+                                        <option value="{{ $userGroup->id }}" @selected(old('user_group_id')==$userGroup->id)>{{$userGroup->name}}</option>
                                         @endforeach
                                     </select>
                                     @if ($errors->any())

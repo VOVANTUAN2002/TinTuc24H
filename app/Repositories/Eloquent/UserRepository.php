@@ -37,7 +37,7 @@ class UserRepository extends EloquentRepository implements UserInterface
 
 
         $user->orderBy('id', 'desc');
-        $users = $user->paginate(4);
+        $users = $user->paginate(5);
 
         return $users;
     }
