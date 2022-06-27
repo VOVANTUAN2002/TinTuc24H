@@ -84,7 +84,7 @@
                                 <label>Người đăng</label>
                                 <select type="text" class="form-control" placeholder="danh mục" name="user_id" value="{{ $new->user_id}}">
                                     @foreach($users as $user)
-                                    <option value="{{$user->id}}">{{$user->name}}</option>
+                                    <option value="{{ $user->id }}" @selected($user->id ==$user->user_id)>{{ $user->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -94,7 +94,7 @@
                                 <label>Loại Tin Tức</label>
                                 <select type="text" class="form-control" placeholder="danh mục" name="category_id" value="{{ $new->category_id}}">
                                     @foreach($categories as $categoriy)
-                                    <option value="{{$categoriy->id}}">{{$categoriy->name}}</option>
+                                    <option value="{{ $categoriy->id }}" @selected($categoriy->id ==$categoriy->category_id)>{{ $categoriy->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
