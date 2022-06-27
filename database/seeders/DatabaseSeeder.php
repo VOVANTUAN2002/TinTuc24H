@@ -324,7 +324,7 @@ class DatabaseSeeder extends Seeder
         Qua xác minh ban đầu, cơ quan chức năng xác định người đàn ông này tự tử. Nạn nhân 65 tuổi, là cư dân của toà chung cư. Khu chung cư này có 2 mặt, 1 mặt giáp với phố Vọng, 1 mặt giáp với đường Trần Đại Nghĩa. "Người này rơi từ trên cao xuống và mắc vào hàng rào" - vị lãnh đạo phường Đồng Tâm thông tin.';
         $new->status = '1';
         $new->view = '1,2 Triệu lượt xem';
-        $new->hot = 5;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/23';
         $new->user_id = 3;
         $new->category_id = 2;
