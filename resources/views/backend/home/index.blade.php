@@ -7,7 +7,7 @@
         <div class="d-flex flex-column flex-md-row">
 
             <p class="lead">
-                <span class="font-weight-bold">Xin chào, {{ $current_user->name}}.</span><br>
+                <span class="font-weight-bold" style="color: rgb(237, 238, 231)">Xin chào, {{ $current_user->name}}.</span><br>
                 <span style="color: rgb(237, 238, 231)">Chúc bạn một ngày làm việc tốt lành !</span>
             </p>
             <div class="ml-auto">
@@ -25,9 +25,9 @@
                     </div>
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
                         <div class="card-body">
-                            <h5 class="text-white mb-0">Tổng Số Like <span class="float-right"><i class="fa fa-thumbs-up"></i></span>
+                            <h5 class="text-white mb-0">Số Email Đăng Ký <span class="float-right"><i class="fa fa-envelope"></i></span>
                             </h5>
-                            <p class="mb-0 text-white small-font">{{$like_count}}<span class="float-right">
+                            <p class="mb-0 text-white small-font">{{$email_count}}<span class="float-right">
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-3 border-light">
@@ -71,14 +71,20 @@
             </div>
             <div class="col-lg-6">
                 <div class="card card-fluid">
-                    <div class="card-header"> Email đăng ký</div><!-- .lits-group -->
+                    <div class="card-header">Các tin tức có lượt xem cao</div><!-- .lits-group -->
                     <div class="lits-group list-group-flush">
-                        @foreach( $newletters as $newletter )
+                        @foreach( $views as $view )
                         <div class="list-group-item">
                             <div class="list-group-item-body">
                                 <h5 class="card-title">
-                                    <a href="{{route('email.edit',$newletter->id)}}">{{ $newletter->id }}|&nbsp;{{ $newletter->email }}</a>
+                                    <a href="{{route('news.edit',$new->id)}}">{{ $view->title }}</a>
                                 </h5>
+                                @if( $view->hot)
+                                <span class="badge badge-danger text-dark">Tin Tức HOT</span>
+                                <span class="badge badge-info text-dark">Trạng Thái: Hiện</span>
+                                @endif
+                                <span class="fas fa-eye badge badge-warning text-dark">{{$view->view}} Lượt xem</span>
+                                <p class="card-subtitle text-muted mb-1"> {{ $view->description }} </p>
                             </div>
                         </div>
                         @endforeach
