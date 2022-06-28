@@ -597,7 +597,7 @@ class DatabaseSeeder extends Seeder
         $new->content = 'Sáng 25/6, Ban Tổ chức Trung ương gặp mặt các ủy viên dự khuyết Trung ương Đảng khóa XIII. Tại hội nghị, có ý kiến bày tỏ băn khoăn khi một số cán bộ thời gian gần đây vi phạm quy định của Đảng, pháp luật của Nhà nước và đặt câu hỏi, năng động, sáng tạo có mâu thuẫn với chặt chẽ không? Dám nghĩ, dám làm có dễ dẫn tới sai phạm không?
 
         Thường trực Ban Bí thư Võ Văn Thưởng cho biết, những sai phạm của cán bộ thời gian qua, nhìn dưới góc độ tích cực là bài học quý với mỗi cán bộ để kỹ lưỡng, chỉn chu hơn trong công tác, chứ không phải vì thế mà né tránh, không làm. Cán bộ hiểu đúng việc "giữ mình" thì sẽ thành người chặt chẽ, kỹ lưỡng hơn.
-        
+
         Thường trực Ban Bí thư mong muốn cán bộ trẻ khi được Đảng giao nhiệm vụ thì hăng hái đảm nhận, không ngừng tiến bộ. "Tiến bộ không phải đo lường bằng chức vụ mà về bản lĩnh, nhận thức, kiến thức, bằng sự vững vàng trong công việc", ông nói.
         Ông Võ Văn Thưởng từng là một trong 25 ủy viên Trung ương dự khuyết khóa X. Khi đó, lần đầu ông được dự hội nghị Trung ương lần thứ nhất tại Đại hội X, tự cảm thấy trách nhiệm nặng nề, lớn lao; tự nhắc nhở bản thân nỗ lực, xứng đáng với trọng trách được giao.
 
@@ -650,7 +650,7 @@ class DatabaseSeeder extends Seeder
         $new->content = 'Theo thông cáo phát chiều 22/6, tại kỳ họp ngày 20-22/6, Ủy ban Kiểm tra Trung ương đã đề nghị Bộ Chính trị xem xét, thi hành kỷ luật Ban cán sự đảng UBND TP HCM nhiệm kỳ 2016-2021 và ông Nguyễn Thành Phong, Ủy viên Trung ương Đảng, Phó trưởng ban Kinh tế Trung ương, nguyên Phó bí thư Thành ủy, nguyên Bí thư Ban cán sự đảng, nguyên Chủ tịch UBND TP HCM.
 
         Cơ quan kiểm tra Trung ương quyết định cảnh cáo Ban Thường vụ Đảng ủy Sở Xây dựng và Ban Thường vụ Đảng ủy Văn phòng UBND TP HCM nhiệm kỳ 2015-2020; khiển trách ông Võ Văn Hoan, Ủy viên Ban cán sự đảng, Phó chủ tịch UBND thành phố, nguyên Bí thư Đảng ủy, nguyên Chánh Văn phòng UBND thành phố.
-        
+
         Quyết định được đưa ra sau khi Ủy ban Kiểm tra Trung ương xem xét kết quả kiểm tra khi có dấu hiệu vi phạm đối với Ban cán sự đảng UBND TP HCM nhiệm kỳ 2016-2021.
         Cơ quan kiểm tra Trung ương nhận thấy Ban cán sự đảng UBND TP HCM đã vi phạm nguyên tắc tập trung dân chủ, quy chế làm việc; thiếu trách nhiệm, buông lỏng lãnh đạo, chỉ đạo. Hậu quả là UBND thành phố và nhiều tổ chức, cá nhân vi phạm quy định của Đảng, pháp luật của Nhà nước trong quản lý tài chính, tài sản nhà nước; xảy ra nhiều vụ án, vụ việc trên địa bàn; nhiều tổ chức đảng, đảng viên bị xử lý kỷ luật; nhiều cán bộ, đảng viên trong đó có cả lãnh đạo chủ chốt của UBND thành phố và các sở, ngành... bị xử lý hình sự.
 
@@ -677,7 +677,7 @@ class DatabaseSeeder extends Seeder
         $new->content = 'Tại kỳ họp ngày 20-22/6, Ủy ban Kiểm tra Trung ương đã xem xét kết quả kiểm tra khi có dấu hiệu vi phạm với Ban Thường vụ Tỉnh ủy Phú Yên nhiệm kỳ 2015-2020. Cơ quan này nhận thấy, Ban Thường vụ Tỉnh ủy Phú Yên đã vi phạm nguyên tắc tập trung dân chủ, quy chế làm việc; thiếu trách nhiệm, buông lỏng lãnh đạo, chỉ đạo, thiếu kiểm tra, giám sát.
 
         Hậu quả là Ban cán sự đảng UBND tỉnh, UBND tỉnh và nhiều tổ chức, cá nhân vi phạm quy định của Đảng, pháp luật của Nhà nước trong quản lý sử dụng đất đai, tài sản nhà nước; quản lý và bảo vệ rừng, tài nguyên khoáng sản; đầu tư, mua sắm trang thiết bị, vật tư y tế; thi tuyển công chức năm 2017-2018.
-        
+
         Một số cán bộ, đảng viên trong đó có cả lãnh đạo chủ chốt của UBND tỉnh bị xử lý hình sự.
         Để xảy ra những vi phạm, khuyết điểm nêu trên, Ủy ban Kiểm tra Trung ương cho rằng trách nhiệm thuộc về các ông: Huỳnh Tấn Việt (Ủy viên Trung ương Đảng, Bí thư Đảng ủy Khối các cơ quan Trung ương, nguyên Bí thư Tỉnh ủy, nguyên Bí thư Đảng đoàn, nguyên Chủ tịch HĐND tỉnh); Trần Hữu Thế (Phó bí thư Tỉnh ủy, Bí thư Ban cán sự đảng, Chủ tịch UBND tỉnh).
 
@@ -884,5 +884,13 @@ class DatabaseSeeder extends Seeder
         $Newsletter = new Newsletter();
         $Newsletter->email = "tam.nguyen@codegym.vn ";
         $Newsletter->save();
+
+
+        for($i=0;$i<10;$i++) {
+            $this->faker = Faker::create();
+            $Newsletter = new Newsletter();
+            $Newsletter->email = $this->faker->email;
+            $Newsletter->save();
+        }
     }
 }

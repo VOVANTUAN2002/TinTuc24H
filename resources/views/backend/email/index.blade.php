@@ -28,6 +28,13 @@
             <div class="col-12 col-lg-12">
                 <div class="card">
                     <div class="table-responsive">
+                        <form action="{{ route('test')}}" style="display:inline" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-success sent">Xóa Nhanh</button>
+                                @if ($errors->any())
+                                <p style="color:red">{{ $errors->first('ids') }}</p>
+                                @endif
                         <table class="table align-items-center table-flush table-borderless">
                             <thead>
                                 <tr>
@@ -40,7 +47,9 @@
                             @foreach($newsletters as $newsletter)
                             <tbody>
                                 <tr>
-                                    <td>{{ $newsletter->id}}</td>
+                                    <td><input type="checkbox" class="displays" name="ids[{{$newsletter->id}}]" value="{{$newsletter->id}}">
+                                        {{ $newsletter->id}}
+                                    </td>
                                     <td>{{ $newsletter->email }}</td>
                                     <td> {{ $newsletter->created_at->Format('d/m/Y')}}</td>
                                     <td>
@@ -57,10 +66,11 @@
                             @endforeach
                         </table>
                     </div>
-                </div>
-                <div style="float:right">
-                    {{ $newsletters->links() }}
-                </div>
+                </form>
+            </div>
+            <div style="float:right">
+                {{ $newsletters->links() }}
+            </div>
 
             </div>
         </div>
@@ -68,3 +78,8 @@
     </div>
 </div>
 @endsection
+<script>
+    $('.sent').click(function(){
+        $('.displays').hide();
+    })
+</script>

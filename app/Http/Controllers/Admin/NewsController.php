@@ -73,7 +73,9 @@ class NewsController extends Controller
     {
         try {
             if ((int) $request->hot === 1) {
+
                 $newhots = News::where('hot', 1)->get();
+                
                 if (count($newhots) === 10) {
 
                     Session::flash('message', 'Chung tôi chỉ cho phép 10 sản phẩm  Hot');
@@ -135,7 +137,7 @@ class NewsController extends Controller
     public function update(UpdateNewsRequest $request, $id)
     {
         try {
-                            
+
             if ((int) $request->hot === 1) {
                 $newhots = News::where('hot', 1)->get();
                 if (count($newhots) === 10) {

@@ -65,10 +65,11 @@ class CommentController extends Controller{
     public function approved(Request $request){
 
         $data = $request->all();
-
         $comment = Comment::find($data['comment_id']);
         $comment->startus = $data['comment_status'];
         $comment->save();
     }
+
+  
 
 }

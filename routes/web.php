@@ -66,6 +66,10 @@ Route::group([
     Route::resource('categories', CategorieController::class);
     Route::resource('userGroups', UserGroupController::class);
     Route::resource('systemLogs', SystemLogController::class);
+
+
+    Route::delete('/testdelete', [EmailController::class,'test'])->name('test');
+
 });
 
 Route::post('/approved', [CommentController::class, 'approved']);

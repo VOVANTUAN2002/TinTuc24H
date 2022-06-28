@@ -17,7 +17,7 @@ class EmailRepository extends EloquentRepository implements EmailInterface
 
     public function getAll($request)
     {
-         $email = $this->model->orderBy('id', 'desc')->paginate(5);
+         $email = $this->model->orderBy('id', 'desc')->paginate(10);
          return $email;
     }
     public function create($request)
@@ -25,7 +25,7 @@ class EmailRepository extends EloquentRepository implements EmailInterface
 
         $email =$this->model;
         $email->email = $request->email;
-        
+
         // dd($email);
         $email->save();
         return $email;
