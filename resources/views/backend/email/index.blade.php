@@ -32,6 +32,9 @@
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-success sent">Xóa Nhanh</button>
+                                @if ($errors->any())
+                                <p style="color:red">{{ $errors->first('ids') }}</p>
+                                @endif
                         <table class="table align-items-center table-flush table-borderless">
                             <thead>
                                 <tr>

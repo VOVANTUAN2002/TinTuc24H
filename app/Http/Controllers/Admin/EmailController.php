@@ -81,6 +81,14 @@ class EmailController extends Controller{
 
     public function test(Request $request){
 
+        $validated = $request->validate(
+            [
+                'ids' => 'required',
+            ],
+            [
+                'ids.required' => 'Bạn phải chọn ô',
+            ],
+    );
        $id=$request->ids;
        Newsletter::whereIn('id', $id)->delete();
        return redirect()->route('email.index')->with('success', 'Xóa email thành công');
