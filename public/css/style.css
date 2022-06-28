@@ -12,7 +12,9 @@ a {
     color: #E47A2E;
     transition: 0.5s;
 }
-
+i {
+    padding: 6px;   
+}
 a:hover,
 a:active,
 a:focus {
@@ -210,7 +212,7 @@ button.btn:hover {
         text-align: center;
         margin-bottom: 15px;
     }
-    
+
     .top-header .social {
         margin-bottom: 0;
     }
@@ -264,11 +266,11 @@ button.btn:hover {
     .header .navbar {
         background: #353535 !important;
     }
-    
+
     .header .navbar-brand {
         display: none;
     }
-    
+
     .header a.nav-link {
         padding: 8px 15px;
         font-size: 15px;
@@ -276,16 +278,16 @@ button.btn:hover {
     }
 }
 
-@media (max-width: 768px) {   
+@media (max-width: 768px) {
     .header,
     .header .navbar {
         background: #333333 !important;
     }
-    
+
     .header a.nav-link {
         padding: 5px;
     }
-    
+
     .header .dropdown-menu {
         box-shadow: none;
     }
@@ -321,9 +323,9 @@ button.btn:hover {
 
 .top-news .tn-content {
     position: absolute;
-    top: 0; 
+    top: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
     padding: 15px 10px 15px 20px;
     background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
@@ -412,9 +414,9 @@ button.btn:hover {
 
 .cat-news .cn-content {
     position: absolute;
-    top: 0; 
+    top: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
     padding: 15px 10px 15px 20px;
     background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
@@ -890,7 +892,7 @@ button.btn:hover {
 
 @media (min-width: 992px) {
     .footer .container-fluid {
-        max-width: 95%;
+        max-width: 86%;
     }
 }
 
@@ -902,7 +904,7 @@ button.btn:hover {
 
 .footer .footer-widget h1 {
     color: #ffffff;
-    margin-bottom: 18px; 
+    margin-bottom: 18px;
 }
 
 .footer .footer-widget .title {
@@ -921,11 +923,11 @@ button.btn:hover {
 }
 
 .footer .footer-widget ul li {
-    margin-bottom: 12px; 
+    margin-bottom: 12px;
 }
 
 .footer .footer-widget ul li:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .footer .footer-widget ul li a {
@@ -943,7 +945,7 @@ button.btn:hover {
 }
 
 .footer .footer-widget ul li a:hover {
-    padding-left: 10px; 
+    padding-left: 10px;
 }
 
 .footer .contact-info p {
@@ -1060,6 +1062,8 @@ button.btn:hover {
 @media (max-width: 768.98px) {
     .footer-bottom .copyright,
     .footer-bottom .template-by {
-        text-align: center; 
-    } 
+        text-align: center;
+    }
 }
+
+

@@ -1,245 +1,98 @@
 @extends('frontend.layouts.master')
 @section('content')
-<!-- Top News Start-->
-<div class="top-news">
+
+<div class="cat-news">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 tn-left">
-                <div class="tn-img">
-                    <img src="img/top-news-1.jpg" />
-                    <div class="tn-content">
-                        <div class="tn-content-inner">
-                            <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                            <a class="tn-title" href="">Lorem ipsum dolor sit amet adipiscing elit</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 tn-right">
-                <div class="row">
+            <div class="col-md-12">
+                <h4 style="color: red"> <b>Tin Tức HOT <sub><img src="https://d3.violet.vn/uploads/previews/document/0/39/67/Movie1.gif" style="width:50px; vertical-align:sub"></sub></b></h4>
+                <div class="row cn-slider">
+
+                    @foreach($newHots as $newHot)
                     <div class="col-md-6">
-                        <div class="tn-img">
-                            <img src="img/top-news-2.jpg" />
-                            <div class="tn-content">
-                                <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="tn-title" href="">Integer faucibus pharetra odio</a>
+                        <div class="cn-img">
+                            @if(!isset($newHot->image))
+                            <a href="{{ route('website.detailNews',$newHot->id )}}">
+                            <img class="default-img" src="https://www.caza.vn/_nuxt/img/3c27315.jpg" style="width:670px; height:440px" alt="#" />
+                            </a>
+                            @else
+                            <a href="{{ route('website.detailNews',$newHot->id )}}">
+                                <img class="default-img" src="{{ $newHot->image }}" style="width:670px; height:440px" alt="#" />
+                            </a>
+                            @endif
+
+                            <div class="cn-content">
+                                <div class="cn-content-inner">
+                                    <a class="cn-date" href="{{ route('website.detailNews',$newHot->id )}}"><i class="far fa-clock"></i>{{
+                                        $newHot->created_at->Format('d/m/Y') }}</a>
+                                    <a class="cn-title" href="{{ route('website.detailNews',$newHot->id )}}">{{ $newHot->title }}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="tn-img">
-                            <img src="img/top-news-3.jpg" />
-                            <div class="tn-content">
-                                <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="tn-title" href="">Nulla vitae pharetra ligula</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="tn-img">
-                            <img src="img/top-news-4.jpg" />
-                            <div class="tn-content">
-                                <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="tn-title" href="">Ut ac euismod tellus a blandit</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="tn-img">
-                            <img src="img/top-news-5.jpg" />
-                            <div class="tn-content">
-                                <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="tn-title" href="">Cras ac egestas sem nec euismod</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <!-- Top News End-->
 
-
 <!-- Category News Start-->
-<div class="cat-news">
-    <div class="container-fluid">
+
+<div>
+    <div class="container">
+        <h4> <b><i class="fas fa-align-justify"></i> Tin Tức Đáng Chú Ý</b></h4>
+        @foreach($news as $new)
         <div class="row">
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Sports</h2>
-                <div class="row cn-slider">
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-1.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Cras sed semper puru vitae lobortis velit</a>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-3">
+                <div class="product-img">
+                    @if(!isset($new->image))
+                    <a href="{{ route('website.detailNews',$new->id )}}">
+                        <img class="default-img" src="https://www.caza.vn/_nuxt/img/3c27315.jpg" alt="#" style='width:100%; height: 200px'>
+                    </a>
+                    @else
+                    <a href="{{ route('website.detailNews',$new->id )}}">
+                        <img class="default-img" src="{{$new->image}}" alt="#" style='width:100%; height: 200px'>
+                    </a>
+                    @endif
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="cn-content-inner">
+                    <div>
+                        @if( $new->hot)
+                        <span class="badge badge-danger">Tin Tức HOT</span>
+                        @endif
                     </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-2.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Vestibulum ante ipsum primis</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <h5> <b><a class="cn-title" href="{{ route('website.detailNews',$new->id )}}">{{
+                                    $new->title}}
+                                </a></b></h5>
                     </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-3.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Sed quis convallis lacus</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <p class="cn-date"><i class="far fa-clock"></i>{{ $new->created_at->Format('d/m/Y')}}</p>
+                    </div>
+                    <div>
+                        <b class="cn-date">{{ $new->description}}</b>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Technology</h2>
-                <div class="row cn-slider">
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-4.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Vivamus vel felis nec magna</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-5.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Phasellus vitae fermentum est</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-6.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Aenean ut varius dui</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-3">
+                <img src="https://stockdep.net/files/images/21244338.jpg" style="height:250px">
             </div>
         </div>
+
+        @endforeach
     </div>
+</div>
+</div>
 </div>
 <!-- Category News End-->
 
-
 <!-- Category News Start-->
-<div class="cat-news">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Business</h2>
-                <div class="row cn-slider">
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-7.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Interdum et malesuada fames ac ante</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-8.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Mauris non ligula eget ante sagittis</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-9.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Integer non nunc nec nulla aliquet</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Entertainment</h2>
-                <div class="row cn-slider">
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-10.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Ut laoreet justo non ornare</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-11.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Proin a nulla ut enim feugiat</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="img/cat-news-12.jpg" />
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
-                                    <a class="cn-title" href="">Sed mauris sem sollicitudin at neque</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Category News End-->
-
 
 <!-- Main News Start-->
 

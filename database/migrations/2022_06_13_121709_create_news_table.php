@@ -17,13 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('image');
-            $table->string('content');
+            $table->string('image')->nullable();;
+            $table->text('content');
             $table->string('status');
-            $table->string('view')->default(0);
-            $table->string('hot')->default(0);
+            $table->string('view')->nullable();
+            $table->string('hot')->nullable();
             $table->date('puplish_date');
-
             $table->timestamps();
         });
     }
