@@ -38,7 +38,7 @@
                         <table class="table align-items-center table-flush table-borderless">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th><input type="checkbox" id="checkAll" >#</th>
                                     <th>Email</th>
                                     <th>Ngày tạo</th>
                                     <th>Chức năng</th>
@@ -47,7 +47,7 @@
                             @foreach($newsletters as $newsletter)
                             <tbody>
                                 <tr>
-                                    <td><input type="checkbox" class="displays" name="ids[{{$newsletter->id}}]" value="{{$newsletter->id}}">
+                                    <td><input type="checkbox" class="checkItem" name="ids[{{$newsletter->id}}]" value="{{$newsletter->id}}">
                                         {{ $newsletter->id}}
                                     </td>
                                     <td>{{ $newsletter->email }}</td>
@@ -77,9 +77,9 @@
         <!--End Row-->
     </div>
 </div>
-@endsection
 <script>
-    $('.sent').click(function(){
-        $('.displays').hide();
-    })
+    $('#checkAll').click(function () {
+         $(':checkbox.checkItem').prop('checked', this.checked);
+ });
 </script>
+@endsection
