@@ -520,7 +520,7 @@ class DatabaseSeeder extends Seeder
         Bây giờ, nhiệm vụ tái thiết Man United sẽ do Ten Hag toàn quyền phụ trách. Cuối tháng này, MU sẽ hội quân chuẩn bị cho mùa giải mới. Trận ra mắt của Ten Hag trên cương vị mới tới vào ngày 12/7 khi MU đá giao hữu với Liverpool ở Thái Lan.';
         $new->status = '1';
         $new->view = 78;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 1;
@@ -558,7 +558,7 @@ class DatabaseSeeder extends Seeder
         Cũng nói thêm, tại AFF Cup 2020, Quang Hải thi đấu 6 trận cho tuyển Việt Nam. Anh để lại 2 bàn thắng, 2 kiến tạo và 13 đường chuyền tạo cơ hội. ';
         $new->status = '1';
         $new->view = 92;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 1;
@@ -577,7 +577,7 @@ class DatabaseSeeder extends Seeder
         HLV Polking của Thái Lan gợi ý: “Tôi mong Quang Hải, cầu thủ đại diện của Việt Nam có thể làm được như thế. Họ cần phải tới Nhật Bản, Hàn Quốc và các giải khác. Thậm chí là cả châu Âu. Các cầu thủ giỏi không nên bó buộc mình ở trong nước nữa”. Tiếp lời người thầy của mình, Chanathip – biểu tượng xuất ngoại thành công hy vọng: “Những cầu thủ giỏi nhất ở các đội tuyển trong khu vực như Quang Hải hay Hoàng Đức của Việt Nam nên cân nhắc rời khỏi vùng an toàn để tìm đến các nền bóng đá cao hơn nhằm tiếp tục nâng cao khả năng của mình”.';
         $new->status = '1';
         $new->view = 96;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 1;
@@ -613,7 +613,7 @@ class DatabaseSeeder extends Seeder
         Đại hội Đảng lần thứ XIII đã bầu 20 ủy viên Trung ương dự khuyết; trong đó 19 người tham gia lần đầu; một người tái cử; độ tuổi bình quân đầu nhiệm kỳ là 43,7.';
         $new->status = '1';
         $new->view = 67;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 3;
@@ -636,7 +636,7 @@ class DatabaseSeeder extends Seeder
         Trước đó, Phó chủ tịch UBND TP HCM Võ Văn Hoan nói trong nghị quyết mới đang xây dựng nhằm thay thế Nghị quyết 54 về cơ chế đặc thù cho TP HCM, thành phố dành một chương riêng về chính sách cho TP Thủ Đức, tập trung vào các kiến nghị: tổ chức, bộ máy phù hợp; phân cấp, ủy quyền mạnh hơn; có một số chức năng, nhiệm vụ của sở ngành để hoạt động "đúng nghĩa như thành phố".';
         $new->status = '1';
         $new->view = 64;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 3;
@@ -663,7 +663,7 @@ class DatabaseSeeder extends Seeder
         Cuối tháng 8/2021, ông Nguyễn Thành Phong được điều động giữ chức Phó ban Kinh tế Trung ương.';
         $new->status = '1';
         $new->view = 82;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 3;
@@ -692,7 +692,7 @@ class DatabaseSeeder extends Seeder
         Trước khi vướng lao lý, ông Hiến từng trả lời báo chí phương án đấu giá các lô đất tại khu đô thị Nam Tuy Hòa đã được Ban cán sự Đảng UBND tỉnh trình xin ý kiến và Thường trực HĐND tỉnh, Ban thường vụ Tỉnh ủy Phú Yên thống nhất.';
         $new->status = '1';
         $new->view = 30;
-        $new->hot = 1;
+        $new->hot = 0;
         $new->puplish_date = '2022/6/26';
         $new->user_id = 3;
         $new->category_id = 3;
