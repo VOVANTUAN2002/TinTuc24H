@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\UserGroup;
 use App\Http\Requests\StoreUserGroupRequest;
 use App\Http\Requests\UpdateUserGroupRequest;
+use App\Models\Role;
 use App\Services\Interfaces\UserGroupServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class UserGroupController extends Controller
@@ -25,6 +27,7 @@ class UserGroupController extends Controller
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny',UserGroup::class);
         $items = $this->UserGroupService->getAll($request);
         // dd($userGroups);
         // return response()->json($items, 200);
@@ -44,6 +47,7 @@ class UserGroupController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', UserGroup::class);
         return view('backend.userGroups.create');
 
     }
@@ -90,8 +94,20 @@ class UserGroupController extends Controller
     public function edit($id)
     {
         $item = UserGroup::find($id);
+        // $this->authorize('update',  $userGroup);
+        $current_user = Auth::user();
+        $userRoles = $item->roles->pluck('id', 'name')->toArray();
+        // dd($current_user->userGroup->roles->toArray());
+        $roles = Role::all()->toArray();
+        $group_names = [];
+        foreach ($roles as $role) {
+            $group_names[$role['group_name']][] = $role;
+        }
         $params = [
             'item' => $item,
+            'userRoles' => $userRoles,
+            'roles' => $roles,
+            'group_names' => $group_names,
         ];
         return view('backend.userGroups.edit',$params);
     }

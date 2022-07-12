@@ -18,7 +18,7 @@ class NewsPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->hasPermission('New_viewAny');
     }
 
     /**
@@ -30,7 +30,7 @@ class NewsPolicy
      */
     public function view(User $user, News $news)
     {
-        //
+        return $user->hasPermission('New_view');
     }
 
     /**
@@ -41,7 +41,7 @@ class NewsPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->hasPermission('New_create');
     }
 
     /**
@@ -53,7 +53,7 @@ class NewsPolicy
      */
     public function update(User $user, News $news)
     {
-        //
+        return $user->hasPermission('New_update');
     }
 
     /**
@@ -65,7 +65,7 @@ class NewsPolicy
      */
     public function delete(User $user, News $news)
     {
-        //
+        return $user->hasPermission('New_delete');
     }
 
     /**
@@ -77,7 +77,7 @@ class NewsPolicy
      */
     public function restore(User $user, News $news)
     {
-        //
+        return $user->hasPermission('New_restore');
     }
 
     /**
@@ -89,6 +89,6 @@ class NewsPolicy
      */
     public function forceDelete(User $user, News $news)
     {
-        //
+        return $user->hasPermission('New_forceDelete');
     }
 }

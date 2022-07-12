@@ -53,13 +53,17 @@
                                     <td>{{ $newsletter->email }}</td>
                                     <td> {{ $newsletter->created_at->Format('d/m/Y')}}</td>
                                     <td>
+                                        @if(Auth::user()->hasPermission('Newsletter_update'))
                                         <span class="sr-only">Edit</span></a> <a href="{{route('email.edit',$newsletter->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
+                                            @endif
+                                            @if(Auth::user()->hasPermission('Newsletter_delete'))
                                         <form action="{{ route('email.destroy',$newsletter->id )}}" style="display:inline" method="post">
                                             <button onclick="return confirm('Xóa {{$newsletter->email}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>
+                                        @endif
                                     </td>
                                 </tr>
                             </tbody>

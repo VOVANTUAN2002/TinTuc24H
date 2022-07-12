@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\CategoryNew;
+use App\Models\SytemLog;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CategoryNewPolicy
+class NewsletterPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class CategoryNewPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\CategoryNew  $categoryNew
+     * @param  \App\Models\Newsletter  $sytemLog
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, CategoryNew $categoryNew)
+    public function view(User $user)
     {
         //
     }
@@ -48,10 +48,10 @@ class CategoryNewPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\CategoryNew  $categoryNew
+     * @param  \App\Models\SytemLog  $sytemLog
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, CategoryNew $categoryNew)
+    public function update(User $user)
     {
         //
     }
@@ -60,10 +60,10 @@ class CategoryNewPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\CategoryNew  $categoryNew
+     * @param  \App\Models\SytemLog  $sytemLog
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, CategoryNew $categoryNew)
+    public function delete(User $user)
     {
         //
     }
@@ -72,10 +72,10 @@ class CategoryNewPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\CategoryNew  $categoryNew
+     * @param  \App\Models\SytemLog  $sytemLog
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, CategoryNew $categoryNew)
+    public function restore(User $user)
     {
         //
     }
@@ -84,10 +84,10 @@ class CategoryNewPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\CategoryNew  $categoryNew
+     * @param  \App\Models\SytemLog  $sytemLog
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, CategoryNew $categoryNew)
+    public function forceDelete(User $user)
     {
         //
     }

@@ -18,7 +18,7 @@ class CategoriePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->hasPermission('Categorie_viewAny');
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoriePolicy
      */
     public function view(User $user, Categorie $categorie)
     {
-        //
+        return $user->hasPermission('Categorie_view');
     }
 
     /**
@@ -41,7 +41,7 @@ class CategoriePolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->hasPermission('Categorie_create');
     }
 
     /**
@@ -53,7 +53,7 @@ class CategoriePolicy
      */
     public function update(User $user, Categorie $categorie)
     {
-        //
+        return $user->hasPermission('Categorie_update');
     }
 
     /**
@@ -65,7 +65,8 @@ class CategoriePolicy
      */
     public function delete(User $user, Categorie $categorie)
     {
-        //
+        return $user->hasPermission('Categorie_delete');
+
     }
 
     /**
@@ -77,7 +78,7 @@ class CategoriePolicy
      */
     public function restore(User $user, Categorie $categorie)
     {
-        //
+        return $user->hasPermission('Categorie_restore');
     }
 
     /**
@@ -89,6 +90,6 @@ class CategoriePolicy
      */
     public function forceDelete(User $user, Categorie $categorie)
     {
-        //
+        return $user->hasPermission('Categorie_forceDelete');
     }
 }

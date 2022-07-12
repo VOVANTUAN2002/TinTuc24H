@@ -13,12 +13,6 @@
         </nav>
         <div class="d-md-flex align-items-md-start">
             <h1 class="page-title mr-sm-auto"> Quản Lý Nhóm - Thùng Rác</h1>
-            <div class="btn-toolbar">
-                <a href="{{ route('userGroups.create') }}" class="btn btn-dark">
-                    <i class="fa-solid fa fa-plus"></i>
-                    <span class="ml-1">Thêm Mới</span>
-                </a>
-            </div>
         </div>
         <div class="card-body">
             <div class="row mb-2">
@@ -71,13 +65,17 @@
                                     <td>{{ ++$key}}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>
+                                        @if(Auth::user()->hasPermission('UserGroup_restore'))
                                         <span class="sr-only">Edit</span></a> <a href="{{route('userGroups.restore',$item->id)}}"
                                         class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-trash-restore"></i> <span class="sr-only">Remove</span></a>
+                                        @endif
+                                        @if(Auth::user()->hasPermission('UserGroup_forceDelete'))
                                         <form action="{{ route('userGroups.force_destroy',$item->id )}}" style="display:inline" method="post">
                                             <button onclick="return confirm('Xóa vĩnh viễn {{$item->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>
+                                        @endif
                                     </td>
 
                                 </tr>

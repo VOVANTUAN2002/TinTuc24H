@@ -26,6 +26,16 @@ class UserGroupRepository extends EloquentRepository implements UserGroupInterfa
         return $userGroups;
     }
 
+    public function update($request, $userGroup)
+    {
+        parent::update($request, $userGroup);
+        $userGroup->roles()->detach();
+        //attach cập nhập các record của bảng trung gian hiện tại
+        $userGroup->roles()->attach($request['roles']);
+        return $userGroup;
+
+    }
+
     public function trashedItems()
     {
 

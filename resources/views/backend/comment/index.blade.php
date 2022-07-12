@@ -48,19 +48,23 @@
                                     <td>{{ $comment->news->title }}</td>
                                     <td>{{ $comment->created_at->Format('d/m/Y') }}</td>
                                     <td>
+                                        @if(Auth::user()->hasPermission('Comment_update'))
                                     @if(($comment->startus ) == 'pending')
                                         <input type="button" data-comment_status="approved" data-comment_id="{{ $comment->id}}" id=" {{$comment->new_id}}"class="btn btn-primary btn-xs comment_approved" value=" Duyệt">
                                     @else
                                         <input type="button" data-comment_status="pending" data-comment_id="{{ $comment->id}}" id=" {{$comment->new_id}}" class="btn btn-danger btn-xs comment_approved" value="Bỏ Duyệt">
                                     @endif
+                                    @endif
                                     </td>
                                     {{-- <td>{{ __($comment->startus) }}</td> --}}
                                     <td>
+                                        @if(Auth::user()->hasPermission('Comment_delete'))
                                         <form action="{{ route('comments.destroy',$comment->id )}}" style="display:inline" method="post">
                                             <button onclick="return confirm('Bạn có chắc muôn xóa bình luận này kh ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>
+                                        @endif
                                     </td>
 
                                 </tr>
