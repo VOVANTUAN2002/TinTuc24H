@@ -28,10 +28,12 @@
                     </form>
                 </div>
                 <div class="col-lg-2">
+                    @if(Auth::user()->hasPermission('New_create'))
                     <a href="{{ route('news.create') }}" class="btn btn-dark">
                         <i class="fa-solid fa fa-plus"></i>
                         <span class="ml-1">Thêm Mới</span>
                     </a>
+                    @endif
                 </div>
             </div>
             <div class="card-header">
@@ -88,13 +90,17 @@
                                     </td>
                                     <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>
                                         <td>
+                                            @if(Auth::user()->hasPermission('New_update'))
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.edit',$new->id)}}" class="btn btn-sm btn-icon btn-dark"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
+                                            @endif
+                                            @if(Auth::user()->hasPermission('New_delete'))
                                         <form action="{{ route('news.destroy',$new->id )}}" style="display:inline" method="post">
                                             <button onclick="return confirm('Xóa {{$new->title}} ?')" class="btn btn-sm btn-icon btn-dark"><i class="far fa-trash-alt"></i></button>
                                             @csrf
                                             @method('delete')
                                         </form>
+                                        @endif
                                     </td>
 
                                 </tr>

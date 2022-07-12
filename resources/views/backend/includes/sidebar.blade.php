@@ -12,11 +12,14 @@
           <i class="fa fa-home"></i> <span>Trang Chủ</span>
         </a>
       </li>
+      @if(Auth::user()->hasPermission('Categorie_viewAny'))
       <li>
         <a href="{{ route('categories.index')}}">
           <i class="fa fa-file-text-o"></i> <span>Loại Tin Tức</span>
         </a>
       </li>
+      @endif
+      @if(Auth::user()->hasPermission('New_viewAny'))
       <li>
         <a href="{{ route('news.index')}}">
           <i class="fa fa-newspaper-o"></i>
@@ -24,31 +27,42 @@
           <span>Tin Tức</span>
         </a>
       </li>
+      @endif
+      @if(Auth::user()->hasPermission('UserGroup_viewAny'))
       <li>
         <a href="{{ route('userGroups.index')}}">
           <i class="fa fa-id-badge"></i> <span>Nhóm Nhân Viên</span>
         </a>
       </li>
+      @endif
+      @if(Auth::user()->hasPermission('User_viewAny'))
       <li>
         <a href="{{ route('users.index')}}">
           <i class="fa fa-user"></i> <span>Nhân Viên</span>
         </a>
       </li>
+      @endif
+      @if(Auth::user()->hasPermission('Comment_viewAny'))
       <li>
         <a href="{{ route('comments.index')}}">
           <i class="fa fa-comments"></i> <span>Bình Luận</span>
         </a>
       </li>
+      @endif
+      @if(Auth::user()->hasPermission('Newsletter_viewAny'))
       <li>
         <a href="{{ route('email.index')}}">
           <i class="fa fa-envelope"></i> <span>Email Đăng Ký</span>
         </a>
       </li>
+      @endif
+      @if(Auth::user()->hasPermission('SystemLog_viewAny'))
       <li>
         <a href="{{ route('systemLogs.index')}}">
           <i class="fas	fa-running"></i> <span>Hoạt Động</span>
         </a>
       </li>
+      @endif
 
     </ul>
 
