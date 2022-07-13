@@ -33,10 +33,12 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="btn-toolbar">
+                        @if(Auth::user()->hasPermission('UserGroup_create'))
                         <a href="{{ route('userGroups.create') }}" class="btn btn-dark">
                             <i class="fa-solid fa fa-plus"></i>
                             <span class="ml-1">Thêm Mới</span>
                         </a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -76,10 +78,13 @@
                                     <td>{{ ++$key}}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>
+                                        @if(Auth::user()->hasPermission('UserGroup_update'))
                                         <span class="sr-only">Edit</span></a> <a
                                             href="{{route('userGroups.edit',$item->id)}}"
                                             class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
+                                        @endif
+                                        @if(Auth::user()->hasPermission('UserGroup_delete'))
                                         <form action="{{ route('userGroups.destroy',$item->id )}}"
                                             style="display:inline" method="post">
                                             <button onclick="return confirm('Xóa {{$item->name}} ?')"
@@ -88,6 +93,7 @@
                                             @csrf
                                             @method('delete')
                                         </form>
+                                        @endif
                                     </td>
 
                                 </tr>
@@ -105,5 +111,4 @@
         <!--End Row-->
     </div>
 </div>
-
 @endsection
