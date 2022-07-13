@@ -31,7 +31,9 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="tf1">Quyền hạn </label>
+                            <label class="form-check form-switch">Quyền hạn
+                                <input style="margin-left: 0.5em;" type="checkbox" id="checkAll"  class="form-check-input" value="Quyền hạn" >
+                                 </label>
                             <div class="row">
                                 @foreach ($group_names as $group_name => $roles)
                                 <div class="list-group list-group-flush list-group-bordered col-lg-4">
@@ -42,7 +44,7 @@
                                         <!-- .switcher-control -->
                                         <label class="form-check form-switch">
                                             <input type="checkbox" @checked( in_array($role['id'],$userRoles) )
-                                                name="roles[]" class="form-check-input" value="{{ $role['id'] }}">
+                                                name="roles[]" class="checkItem form-check-input" value="{{ $role['id'] }}">
                                             <span class="switcher-indicator"></span>
                                         </label>
                                         <!-- /.switcher-control -->
@@ -63,6 +65,10 @@
         </div>
     </div>
 </div>
-
+<script>
+    $('#checkAll').click(function () {
+         $(':checkbox.checkItem').prop('checked', this.checked);
+ });
+</script>
 
 @endsection

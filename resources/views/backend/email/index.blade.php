@@ -31,7 +31,9 @@
                         <form action="{{ route('test')}}" style="display:inline" method="post">
                         @csrf
                         @method('delete')
+                        @if(Auth::user()->hasPermission('Newsletter_delete'))
                         <button type="submit" class="btn btn-success sent">Xóa Nhanh</button>
+                        @endif
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('ids') }}</p>
                                 @endif
