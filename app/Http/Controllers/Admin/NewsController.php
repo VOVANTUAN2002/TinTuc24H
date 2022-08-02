@@ -75,7 +75,7 @@ class NewsController extends Controller
             if ((int) $request->hot === 1) {
 
                 $newhots = News::where('hot', 1)->get();
-                
+
                 if (count($newhots) === 10) {
 
                     Session::flash('message', 'Chung tôi chỉ cho phép 10 sản phẩm  Hot');
@@ -148,6 +148,7 @@ class NewsController extends Controller
             }
 
             $news = $this->newsService->update($request, $id);
+            return back();
             return redirect()->route('news.index')->with('success', ' Sửa  Tin tức ' . $request->title . ' ' . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -168,6 +169,7 @@ class NewsController extends Controller
     {
         try {
             $news = $this->newsService->destroy($id);
+            return back();
             return redirect()->route('news.index')->with('success', ' Xóa Tin tức ' . $news->name . ' thành công ');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -191,6 +193,7 @@ class NewsController extends Controller
     {
         try {
             $this->newsService->restore($id);
+            return back();
             return redirect()->route('news.trash')->with('success', 'Khôi phục thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -202,7 +205,7 @@ class NewsController extends Controller
     {
         try {
             $news = $this->newsService->force_destroy($id);
-
+            return back();
             return redirect()->route('news.trash')->with('success', 'Xóa' . ' ' . $news->name . ' ' .  'thành công');
         } catch (\Exception $e) {
             Log::error($e->getMessage());

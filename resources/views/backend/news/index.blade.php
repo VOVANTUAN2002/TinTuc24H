@@ -87,7 +87,7 @@
                                         </br>
                                     </td>
                                     <td> {{ $new->categorie ? $new->categorie->name : ''}}</td>
-                                        <td>
+                                    <td>
                                         <span class="sr-only">Edit</span></a> <a href="{{route('news.edit',$new->id)}}" class="btn btn-sm btn-icon btn-dark"><i class="fas fa-pencil-alt"></i>
                                             <span class="sr-only">Remove</span></a>
                                         <form action="{{ route('news.destroy',$new->id )}}" style="display:inline" method="post">
