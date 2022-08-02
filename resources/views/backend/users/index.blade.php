@@ -36,10 +36,12 @@
                 <div class="col-lg-4">
                     <div class="d-md-flex align-items-md-start">
                         <div class="btn-toolbar">
+                            @if(Auth::user()->hasPermission('User_create'))
                             <a href="{{ route('users.create') }}" class="btn btn-dark mr-2">
                                 <i class="fa-solid fa fa-plus "></i>
                                 <span class="ml-1">Thêm Mới</span>
                             </a>
+                            @endif
                         </div>
                         <a href="{{route('users.export')}}" class="btn btn-dark">
                             <i class="fas fa-file"></i>
@@ -95,13 +97,18 @@
                                 <td>
 
                                     @if($item->id == Auth::id())
+                                    @if(Auth::user()->hasPermission('User_update'))
                                     <span class="sr-only">Edit</span></a> <a href="{{route('users.edit',$item->id)}}"
                                         class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
+                                        @endif
                                         <span class="sr-only">Remove</span></a>
                                     @else
+                                    @if(Auth::user()->hasPermission('User_update'))
                                     <span class="sr-only">Edit</span></a> <a href="{{route('users.edit',$item->id)}}"
                                         class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
                                         <span class="sr-only">Remove</span></a>
+                                    @endif
+                                    @if(Auth::user()->hasPermission('User_delete'))
                                     <form action="{{ route('users.destroy',$item->id )}}" style="display:inline"
                                         method="post">
                                         <button onclick="return confirm('Xóa {{$item->name}} ?')"
@@ -110,6 +117,7 @@
                                         @csrf
                                         @method('delete')
                                     </form>
+                                    @endif
                                     @endif
                                 </td>
 

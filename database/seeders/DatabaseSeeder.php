@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 
     public function importRoles()
     {
-        $groups     = ['New', 'Categorie', 'User', 'UserGroup', 'Role', 'Category_new'];
+        $groups     = ['New', 'Categorie', 'User', 'UserGroup', 'Comment', 'Newsletter','SystemLog'];
         $actions    = ['viewAny', 'view', 'create', 'update', 'delete', 'restore', 'forceDelete'];
         foreach ($groups as $group) {
             foreach ($actions as $action) {
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
         $user->phone = '0777333274';
         $user->address = 'Quảng Trị';
         $user->start_day = '2021/10/29';
-        $user->user_group_id  = '3';
+        $user->user_group_id  = '1';
         $user->gender = 'Nam';
         $user->avatar = 'upload/admin13.png';
         $user->save();
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
 
     public function importUserGroupRoles()
     {
-        for ($i = 1; $i <= 42; $i++) {
+        for ($i = 1; $i <= 49; $i++) {
             DB::table('user_group_roles')->insert([
                 'user_group_id' => 1,
                 'role_id' => $i,

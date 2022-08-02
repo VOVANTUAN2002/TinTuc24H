@@ -32,10 +32,12 @@
                     </form>
                 </div>
                 <div class="col-lg-2">
+                    @if(Auth::user()->hasPermission('Categorie_create'))
                     <a href="{{ route('categories.create') }}" class="btn btn-dark">
                         <i class="fa-solid fa fa-plus"></i>
                         <span class="ml-1">Thêm Mới</span>
                     </a>
+                    @endif
                 <div>
             </div>
             </div>
@@ -64,13 +66,17 @@
                                         <td>{{ $category->id}}</td>
                                         <td>{{ $category->name }}</td>
                                         <td>
+                                            @if(Auth::user()->hasPermission('Categorie_update'))
                                             <span class="sr-only">Edit</span></a> <a href="{{route('categories.edit',$category->id)}}" class="btn btn-sm btn-icon btn-secondary"><i class="fas fa-pencil-alt"></i>
                                                 <span class="sr-only">Remove</span></a>
+                                                @endif
+                                                @if(Auth::user()->hasPermission('Categorie_delete'))
                                             <form action="{{ route('categories.destroy',$category->id )}}" style="display:inline" method="post">
                                                 <button onclick="return confirm('Xóa {{$category->name}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
                                                 @csrf
                                                 @method('delete')
                                             </form>
+                                            @endif
                                         </td>
 
                                     </tr>
