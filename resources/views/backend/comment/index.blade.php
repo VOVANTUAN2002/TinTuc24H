@@ -95,7 +95,6 @@
                 var alert = "Thay đổi thành công";
             }
             $.ajax({
-
                  url:"{{url('/approved')}}",
                  method:"POST",
                  headers: {
@@ -105,13 +104,12 @@
                     comment_status:comment_status,
                     comment_id:comment_id,
                     // new_id:new_id,
-                },
+                },\notifications.html
                 success:function(status){
                     location.reload();
                     $('#notify_comment').html('<span class="text text-alert">'+alert+'</span>');
                 }
              });
         });
-
     </script>
 @endsection

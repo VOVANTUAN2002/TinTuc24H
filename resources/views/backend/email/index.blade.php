@@ -31,8 +31,10 @@
                         <form action="{{ route('test')}}" style="display:inline" method="post">
                         @csrf
                         @method('delete')
+                        @if($newsletters->count() > 0)
                         @if(Auth::user()->hasPermission('Newsletter_delete'))
-                        <button type="submit" class="btn btn-success sent">Xóa Nhanh</button>
+                        <button type="submit" onclick="return confirm('Xóa  ?')" class="btn btn-success sent">Xóa Nhanh</button>
+                        @endif
                         @endif
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('ids') }}</p>
@@ -60,11 +62,6 @@
                                             <span class="sr-only">Remove</span></a>
                                             @endif
                                             @if(Auth::user()->hasPermission('Newsletter_delete'))
-                                        <form action="{{ route('email.destroy',$newsletter->id )}}" style="display:inline" method="post">
-                                            <button onclick="return confirm('Xóa {{$newsletter->email}} ?')" class="btn btn-sm btn-icon btn-secondary"><i class="far fa-trash-alt"></i></button>
-                                            @csrf
-                                            @method('delete')
-                                        </form>
                                         @endif
                                     </td>
                                 </tr>
